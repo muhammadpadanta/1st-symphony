@@ -1,5 +1,5 @@
 {
-  "name": "my-next-app",
+  "name": "next-TKM-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.8",
+    "next": "14.1.2",
+    "next-videos": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.2"
+    "simplex-noise": "^4.0.1",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "daisyui": "^4.7.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.2",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2"
+    "typescript": "^5"
   }
 }
