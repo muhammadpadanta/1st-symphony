@@ -1,8 +1,8 @@
 "use client";
-import { Video } from 'next-video';
+
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { BgBoxes } from "@/components/bgboxes";
+
 import { Boxes } from "@/components/ui/background-boxes";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {BtnBorder} from "./btnborder";
@@ -13,12 +13,12 @@ export function Hero() {
     const words = [
         {
             text: "We Are Ready To",
-            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400",
+            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 danta1 text-4xl 2xl:text-[3rem]",
         },
 
         {
             text: "Tune in with You.",
-            className: "bg-clip-text text-transparent bg-gradient-to-b from-[#0C2976] to-white",
+            className: "bg-clip-text text-transparent bg-gradient-to-t from-[#162a85] to-blue-300 danta1 text-4xl 2xl:text-[3rem]",
         },
         ];
     
@@ -74,7 +74,7 @@ export function Hero() {
                     
                     <div className="w-1/2 flex flex-col justify-center items-center">
                         <div className="b z-10">
-                            <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center  ">
+                            <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center  merienda-font">
                                 The road to freedom starts from here
                             </p>
                             <TypewriterEffectSmooth words={words} />

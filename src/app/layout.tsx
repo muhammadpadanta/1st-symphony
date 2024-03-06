@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Luckiest_Guy } from "next/font/google";
 import "./globals.css";
 
-const danta = Luckiest_Guy({
-  subsets: ["latin"],
-  variables: "--font--luckiest-guy",
-  weight: "400",
 
-});
 
 export const metadata: Metadata = {
   title: "1st Symphony",
@@ -21,7 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={danta.className}>{children}</body>
+      <head>
+      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Honk&family=Permanent+Marker&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"></link>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

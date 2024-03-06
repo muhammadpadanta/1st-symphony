@@ -8,7 +8,7 @@ export function BtnBorder() {
             <a href="https://youtube.com" >
                 <ButtonBorder
                     borderRadius="1.75rem"
-                    className="bg-slate-900 text-white border-slate-800 z-20 hover:bg-slate-800 transition-all"
+                    className="bg-[#360d12] text-white border-slate-800 z-20 hover:bg-[#640e18] transition-all honk-font text-2xl"
 
                     >
                     GET TICKET

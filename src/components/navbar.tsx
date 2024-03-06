@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 export function NavbarMenu() {
   return (
-    <div className="relative left-0 w-screen  z-50 ">
+    <div className="relative left-0 w-screen z-50 ">
       <Navbar className="top-2  " />
       
     </div>
@@ -21,12 +21,12 @@ function Navbar({ className }: { className?: string }) {
       
 
       
-        <a href="https://youtube.com" className="text-white">Home</a>
-        <a href="https://youtube.com" className="text-white">Ticket</a>
+        <a href="https://youtube.com" className="text-white danta ">Home</a>
+        <a href="https://youtube.com" className="text-white danta">Ticket</a>
         
         
-        <MenuItem setActive={setActive} active={active} item="About">
-          <div className="flex flex-col space-y-4 text-sm">
+        <MenuItem setActive={setActive} active={active} item="About" className="danta">
+          <div className="flex flex-col space-y-4 text-sm danta">
             <HoveredLink href="/hobby">Contact us</HoveredLink>
             <HoveredLink href="/individual">Our Team</HoveredLink>
             
