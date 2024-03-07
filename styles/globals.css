@@ -70,6 +70,11 @@ body {
   font-style: normal;
 }
 
+.app-background {
+  background-color: #0a0a0a;
+  overflow-x: hidden;
+}
+
 
 
 

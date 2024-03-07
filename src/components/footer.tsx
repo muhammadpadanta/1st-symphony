@@ -5,21 +5,21 @@ const people = [
   {
     id: 1,
     name: "Facebook",
-    designation: "Facebook",
+    designation: "1st Symphony",
     image:
     "https://cdn.pixabay.com/photo/2016/11/05/08/42/facebook-1799691_1280.png",
   },
   {
     id: 2,
     name: "Discord",
-    designation: "Discord",
+    designation: "1stSymphony",
     image:
       "https://i.pinimg.com/736x/8b/70/50/8b70503d7ffc26ad5a89ce4c4ce231f9.jpg",
   },
   {
     id: 3,
     name: "Instagram",
-    designation: "Instagram",
+    designation: "1st_Symphony",
     image:
       "https://i.pinimg.com/564x/36/b2/2d/36b22ddab8cdc81af8cdcd26b144ca37.jpg",
   },

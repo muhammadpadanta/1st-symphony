@@ -6,14 +6,17 @@ import {CardSliderAnimation2} from "../components/cards";
 import { HeroScroll } from "@/components/heroscroll";
 import Footer from '../components/footer';
 
+
 export default function Home() {
   return (
-    <main className="bg-[#0a0a0a] overflow-x-hidden">
+    <main className="app-background">
       <NavbarMenu />
       <Hero />
       <HeroScroll/>
       <CardSliderAnimation />
       <CardSliderAnimation2 />
+      
+      
       <Footer />
 
 

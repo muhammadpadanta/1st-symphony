@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
+import Link from 'next/link';
 
 export function NavbarMenu() {
   return (
@@ -19,10 +20,14 @@ function Navbar({ className }: { className?: string }) {
       
       <Menu setActive={setActive}>
       
-
-      
-        <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all ">Home</a>
-        <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all">Ticket</a>
+      <Link href="/" legacyBehavior> 
+      <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all ">Home</a>
+      </Link>
+      <Link href="/ticketlist" legacyBehavior> 
+      <a className="text-white danta hover:scale-110 hover:opacity-80 transition-all">Ticket</a>
+      </Link>
+        
+        
         
         <MenuItem 
   setActive={setActive} 
@@ -36,6 +41,8 @@ function Navbar({ className }: { className?: string }) {
     <HoveredLink href="/individual">Our Team</HoveredLink>
   </div>
 </MenuItem>
+
+
       </Menu>
     </div>
   );

@@ -87,6 +87,8 @@ export const Menu = ({
       <div className="flex justify-between items-center space-x-8 mr-14">
         {children}
       </div>{" "}
+
+      
       <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
         <a href="https://www.youtube.com">
         <BsReverseLayoutTextSidebarReverse />
