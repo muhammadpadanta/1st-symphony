@@ -41,7 +41,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]); // Add animate to the dependencies array
 
   const renderWords = () => {
     return (

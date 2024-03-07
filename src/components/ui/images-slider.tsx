@@ -36,28 +36,41 @@ export const ImagesSlider = ({
   };
 
   useEffect(() => {
-    loadImages();
-  }, []);
-
-  const loadImages = () => {
-    setLoading(true);
-    const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
-        img.onerror = reject;
+    const loadImages = () => {
+      setLoading(true);
+      const loadPromises = images.map((image) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = image;
+          img.onload = () => resolve(image);
+          img.onerror = reject;
+        });
       });
-    });
-
-    Promise.all(loadPromises)
-      .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
-        setLoading(false);
-      })
-      .catch((error) => console.error("Failed to load images", error));
-  };
+  
+      Promise.all(loadPromises)
+        .then((loadedImages) => {
+          setLoadedImages(loadedImages as string[]);
+          setLoading(false);
+        })
+        .catch((error) => console.error("Failed to load images", error));
+    };
+  
+    loadImages();
+  }, [images]);
+  
   useEffect(() => {
+    const handleNext = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex + 1 === images.length ? 0 : prevIndex + 1
+      );
+    };
+  
+    const handlePrevious = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+      );
+    };
+  
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         handleNext();
@@ -65,9 +78,9 @@ export const ImagesSlider = ({
         handlePrevious();
       }
     };
-
+  
     window.addEventListener("keydown", handleKeyDown);
-
+  
     // autoplay
     let interval: any;
     if (autoplay) {
@@ -75,12 +88,12 @@ export const ImagesSlider = ({
         handleNext();
       }, 5000);
     }
-
+  
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       clearInterval(interval);
     };
-  }, []);
+  }, [images.length, autoplay]);
 
   useEffect(() => {}, []);
 
