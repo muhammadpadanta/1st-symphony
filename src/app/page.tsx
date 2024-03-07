@@ -3,7 +3,7 @@ import { NavbarMenu } from "../components/navbar";
 import {Hero} from "../components/hero";
 import {CardSliderAnimation} from "../components/cards";
 import {CardSliderAnimation2} from "../components/cards";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { HeroScroll } from "@/components/heroscroll";
 import Footer from '../components/footer';
 
