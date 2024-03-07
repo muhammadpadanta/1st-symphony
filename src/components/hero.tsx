@@ -22,7 +22,7 @@ export function Hero() {
         ];
     
     const images = [
-        "https://www.desktopbackground.org/p/2015/08/05/990227_coldplay-hd-wallpapers-4k-wallpapers_2560x1600_h.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/0/04/Imagine_Dragons%2C_Roundhouse%2C_London_%2835390234536%29.jpg",
         "https://assets.teenvogue.com/photos/63b98a0effed78bd420c4383/16:9/w_2560%2Cc_limit/YOASOBI_A%25E5%2586%2599_2021_12.jpg",
         "https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg",
         ];

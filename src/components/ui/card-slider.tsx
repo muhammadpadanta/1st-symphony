@@ -24,6 +24,7 @@ export const CardSlider = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false); 
+
   useEffect(() => {
     function addAnimation() {
       if (containerRef.current && scrollerRef.current) {
@@ -41,36 +42,38 @@ export const CardSlider = ({
         setStart(true);
       }
     }
-  
-    addAnimation();
-  }, []);
 
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
+    const getDirection = () => {
+      if (containerRef.current) {
+        if (direction === "left") {
+          containerRef.current.style.setProperty(
+            "--animation-direction",
+            "forwards"
+          );
+        } else {
+          containerRef.current.style.setProperty(
+            "--animation-direction",
+            "reverse"
+          );
+        }
       }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
+    };
+
+    const getSpeed = () => {
+      if (containerRef.current) {
+        if (speed === "fast") {
+          containerRef.current.style.setProperty("--animation-duration", "20s");
+        } else if (speed === "normal") {
+          containerRef.current.style.setProperty("--animation-duration", "40s");
+        } else {
+          containerRef.current.style.setProperty("--animation-duration", "80s");
+        }
       }
-    }
-  };
+    };
+
+    addAnimation();
+  }, [direction, speed]); // Add direction and speed to the dependency array
+
   return (
     // scroll speed
     <div

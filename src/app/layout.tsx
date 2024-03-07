@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Luckiest_Guy } from "next/font/google";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 export const metadata: Metadata = {
   title: "1st Symphony",
@@ -25,8 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <Analytics />
-        <SpeedInsights />
+        
         </body>
     </html>
   );

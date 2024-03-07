@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 
 export const ImagesSlider = ({
   images,
@@ -20,8 +21,6 @@ export const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -36,41 +35,6 @@ export const ImagesSlider = ({
   };
 
   useEffect(() => {
-    const loadImages = () => {
-      setLoading(true);
-      const loadPromises = images.map((image) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = image;
-          img.onload = () => resolve(image);
-          img.onerror = reject;
-        });
-      });
-  
-      Promise.all(loadPromises)
-        .then((loadedImages) => {
-          setLoadedImages(loadedImages as string[]);
-          setLoading(false);
-        })
-        .catch((error) => console.error("Failed to load images", error));
-    };
-  
-    loadImages();
-  }, [images]);
-  
-  useEffect(() => {
-    const handleNext = () => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex + 1 === images.length ? 0 : prevIndex + 1
-      );
-    };
-  
-    const handlePrevious = () => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
-      );
-    };
-  
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         handleNext();
@@ -78,9 +42,9 @@ export const ImagesSlider = ({
         handlePrevious();
       }
     };
-  
+
     window.addEventListener("keydown", handleKeyDown);
-  
+
     // autoplay
     let interval: any;
     if (autoplay) {
@@ -88,14 +52,12 @@ export const ImagesSlider = ({
         handleNext();
       }, 5000);
     }
-  
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       clearInterval(interval);
     };
   }, [images.length, autoplay]);
-
-  useEffect(() => {}, []);
 
   const slideVariants = {
     initial: {
@@ -128,8 +90,6 @@ export const ImagesSlider = ({
     },
   };
 
-  const areImagesLoaded = loadedImages.length > 0;
-
   return (
     <div className="utama bg-transparent justify-center items-center flex">
       <div
@@ -139,28 +99,34 @@ export const ImagesSlider = ({
           )}
 
         >
-        {areImagesLoaded && children}
-        {areImagesLoaded && overlay && (
+        {children}
+        {overlay && (
           <div
             className={cn("absolute inset-0 z-20", overlayClassName)}
           />
           )}
 
-        {areImagesLoaded && (
-          <AnimatePresence>
-            <motion.img
-              key={currentIndex}
-              src={loadedImages[currentIndex]}
-              initial="initial"
-              animate="visible"
-              exit={direction === "up" ? "upExit" : "downExit"}
-              variants={slideVariants}
-              className="image h-full w-full absolute inset-0 border rounded-xl  border-white object-cover "
-            />
-          </AnimatePresence>
-          )}
+        <AnimatePresence>
+        <motion.div
+  key={currentIndex}
+  initial="initial"
+  animate="visible"
+  exit={direction === "up" ? "upExit" : "downExit"}
+  variants={slideVariants}
+  className="image h-full w-full absolute inset-0 border rounded-xl border-white"
+>
+  <div className="h-full w-full overflow-hidden rounded-xl relative">
+    <Image
+      src={images[currentIndex]}
+      alt=""
+      layout="fill"
+      objectFit="cover"
+      className="mask-image"
+    />
+  </div>
+</motion.div>
+        </AnimatePresence>
       </div>
     </div>
-    
   );
 };

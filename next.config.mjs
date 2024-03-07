@@ -30,6 +30,11 @@ const nextConfig = {
       'cdn.britannica.com',
       'picsum.photos',
       'cdn.antaranews.com',
+      'www.desktopbackground.org',
+      'assets.teenvogue.com',
+      'esports.id',
+      
+      
     ],
   },
   // Merge withVideos configuration

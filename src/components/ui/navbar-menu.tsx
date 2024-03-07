@@ -42,7 +42,7 @@ export const MenuItem = ({
           <motion.div
             initial={{ opacity: 0, scale: 0, y: 0 }}
             animate={{ opacity: 1, scale: 1, y: -10 }}
-            exit={{ opacity: 0.5, scale: 0, y: 0 }}
+            
             transition={transition}
           >
             <div className="absolute top-[calc(100%_+_1.7rem)] left-1/2 transform -translate-x-1/2">
