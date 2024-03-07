@@ -2,6 +2,7 @@
 
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
+import Image from 'next/image';
 
 export const CardSlider = ({
   items,
@@ -98,7 +99,8 @@ export const CardSlider = ({
         aria-hidden="true"
         className="user-select-none border -z-1 pointer-events-none absolute  -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
       ></div>
-      <img src={item.imageUrl} alt={item.name} className="object-cover group-hover:opacity-40 group-hover:scale-105 group-hover:filter group-hover:blur-sm transition-all" />
+     {/* Change this img tag to use the Next.js Image component */}
+<Image src={item.imageUrl} alt={item.name} width={500} height={300} className="object-cover group-hover:opacity-40 group-hover:scale-105 group-hover:filter group-hover:blur-sm transition-all" />
     </blockquote>
     {/* Text to display on hover */}
     <div className="absolute inset-0 flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 group-hover:scale-110  transition-all">

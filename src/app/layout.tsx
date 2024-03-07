@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Luckiest_Guy } from "next/font/google";
 import "./globals.css";
-
-
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "1st Symphony",
@@ -23,7 +23,11 @@ export default function RootLayout({
       <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"></link>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+        </body>
     </html>
   );
 }

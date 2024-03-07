@@ -2,24 +2,34 @@ import withVideos from 'next-videos';
 
 const nextConfig = {
   images: {
-    remotePatterns: [
-      { hostname: 'media.suara.com' },
-      { hostname: 'images3.alphacoders.com' },
-      { hostname: 'assets.aceternity.com' },
-      { hostname: 'www.suarasurabaya.net' },
-      { hostname: 'static.promediateknologi.id' },
-      { hostname: 'i.ytimg.com' },
-      { hostname: 'images.unsplash.com' },
-      { hostname: 'upload.wikimedia.org' },
-      { hostname: 'e7.pngegg.com' },
-      { hostname: 'w7.pngwing.com' },
-      { hostname: 'i.pinimg.com' },
-      { hostname: 'cdn.pixabay.com' },
-      { hostname: 'spng.pngfind.com' },
-      
-      
-      
-     
+    domains: [
+      'media.suara.com',
+      'images3.alphacoders.com',
+      'assets.aceternity.com',
+      'www.suarasurabaya.net',
+      'static.promediateknologi.id',
+      'i.ytimg.com',
+      'images.unsplash.com',
+      'upload.wikimedia.org',
+      'e7.pngegg.com',
+      'w7.pngwing.com',
+      'i.pinimg.com',
+      'cdn.pixabay.com',
+      'spng.pngfind.com',
+      'asset.kompas.com',
+      'thebiaslistcom.files.wordpress.com',
+      'www.billboard.com',
+      'media.matamata.com',
+      'www.rukita.co',
+      's-light.tiket.photos',
+      'next.config.js',
+      'awsimages.detik.net.id',
+      'cdn1-production-images-kly.akamaized.net',
+      'i.scdn.co',
+      'akcdn.detik.net.id',
+      'cdn.britannica.com',
+      'picsum.photos',
+      'cdn.antaranews.com',
     ],
   },
   // Merge withVideos configuration
