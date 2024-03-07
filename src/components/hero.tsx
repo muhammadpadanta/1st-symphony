@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-import { Boxes } from "@/components/ui/background-boxes";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {BtnBorder} from "./btnborder";
 import { ImagesSlider } from "@/components/ui/images-slider";
@@ -13,12 +12,12 @@ export function Hero() {
     const words = [
         {
             text: "We Are Ready To",
-            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 danta1 text-4xl 2xl:text-[3rem]",
+            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 danta1 text-4xl 2xl:text-[3rem] drop-shadow-xl",
         },
 
         {
             text: "Tune in with You.",
-            className: "bg-clip-text text-transparent bg-gradient-to-t from-[#162a85] to-blue-300 danta1 text-4xl 2xl:text-[3rem]",
+            className: "bg-clip-text text-transparent bg-gradient-to-t from-[#092327] to-white danta1 text-4xl 2xl:text-[3rem] drop-shadow-xl",
         },
         ];
     

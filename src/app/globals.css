@@ -53,7 +53,7 @@ body {
   font-variation-settings:
     "MORF" 15,
     "SHLN" 50;
-    filter: hue-rotate(240deg); /* Adjust the hue */
+    filter: hue-rotate(10deg); /* Adjust the hue */
 }
 
 .merienda-font {

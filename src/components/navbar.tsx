@@ -21,17 +21,21 @@ function Navbar({ className }: { className?: string }) {
       
 
       
-        <a href="https://youtube.com" className="text-white danta ">Home</a>
-        <a href="https://youtube.com" className="text-white danta">Ticket</a>
+        <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all ">Home</a>
+        <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all">Ticket</a>
         
-        
-        <MenuItem setActive={setActive} active={active} item="About" className="danta">
-          <div className="flex flex-col space-y-4 text-sm danta">
-            <HoveredLink href="/hobby">Contact us</HoveredLink>
-            <HoveredLink href="/individual">Our Team</HoveredLink>
-            
-          </div>
-        </MenuItem>
+        <MenuItem 
+  setActive={setActive} 
+  active={active} 
+  item="About" 
+  className="danta "
+  labelClassName="hover:scale-110 transition-all" // New prop
+>
+  <div className="flex flex-col space-y-4 text-sm danta">
+    <HoveredLink href="/hobby">Contact us</HoveredLink>
+    <HoveredLink href="/individual">Our Team</HoveredLink>
+  </div>
+</MenuItem>
       </Menu>
     </div>
   );

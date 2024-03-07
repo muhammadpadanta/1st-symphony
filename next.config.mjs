@@ -13,6 +13,13 @@ const nextConfig = {
       { hostname: 'upload.wikimedia.org' },
       { hostname: 'e7.pngegg.com' },
       { hostname: 'w7.pngwing.com' },
+      { hostname: 'i.pinimg.com' },
+      { hostname: 'cdn.pixabay.com' },
+      { hostname: 'spng.pngfind.com' },
+      
+      
+      
+     
     ],
   },
   // Merge withVideos configuration
