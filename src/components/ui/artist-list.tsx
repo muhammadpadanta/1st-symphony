@@ -255,31 +255,30 @@ const ShaderMaterial = ({
     };
 
     // Shader material
-    const material = useMemo(() => {
-        const materialObject = new THREE.ShaderMaterial({
-            vertexShader: `
-      precision mediump float;
-      in vec2 coordinates;
-      uniform vec2 u_resolution;
-      out vec2 fragCoord;
-      void main(){
-        float x = position.x;
-        float y = position.y;
-        gl_Position = vec4(x, y, 0.0, 1.0);
-        fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
-        fragCoord.y = u_resolution.y - fragCoord.y;
-      }
-      `,
-            fragmentShader: source,
-            uniforms: getUniforms(),
-            glslVersion: THREE.GLSL3,
-            blending: THREE.CustomBlending,
-            blendSrc: THREE.SrcAlphaFactor,
-            blendDst: THREE.OneFactor,
-        });
 
-        return materialObject;
-    }, [size.width, size.height, source]);
+        const material = useMemo(() => {
+            return new THREE.ShaderMaterial({
+                vertexShader: `
+            precision mediump float;
+            in vec2 coordinates;
+            uniform vec2 u_resolution;
+            out vec2 fragCoord;
+            void main(){
+                float x = position.x;
+                float y = position.y;
+                gl_Position = vec4(x, y, 0.0, 1.0);
+                fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
+                fragCoord.y = u_resolution.y - fragCoord.y;
+            }
+        `,
+                fragmentShader: source,
+                uniforms: getUniforms(),
+                glslVersion: THREE.GLSL3,
+                blending: THREE.CustomBlending,
+                blendSrc: THREE.SrcAlphaFactor,
+                blendDst: THREE.OneFactor,
+            });
+        }, [size.width, size.height, source]);
 
     return (
         <mesh ref={ref as any}>

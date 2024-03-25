@@ -49,8 +49,8 @@ export function ArtistList() {
                 className="py-20 flex flex-wrap items-center justify-center bg-[#0a0a0a] w-full gap-8 mx-auto px-8"
             >
                 {cardData.map((card, index) => (
-                    <div className="min-w-[20%]">
-                        <Card key={index} title={card.title} icon={card.icon} image={card.image}>
+                    <div key={index} className="min-w-[20%]">
+                        <Card title={card.title} icon={card.icon} image={card.image}>
                             <ArtistListUi
                                 animationSpeed={3}
                                 containerClassName="bg-transparent"
