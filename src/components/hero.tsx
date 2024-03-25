@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-
+import ReactPlayer from 'react-player';
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {BtnBorder} from "./btnborder";
 import { ImagesSlider } from "@/components/ui/images-slider";
@@ -12,12 +12,12 @@ export function Hero() {
     const words = [
         {
             text: "We Are Ready To",
-            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 danta1 text-4xl 2xl:text-[3rem] drop-shadow-xl",
+            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 text-4xl 2xl:text-[3rem] drop-shadow-xl",
         },
 
         {
             text: "Tune in with You.",
-            className: "bg-clip-text text-transparent bg-gradient-to-t from-[#092327] to-white danta1 text-4xl 2xl:text-[3rem] drop-shadow-xl",
+            className: "bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl 2xl:text-[3rem] drop-shadow-xl",
         },
         ];
     
@@ -39,8 +39,12 @@ export function Hero() {
                 muted
                 loop
                 className="absolute w-full h-full object-cover z-1 brightness-50 opacity-25"
+                disablePictureInPicture
             />
             <div className="w-full mx-auto p-4 ">
+
+     
+  
                 
                 
                     
@@ -71,14 +75,14 @@ export function Hero() {
                     </div>
                     
                     
-                    <div className="w-1/2 flex flex-col justify-center items-center">
-                        <div className="b z-10">
-                            <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center  merienda-font">
+                    <div className="w-1/2 flex flex-col justify-center items-center new-rocker-regular ">
+                        <div className="b z-10 ">
+                            <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center ">
                                 The road to freedom starts from here
                             </p>
                             <TypewriterEffectSmooth words={words} />
-                        </div>
-                        <div className="btnborder">
+                        </div >
+                        <div className="btnborder ">
                             <BtnBorder />
                         </div>
                     

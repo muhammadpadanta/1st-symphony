@@ -25,22 +25,19 @@ const people = [
   },
 
   ];
-const Footer = () => (
-  <footer className="footer items-center  bg-[#06181b] text-white p-5 mt-5">
-    <aside className="items-center grid-flow-col">
-    <p className='danta'>Copyright © 2024</p>
-    
-      <p className='dancing-script-font text-xl '>1st Symphony</p>
-      
-      <p className='danta'>- All right reserved</p>
-      
-    </aside> 
-    <nav className="grid-flow-col gap-4 mr-20 justify-self-end ">
-      <div className="flex  ">
-        <SocialMedia items={people} />
-      </div>
-    </nav>
-  </footer>
-);
-
+  const Footer = () => (
+    <footer className="footer items-center bg-[#06181b] text-white p-5 mt-5 relative">
+      <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: `url('https://i.ibb.co/j66T1qq/Pngtree-blue-wave-shapes-with-layered-7291763.png')` }} />
+      <aside className="items-center grid-flow-col pacifico-regular z-10 relative">
+        <p className='text-center'>Copyright © 2024</p>
+        <p className=''>1st Symphony</p>
+        <p className=''>. All Right Reserved.</p>
+      </aside> 
+      <nav className="grid-flow-col gap-4 mr-20 justify-self-end z-10 relative">
+        <div className="flex">
+          <SocialMedia items={people} />
+        </div>
+      </nav>
+    </footer>
+  );
 export default Footer;

@@ -16,12 +16,12 @@ export function NavbarMenu() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className="fixed top-0 z-50 w-screen">
+    <div className="fixed top-0 z-50 w-screen pacifico-regular">
       
       <Menu setActive={setActive}>
       
       <Link href="/" legacyBehavior> 
-      <a href="https://youtube.com" className="text-white danta hover:scale-110 hover:opacity-80 transition-all ">Home</a>
+      <a href="https://youtube.com" className="text-white hover:scale-110 hover:opacity-80 transition-all ">Home</a>
       </Link>
       <Link href="/ticketlist" legacyBehavior> 
       <a className="text-white danta hover:scale-110 hover:opacity-80 transition-all">Ticket</a>

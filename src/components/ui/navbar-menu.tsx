@@ -81,7 +81,7 @@ export const Menu = ({
       className="w-screen top-0 sticky z-50 bg-[#092327] flex justify-between items-center p-4"
     >
       <a href="https://www.youtube.com" >
-      <div className="text-yellow-300 underline flex justify-between dancing-script-font text-3xl hover:opacity-70 transition-all">1st Symphony</div> 
+      <div className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st Symphony</div> 
       </a>
       
       <div className="flex justify-between items-center space-x-8 mr-14">
