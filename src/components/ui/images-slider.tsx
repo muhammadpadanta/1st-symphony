@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
+import { useCallback, } from "react";
+import { debounce } from "lodash";
+
 
 export const ImagesSlider = ({
   images,
@@ -22,42 +25,44 @@ export const ImagesSlider = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex + 1 === images.length ? 0 : prevIndex + 1
     );
-  };
+  }, [images.length]);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
     );
-  };
+  }, [images.length]);
+
+  
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = debounce((event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         handleNext();
       } else if (event.key === "ArrowLeft") {
         handlePrevious();
       }
-    };
-
+    }, 100);
+  
     window.addEventListener("keydown", handleKeyDown);
-
-    // autoplay
-    let interval: any;
-    if (autoplay) {
-      interval = setInterval(() => {
-        handleNext();
-      }, 5000);
-    }
-
+  
+    // Autoplay logic
+    let intervalId: NodeJS.Timeout | undefined;
+if (autoplay) {
+  intervalId = setInterval(handleNext, 5000); // Change image every 5 seconds
+}
+  
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      clearInterval(interval);
+      if (intervalId) {
+        clearInterval(intervalId); // Clear interval on component unmount
+      }
     };
-  }, [images.length, autoplay]);
+  }, [handleNext, handlePrevious, autoplay]);
 
   const slideVariants = {
     initial: {
@@ -122,6 +127,7 @@ export const ImagesSlider = ({
       layout="fill"
       objectFit="cover"
       className="mask-image"
+      
     />
   </div>
 </motion.div>
