@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from 'react-player';
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import {BtnBorder} from "./btnborder";
+import { ButtonBorder } from "@/components/ui/btn-border";
 import { ImagesSlider } from "@/components/ui/images-slider";
 
 
@@ -22,9 +22,9 @@ export function Hero() {
         ];
     
     const images = [
-        "https://upload.wikimedia.org/wikipedia/commons/0/04/Imagine_Dragons%2C_Roundhouse%2C_London_%2835390234536%29.jpg",
-        "https://assets.teenvogue.com/photos/63b98a0effed78bd420c4383/16:9/w_2560%2Cc_limit/YOASOBI_A%25E5%2586%2599_2021_12.jpg",
-        "https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg",
+        "https://lastfm.freetls.fastly.net/i/u/770x0/ad255404a818dfbd6b2ccd17bda35988.jpg#ad255404a818dfbd6b2ccd17bda35988",
+        "https://lastfm.freetls.fastly.net/i/u/770x0/e8d2cd8575f54ccadb35a5dba78d524a.jpg#e8d2cd8575f54ccadb35a5dba78d524a",
+        "https://lastfm.freetls.fastly.net/i/u/770x0/509496d58e48cee9fb27767ff924724a.jpg#509496d58e48cee9fb27767ff924724a",
         ];
     
     
@@ -82,8 +82,20 @@ export function Hero() {
                             </p>
                             <TypewriterEffectSmooth words={words} />
                         </div >
+
                         <div className="btnborder ">
-                            <BtnBorder />
+                        <a href="https://youtube.com" >
+                <ButtonBorder
+                    borderRadius="1.75rem"
+                    className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all danta text-xl"
+
+                    >
+                        <span className="animate-pulse">
+                        GET TICKET
+                        </span>
+                    
+                </ButtonBorder>
+            </a>
                         </div>
                     
                     </div>

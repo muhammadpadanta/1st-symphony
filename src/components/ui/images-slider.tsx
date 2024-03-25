@@ -124,8 +124,8 @@ if (autoplay) {
     <Image
       src={images[currentIndex]}
       alt=""
-      layout="fill"
-      objectFit="cover"
+      width={1920}
+      height={1080}
       className="mask-image"
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />

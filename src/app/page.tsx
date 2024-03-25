@@ -3,18 +3,17 @@ import { NavbarMenu } from "../components/navbar";
 import {Hero} from "../components/hero";
 import {CardSliderAnimation} from "../components/cards";
 import {CardSliderAnimation2} from "../components/cards";
-import { HeroScroll } from "@/components/heroscroll";
+import { HeroParallaxEffect } from "@/components/heroparallax";
 import Footer from '../components/footer';
-
+import {FaqMenu} from "../components/faq";
 
 export default function Home() {
   return (
-    <main className="app-background">
+    <main>
       <NavbarMenu />
       <Hero />
-      <HeroScroll/>
-      <CardSliderAnimation />
-      <CardSliderAnimation2 />
+      <HeroParallaxEffect/>
+      <FaqMenu />
       
       
       <Footer />
