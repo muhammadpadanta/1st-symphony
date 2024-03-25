@@ -108,10 +108,10 @@ export const Header = () => {
       <span className="underline">Symphony Source</span><br/>Your Gateway to Unforgettable Concerts
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 new-rocker-regular">
-      "Welcome to <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>, your go-to destination for purchasing music concert tickets online! 
+      Welcome to <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>, your go-to destination for purchasing music concert tickets online! 
       Browse our wide selection of concerts, from rock to pop to jazz, and secure your tickets with ease. 
       With a straightforward booking process and reliable customer support, getting your tickets has never been simpler. 
-      Don't miss out on the chance to experience live music – start booking your tickets now at <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>!"
+      Dont miss out on the chance to experience live music  start booking your tickets now at <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>!"
       </p>
     </div>
   );
