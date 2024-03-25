@@ -24,7 +24,7 @@ export function TicketList() {
                 <CardBody className="flex justify-center items-center  relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black   rounded-xl p-3  ">
                   <CardItem translateZ="100" className="w-full mt-4  ">
                     <Image
-                      src="https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg"
+                      src="https://lastfm.freetls.fastly.net/i/u/770x0/ad255404a818dfbd6b2ccd17bda35988.jpg#ad255404a818dfbd6b2ccd17bda35988"
                       height="1000"
                       width="1000"
                       className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -61,134 +61,6 @@ export function TicketList() {
             </div>
           </div>
 
-          <div className="kotak1 border bg-opacity-20 backdrop-blur-lg mb-5 bg-[#0d3c44] rounded-xl flex-grow flex flex-col md:flex-row justify-center items-center h-1/2 text-white">
-            <div className="item1 px-5 flex-grow flex justify-center items-center">
-              <CardContainer className="inter-var ">
-                <CardBody className="flex justify-center items-center  relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black   rounded-xl p-3  ">
-                  <CardItem translateZ="100" className="w-full mt-4  ">
-                    <Image
-                      src="https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg"
-                      height="1000"
-                      width="1000"
-                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      alt="thumbnail"
-                    />
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-            </div>
-
-            <div className="item2 w-full text-sm  2xl:text-2xl flex-grow flex justify-center items-center space-x-10 ">
-              <div className="block text-center danta1 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p>20</p>
-                <p>FEB</p>
-              </div>
-
-              <div className="block text-center  danta1 px-5 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p className="text-sm">Jakarta, Indonesia</p>
-                <p>
-                  <span className="inline-flex items-center">
-                  <HiLocationMarker />
-                    <span className="pr-5">bsd city</span>
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="item3 pl-10 w-full text-sm = 2xl:text-xl flex-grow flex justify-center items-center danta hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-              <p>Rp800.000 - Rp1.200.000 </p>
-            </div>
-
-            <div className="item4 px-10 w-full md:w-1/4 flex justify-center items-center">
-              <button className="btn hover:text-yellow-300 hover:bg-[#1b1a1a]">GET TICKET</button>
-            </div>
-          </div>
-
-          <div className="kotak1 border bg-opacity-20 backdrop-blur-lg mb-5 bg-[#0d3c44] rounded-xl flex-grow flex flex-col md:flex-row justify-center items-center h-1/2 text-white">
-            <div className="item1 px-5 flex-grow flex justify-center items-center">
-              <CardContainer className="inter-var ">
-                <CardBody className="flex justify-center items-center  relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black   rounded-xl p-3  ">
-                  <CardItem translateZ="100" className="w-full mt-4  ">
-                    <Image
-                      src="https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg"
-                      height="1000"
-                      width="1000"
-                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      alt="thumbnail"
-                    />
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-            </div>
-
-            <div className="item2 w-full text-sm  2xl:text-2xl flex-grow flex justify-center items-center space-x-10 ">
-              <div className="block text-center danta1 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p>20</p>
-                <p>FEB</p>
-              </div>
-
-              <div className="block text-center  danta1 px-5 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p className="text-sm">Jakarta, Indonesia</p>
-                <p>
-                  <span className="inline-flex items-center">
-                  <HiLocationMarker />
-                    <span className="pr-5">bsd city</span>
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="item3 pl-10 w-full text-sm = 2xl:text-xl flex-grow flex justify-center items-center danta hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-              <p>Rp800.000 - Rp1.200.000 </p>
-            </div>
-
-            <div className="item4 px-10 w-full md:w-1/4 flex justify-center items-center">
-              <button className="btn hover:text-yellow-300 hover:bg-[#1b1a1a]">GET TICKET</button>
-            </div>
-          </div>
-
-          <div className="kotak1 border bg-opacity-20 backdrop-blur-lg mb-5 bg-[#0d3c44] rounded-xl flex-grow flex flex-col md:flex-row justify-center items-center h-1/2 text-white">
-            <div className="item1 px-5 flex-grow flex justify-center items-center">
-              <CardContainer className="inter-var ">
-                <CardBody className="flex justify-center items-center  relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black   rounded-xl p-3  ">
-                  <CardItem translateZ="100" className="w-full mt-4  ">
-                    <Image
-                      src="https://media.suara.com/pictures/970x544/2022/03/17/39060-tulus-instagramattulusm.jpg"
-                      height="1000"
-                      width="1000"
-                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      alt="thumbnail"
-                    />
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-            </div>
-
-            <div className="item2 w-full text-sm  2xl:text-2xl flex-grow flex justify-center items-center space-x-10 ">
-              <div className="block text-center danta1 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p>20</p>
-                <p>FEB</p>
-              </div>
-
-              <div className="block text-center  danta1 px-5 hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-                <p className="text-sm">Jakarta, Indonesia</p>
-                <p>
-                  <span className="inline-flex items-center">
-                  <HiLocationMarker />
-                    <span className="pr-5">bsd city</span>
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="item3 pl-10 w-full text-sm = 2xl:text-xl flex-grow flex justify-center items-center danta hover:scale-110 transition-all hover:text-yellow-300 cursor-pointer">
-              <p>Rp800.000 - Rp1.200.000 </p>
-            </div>
-
-            <div className="item4 px-10 w-full md:w-1/4 flex justify-center items-center">
-              <button className="btn hover:text-yellow-300 hover:bg-[#1b1a1a]">GET TICKET</button>
-            </div>
-          </div>
 
          
           

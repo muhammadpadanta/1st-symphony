@@ -6,6 +6,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 export function HeroParallaxEffect() {
   
   return <HeroParallax products={products} />;
+
 }
 
 // Mengatur Link Gambar,title dari Hero Parallax

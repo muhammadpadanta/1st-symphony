@@ -26,13 +26,13 @@ export function FaqMenu() {
     <div className="max-w-2xl mx-auto flex flex-col justify-center items-center h-screen new-rocker-regular">
       <h1 className="text-3xl mb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Frequently Asked Questions</h1>
       {faqs.map((faq, index) => (
-        <div key={index} className="collapse collapse-arrow bg-base-200 mb-5">
+        <div key={index} className="collapse collapse-arrow bg-[#2e3239] mb-5">
           <input
             type="radio"
             name="my-accordion-2"
             defaultChecked={index === 0}
           />
-          <div className="collapse-title text-2xl ">{faq.title}</div>
+          <div className="collapse-title text-2xl text-white">{faq.title}</div>
           <div className="collapse-content text-gray-300">
             <p>{faq.content}</p>
           </div>
