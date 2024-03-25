@@ -27,7 +27,7 @@ export function ButtonBorder({
     borderClassName?: string;
     duration?: number;
     className?: string;
-    [key: string]: any;
+
 }) {
     return (
         <Component
@@ -80,7 +80,7 @@ export const MovingBorder = ({
     duration?: number;
     rx?: string;
     ry?: string;
-    [key: string]: any;
+
 }) => {
     const pathRef = useRef<any>();
     const progress = useMotionValue<number>(0);

@@ -71,29 +71,29 @@ export const HeroParallax = ({
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+              <ProductCard
+                  product={product}
+                  reverse={false}
+                  key={product.title}
+              />
           ))}
         </motion.div>
         <motion.div className="flex flex-row  mb-20 space-x-20 ">
           {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
+              <ProductCard
+                  product={product}
+                  reverse={true}
+                  key={product.title}
+              />
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
           {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+              <ProductCard
+                  product={product}
+                  reverse={false}
+                  key={product.title}
+              />
           ))}
         </motion.div>
       </motion.div>
@@ -111,23 +111,33 @@ export const Header = () => {
       Welcome to <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>, your go-to destination for purchasing music concert tickets online! 
       Browse our wide selection of concerts, from rock to pop to jazz, and secure your tickets with ease. 
       With a straightforward booking process and reliable customer support, getting your tickets has never been simpler. 
-      Dont miss out on the chance to experience live music  start booking your tickets now at <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>!"
+      Dont miss out on the chance to experience live music  start booking your tickets now at <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>
       </p>
     </div>
   );
 };
 
 export const ProductCard = ({
-  product,
-  translate,
-}: {
+                              product,
+                              reverse = false,
+                            }: {
   product: {
     title: string;
     link: string;
     thumbnail: string;
   };
-  translate: MotionValue<number>;
+  reverse?: boolean;
 }) => {
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end start"],
+  });
+
+  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+
+  const translate = useSpring(
+      useTransform(scrollYProgress, [0, 1], reverse ? [0, -1000] : [0, 1000]),
+      springConfig
+  );
   return (
     <motion.div
       style={{

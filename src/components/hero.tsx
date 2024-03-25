@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import ReactPlayer from 'react-player';
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { ButtonBorder } from "@/components/ui/btn-border";
 import { ImagesSlider } from "@/components/ui/images-slider";

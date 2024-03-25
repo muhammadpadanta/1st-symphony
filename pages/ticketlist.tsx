@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavbarMenu } from "../src/components/navbar";
+import { NavbarMenu } from "@/components/navbar";
 import { TicketList } from '@/components/ticketlist';
 import "../styles/globals.css";
 

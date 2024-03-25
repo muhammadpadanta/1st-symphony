@@ -30,7 +30,7 @@ export const MenuItem = ({
   labelClassName?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className={`relative ${typeof className === 'string' ? className : ''}`}>
+    <div onMouseEnter={() => setActive(item)} className={`relative ${ className === 'string' ? className : ''}`}>
       <motion.p
         transition={{ duration: 0.3 }}
         className={`cursor-pointer text-white hover:opacity-[0.9] dark:text-white ${labelClassName}`}
@@ -42,7 +42,7 @@ export const MenuItem = ({
           <motion.div
             initial={{ opacity: 0, scale: 0, y: 0 }}
             animate={{ opacity: 1, scale: 1, y: -10 }}
-            
+
             transition={transition}
           >
             <div className="absolute top-[calc(100%_+_1.7rem)] left-1/2 transform -translate-x-1/2">
@@ -69,7 +69,6 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
-  className,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
@@ -81,14 +80,14 @@ export const Menu = ({
       className="w-screen top-0 sticky z-50 bg-[#092327] flex justify-between items-center p-4"
     >
       <a href="https://www.youtube.com" >
-      <div className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st Symphony</div> 
+      <div className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st Symphony</div>
       </a>
-      
+
       <div className="flex justify-between items-center space-x-8 mr-14">
         {children}
       </div>{" "}
 
-      
+
       <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
         <a href="https://www.youtube.com">
         <BsReverseLayoutTextSidebarReverse />

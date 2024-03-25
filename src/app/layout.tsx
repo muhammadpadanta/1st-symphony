@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../../styles/globals.css";
-
+import React from "react";
 
 export const metadata: Metadata = {
   title: "1st Symphony",
@@ -14,13 +14,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-      <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Pacifico&family=Permanent+Marker&family=Honk&family=Merienda:wght@300..900&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-      </head>
-      <body>
-        {children}
-        
-        </body>
+    <head>
+        <title>1st Symphony</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Pacifico&family=Permanent+Marker&family=Honk&family=Merienda:wght@300..900&family=Dancing+Script:wght@400..700&display=swap"
+            rel="stylesheet"/>
+    </head>
+    <body>
+    {children}
+
+    </body>
     </html>
   );
 }

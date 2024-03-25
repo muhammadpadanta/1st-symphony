@@ -1,6 +1,5 @@
 import React from 'react';
 import { SocialMedia } from "@/components/ui/social-media";
-import { BsMusicNote, BsMusicNoteBeamed, } from "react-icons/bs";
 const people = [
   {
     id: 1,

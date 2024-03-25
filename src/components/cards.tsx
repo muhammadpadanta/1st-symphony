@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+
 import { CardSlider } from "@/components/ui/card-slider";
 import Image from 'next/image';
 

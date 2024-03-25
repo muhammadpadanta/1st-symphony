@@ -92,7 +92,7 @@ export const CardSlider = ({
         )}
       >
  {/* Container */}
-{items.map((item, idx) => (
+{items.map((item,) => (
   <li
     className="w-[20vw] max-w-full relative rounded-2xl flex-shrink-0 transition-all group"
     key={item.name}

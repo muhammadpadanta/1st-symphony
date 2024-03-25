@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import { cn } from "@/utils/cn";
+import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
+
 import Link from 'next/link';
 
 export function NavbarMenu() {
@@ -13,7 +13,7 @@ export function NavbarMenu() {
   );
 }
 
-function Navbar({ className }: { className?: string }) {
+function Navbar({ }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div className="fixed top-0 z-50 w-screen pacifico-regular">
