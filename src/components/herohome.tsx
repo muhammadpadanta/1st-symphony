@@ -78,14 +78,16 @@ export function HeroHome() {
                             <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center ">
                                 The road to freedom starts from here
                             </p>
-                            <TypewriterEffectSmooth words={words} />
+                            <TypewriterEffectSmooth
+                                words={words}
+                            />
                         </div >
 
                         <div className="btnborder ">
                         <a href="https://youtube.com" >
                 <ButtonBorder
                     borderRadius="1.75rem"
-                    className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all danta text-xl"
+                    className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl"
 
                     >
                         <span className="animate-pulse">

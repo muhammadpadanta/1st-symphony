@@ -2,9 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { BsReverseLayoutTextSidebarReverse, BsFillPersonFill } from "react-icons/bs";
 import { AnimatePresence } from 'framer-motion';
+
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -15,30 +14,32 @@ const transition = {
 };
 
 export const MenuItem = ({
-  setActive,
-  active,
-  item,
-  children,
-  className,
-  labelClassName,
-}: {
+                           setActive,
+                           active,
+                           item,
+                           itemId,
+                           children,
+                           className,
+                           labelClassName,
+                         }: {
   setActive: (item: string) => void;
   active: string | null;
-  item: string;
+  item: string | React.ReactNode;
+  itemId: string; // New prop
   children?: React.ReactNode;
   className?: string;
   labelClassName?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className={`relative ${ className === 'string' ? className : ''}`}>
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className={`cursor-pointer text-white hover:opacity-[0.9] dark:text-white ${labelClassName}`}
-      >
-        {item}
-      </motion.p>
-      <AnimatePresence>
-        {active === item && (
+      <div onMouseEnter={() => setActive(itemId)} className={`relative ${ className === 'string' ? className : ''}`}>
+        <motion.p
+            transition={{ duration: 0.3 }}
+            className={`cursor-pointer text-white hover:opacity-[0.9] dark:text-white ${labelClassName}`}
+        >
+          {item}
+        </motion.p>
+        <AnimatePresence>
+          {active === itemId && ( // Use itemId here
           <motion.div
             initial={{ opacity: 0, scale: 0, y: 0 }}
             animate={{ opacity: 1, scale: 1, y: -10 }}
@@ -67,7 +68,7 @@ export const MenuItem = ({
 };
 
 export const Menu = ({
-  setActive,
+
   children,
 }: {
   setActive: (item: string | null) => void;
@@ -75,61 +76,14 @@ export const Menu = ({
   className?: string;
 }) => {
   return (
-    <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="w-screen top-0 sticky z-50 bg-[#092327] flex justify-between items-center p-4"
-    >
-      <a href="https://www.youtube.com" >
-      <div className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st Symphony</div>
-      </a>
+
 
       <div className="flex justify-between items-center space-x-8 mr-14">
         {children}
-      </div>{" "}
-
-
-      <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
-        <a href="https://www.youtube.com">
-        <BsReverseLayoutTextSidebarReverse />
-        </a>
-
-        <a href="https://www.youtube.com" className="text-2xl">
-        <BsFillPersonFill />
-        </a>
       </div>
-    </nav>
-  );
-};
 
-export const ProductItem = ({
-  title,
-  description,
-  href,
-  src,
-}: {
-  title: string;
-  description: string;
-  href: string;
-  src: string;
-}) => {
-  return (
-    <Link href={href} className="flex space-x-2">
-      <Image
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-white dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
-      </div>
-    </Link>
+
+
   );
 };
 

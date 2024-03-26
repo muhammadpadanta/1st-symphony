@@ -26,7 +26,10 @@ export function FaqMenu() {
     <div className="max-w-2xl mx-auto flex flex-col justify-center items-center space-y-5 h-screen new-rocker-regular">
       <h1 className="text-3xl mb-5 text-red-400">Frequently Asked Questions</h1>
       {faqs.map((faq, index) => (
-        <div key={index} className="collapse collapse-arrow bg-[#2e3239] mb-5">
+        <div key={index}
+             className="collapse collapse-arrow bg-[#2e3239] bg-opacity-20 backdrop-blur-lg mb-5"
+             style={{ filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
+        >
           <input
             type="radio"
             name="my-accordion-2"

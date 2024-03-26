@@ -118,7 +118,8 @@ if (autoplay) {
   animate="visible"
   exit={direction === "up" ? "upExit" : "downExit"}
   variants={slideVariants}
-  className="image h-full w-full absolute inset-0 border rounded-xl border-white"
+  className="image h-full w-full absolute inset-0 border rounded-xl border-red-400"
+
 >
   <div className="h-full w-full overflow-hidden rounded-xl relative">
     <Image

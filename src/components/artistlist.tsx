@@ -35,31 +35,33 @@ export function ArtistList() {
 
 
         {
-            title: "Twice",
+            title: "Yoasobi",
             icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/d98b6e954551c972386080b98ad7b60d.jpg#d98b6e954551c972386080b98ad7b60d",
+            image: "https://lastfm.freetls.fastly.net/i/u/770x0/76b01e2f38be328ea61dd752e1c69d63.jpg#76b01e2f38be328ea61dd752e1c69d63",
         },
         {
-            title: "Virgoun",
+            title: "Newjeans",
             icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/462378a051090cdde996f5ffd54380a3.jpg#462378a051090cdde996f5ffd54380a3",
+            image: "https://lastfm.freetls.fastly.net/i/u/770x0/0970eefb5a3f0444f85429c2ddb5907c.jpg#0970eefb5a3f0444f85429c2ddb5907c",
         },
         {
-            title: "Mahalini",
+            title: "Armada",
             icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
+            image: "https://lastfm.freetls.fastly.net/i/u/770x0/2ecde8495a2b9b3dddef9e0afaf98897.jpg#2ecde8495a2b9b3dddef9e0afaf98897",
         },
         {
-            title: "BTS",
+            title: "Blackpink",
             icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
+            image: "https://lastfm.freetls.fastly.net/i/u/770x0/9663125192c3ba383344d0cbc5107f98.jpg#9663125192c3ba383344d0cbc5107f98",
         },
 
         {
-            title: "BTS",
+            title: "Raisa",
             icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
+            image: "https://lastfm.freetls.fastly.net/i/u/770x0/f1ff45f4bb60312b3da0749d88a820e8.jpg#f1ff45f4bb60312b3da0749d88a820e8",
         },
+
+
 
 
 
@@ -69,16 +71,19 @@ export function ArtistList() {
     ];
 
     return (
-        <div className="flex flex-col items-center justify-center w-[80vw] mx-auto ">
+        <div
+            className="flex flex-col items-center justify-center mx-auto  "
+            id="artistList"
+        >
 
             <div className="flex  justify-center items-center mt-20">
-                <h1 className="text-3xl  mb-2 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Find
-                    Ticket By Artist</h1>
+                <h1 className="text-4xl font-bold new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Artist List</h1>
                 <div
-                    className="py-20  h-[70vh] bg-opacity-20 backdrop-blur-lg bg-[#2e3239] overflow-y-auto flex flex-wrap items-center justify-center w-full gap-8  mx-auto overflow-auto rounded-xl"
+                    className=" p-10 h-[70vh] border-2 border-r-red-400 border-l-red-400 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg  flex flex-wrap items-center justify-center w-full gap-8  mx-auto overflow-auto rounded-xl"
+                    style={{ filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                 >
                     {artistData.map((card, index) => (
-                        <div key={index} className="min-w-[20%]">
+                        <div key={index} className="min-w-[30%]">
                             <Card title={card.title} icon={card.icon} image={card.image}>
                                 <ArtistListUi
                                     animationSpeed={3}
@@ -117,9 +122,9 @@ const Card = ({
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="border border-white/[0.2] group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 h-[30rem] relative sm:h-auto sm:min-h-[30rem]"
+            className="border-2 border-gray-500 group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 h-[30rem] relative sm:h-auto sm:min-h-[30rem]"
 
-            style={{backgroundImage: `url("${image}")`, backgroundSize: 'cover'}}
+            style={{backgroundImage: `url("${image}")`, backgroundSize: 'cover', filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
         >
             <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-white"/>
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-white"/>
