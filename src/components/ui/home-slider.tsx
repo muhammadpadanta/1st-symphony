@@ -6,7 +6,7 @@ import { useCallback, } from "react";
 import { debounce } from "lodash";
 
 
-export const ImagesSlider = ({
+export const HomeSlider = ({
   images,
   children,
   overlay = true,

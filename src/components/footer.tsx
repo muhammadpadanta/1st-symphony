@@ -5,23 +5,24 @@ const people = [
     id: 1,
     name: "Facebook",
     designation: "1st Symphony",
-    image:
-    "https://cdn.pixabay.com/photo/2016/11/05/08/42/facebook-1799691_1280.png",
+    image: "https://cdn.pixabay.com/photo/2016/11/05/08/42/facebook-1799691_1280.png",
+    url: "https://www.facebook.com/MuhammadPadantaTarigan"
   },
   {
     id: 2,
     name: "Discord",
     designation: "1stSymphony",
-    image:
-      "https://i.pinimg.com/736x/8b/70/50/8b70503d7ffc26ad5a89ce4c4ce231f9.jpg",
+    image: "https://i.pinimg.com/736x/8b/70/50/8b70503d7ffc26ad5a89ce4c4ce231f9.jpg",
+    url: "https://discord.gg/6CsZXs2DxN"
   },
   {
     id: 3,
-    name: "Instagram",
-    designation: "1st_Symphony",
-    image:
-      "https://i.pinimg.com/564x/36/b2/2d/36b22ddab8cdc81af8cdcd26b144ca37.jpg",
+    name: "Github",
+    designation: "muhammadpadanta",
+    image: "https://assets.dryicons.com/uploads/icon/svg/8312/cc33248a-e56e-4e7f-93f4-0e16350e5768.svg",
+    url: "https://github.com/muhammadpadanta"
   },
+
 
   ];
   const Footer = () => (

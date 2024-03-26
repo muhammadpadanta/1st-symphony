@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { ButtonBorder } from "@/components/ui/btn-border";
-import { ImagesSlider } from "@/components/ui/images-slider";
+import { HomeSlider } from "@/components/ui/home-slider";
 
 
-export function Hero() {
+export function HeroHome() {
     const words = [
         {
             text: "We Are Ready To",
@@ -51,7 +51,7 @@ export function Hero() {
                     
                     <div className="sliderimage w-1/2">
                         
-                        <ImagesSlider className="h-[40vh] top-2" images={images}>
+                        <HomeSlider className="h-[40vh] top-2" images={images}>
                             <motion.div
                                 initial={{
                                 opacity: 0,
@@ -69,7 +69,7 @@ export function Hero() {
                             </motion.div>
                             
                             
-                        </ImagesSlider>
+                        </HomeSlider>
                     </div>
                     
                     

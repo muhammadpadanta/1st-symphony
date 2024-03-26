@@ -23,8 +23,8 @@ const faqs = [
 
 export function FaqMenu() {
   return (
-    <div className="max-w-2xl mx-auto flex flex-col justify-center items-center h-screen new-rocker-regular">
-      <h1 className="text-3xl mb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Frequently Asked Questions</h1>
+    <div className="max-w-2xl mx-auto flex flex-col justify-center items-center space-y-5 h-screen new-rocker-regular">
+      <h1 className="text-3xl mb-5 text-red-400">Frequently Asked Questions</h1>
       {faqs.map((faq, index) => (
         <div key={index} className="collapse collapse-arrow bg-[#2e3239] mb-5">
           <input

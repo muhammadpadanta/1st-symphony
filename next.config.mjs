@@ -13,6 +13,8 @@ const nextConfig = {
       'cdn.pixabay.com',
       'aceternity.com',
       'lastfm.freetls.fastly.net',
+        's9.gifyu.com',
+        'assets.dryicons.com',
       
       
     ],

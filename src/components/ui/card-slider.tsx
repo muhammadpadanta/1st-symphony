@@ -4,6 +4,7 @@ import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 
+
 export const CardSlider = ({
   items,
   direction = "left",

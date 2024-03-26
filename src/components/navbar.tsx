@@ -21,10 +21,10 @@ function Navbar({ }: { className?: string }) {
       <Menu setActive={setActive}>
       
       <Link href="/" legacyBehavior> 
-      <a href="https://youtube.com" className="text-white hover:scale-110 hover:opacity-80 transition-all ">Home</a>
+      <p className="text-white hover:scale-110 hover:opacity-80 transition-all cursor-pointer ">Home</p>
       </Link>
       <Link href="/ticketlist" legacyBehavior> 
-      <a className="text-white danta hover:scale-110 hover:opacity-80 transition-all">Ticket</a>
+      <p className="text-white hover:scale-110 hover:opacity-80 transition-all">Ticket</p>
       </Link>
         
         
@@ -32,11 +32,10 @@ function Navbar({ }: { className?: string }) {
         <MenuItem 
   setActive={setActive} 
   active={active} 
-  item="About" 
-  className="danta "
+  item="About"
   labelClassName="hover:scale-110 transition-all" // New prop
 >
-  <div className="flex flex-col space-y-4 text-sm danta">
+  <div className="flex flex-col space-y-4 text-sm ">
     <HoveredLink href="/hobby">Contact us</HoveredLink>
     <HoveredLink href="/individual">Our Team</HoveredLink>
   </div>

@@ -3,24 +3,24 @@ import { NavbarMenu } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { TicketList } from '@/components/ticketlist';
 import {CardSliderAnimation} from "@/components/cards";
-import {CardSliderAnimation2} from "@/components/cards";
 import "../styles/globals.css";
 import {ArtistList} from "@/components/artistlist";
+import HeroArtist from "@/components/heroartist";
 const TicketListPage = () => {
   return (
-    <>
-      
-        <NavbarMenu />
-     
-      <div className="mt-10 bg-[#0a0a0a]">
+      <main className="bg-[#0a0a0a]">
 
-        <ArtistList />
-        <CardSliderAnimation />
-          <CardSliderAnimation2 />
-          <Footer />
-      </div>
-    </>
-  );
+              <NavbarMenu/>
+
+<HeroArtist/>
+          <ArtistList/>
+        <CardSliderAnimation/>
+
+              <Footer/>
+
+
+      </main>
+);
 };
 
 export default TicketListPage;
