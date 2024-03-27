@@ -1,5 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-
+const {nextui} = require("@nextui-org/react");
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -7,7 +7,11 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+      "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+
+  ],
   darkMode: "class",
   theme: {
     // rest of the code
@@ -15,9 +19,6 @@ module.exports = {
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
-      },
-      fontFamily: {
-        danta: ["var(--font-luckiest-guy)"],
       },
       keyframes: {
         scroll: {
@@ -28,9 +29,11 @@ module.exports = {
       },
     },
   },
+
   plugins: [
+    nextui(),
     addVariablesForColors,
-    require("daisyui"), // Adding daisyui plugin
+    require("daisyui"),
     ],
 };
 
