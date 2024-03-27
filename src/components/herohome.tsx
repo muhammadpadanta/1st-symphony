@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { ButtonBorder } from "@/components/ui/btn-border";
 import { HomeSlider } from "@/components/ui/home-slider";
-
+import Link from 'next/link';
 
 export function HeroHome() {
     const words = [
@@ -90,10 +90,11 @@ export function HeroHome() {
                     className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl"
 
                     >
+                    <Link href="/ticketlist" legacyBehavior>
                         <span className="animate-pulse">
                         GET TICKET
                         </span>
-                    
+                    </Link>
                 </ButtonBorder>
             </a>
                         </div>
