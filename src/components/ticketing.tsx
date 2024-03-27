@@ -78,7 +78,7 @@ const features = [
 export default function Ticketing() {
     return (
         <>
-            <p className="text-4xl pt-10 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Popular
+            <p className="text-4xl pt-24 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Popular
                 Album</p>
             <p className="text-2xl new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">(Artist:
                 Marshmello)</p>
