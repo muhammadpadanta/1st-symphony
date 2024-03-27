@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+import Link from 'next/link';
 import { AnimatePresence, motion } from "framer-motion";
 import { ArtistListUi } from "@/components/ui/artist-list";
 
@@ -78,27 +78,34 @@ export function ArtistList() {
 
             <div className="flex  justify-center items-center mt-20">
                 <h1 className="text-4xl font-bold new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Artist List</h1>
+
                 <div
                     className=" p-10 h-[70vh] border-2 border-r-red-400 border-l-red-400 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg  flex flex-wrap items-center justify-center w-full gap-8  mx-auto overflow-auto rounded-xl"
                     style={{ filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                 >
+
                     {artistData.map((card, index) => (
-                        <div key={index} className="min-w-[30%]">
-                            <Card title={card.title} icon={card.icon} image={card.image}>
-                                <ArtistListUi
-                                    animationSpeed={3}
-                                    containerClassName="bg-transparent"
-                                    colors={[
-                                        getRandomColor(),
-                                        getRandomColor(),
-                                    ]}
-                                    dotSize={2}
-                                />
-                            </Card>
-                        </div>
+                        <Link key={index} href="/tickets" legacyBehavior>
+                            <div className="min-w-[30%] cursor-pointer">
+                                <Card title={card.title} icon={card.icon} image={card.image}>
+                                    <ArtistListUi
+                                        animationSpeed={3}
+                                        containerClassName="bg-transparent"
+                                        colors={[
+                                            getRandomColor(),
+                                            getRandomColor(),
+                                        ]}
+                                        dotSize={2}
+                                    />
+                                </Card>
+                            </div>
+                        </Link>
                     ))}
+
                 </div>
+
             </div>
+
 
         </div>
 
