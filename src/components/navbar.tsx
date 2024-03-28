@@ -34,7 +34,7 @@ function Navbar({ }: { className?: string }) {
                   <Link href="/" legacyBehavior>
                       <p className="text-white hover:scale-110 hover:opacity-80 transition-all cursor-pointer ">Home</p>
                   </Link>
-                  <Link href="/ticketlist" legacyBehavior>
+                  <Link href="/tickets" legacyBehavior>
                       <p className="text-white hover:scale-110 hover:opacity-80 transition-all cursor-pointer">Ticket</p>
                   </Link>
 

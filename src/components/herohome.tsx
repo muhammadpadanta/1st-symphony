@@ -90,7 +90,7 @@ export function HeroHome() {
                     className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl"
 
                     >
-                    <Link href="/ticketlist" legacyBehavior>
+                    <Link href="/pages/tickets" legacyBehavior>
                         <span className="animate-pulse">
                         GET TICKET
                         </span>

@@ -85,7 +85,7 @@ export function ArtistList() {
                 >
 
                     {artistData.map((card, index) => (
-                        <Link key={index} href="/tickets" legacyBehavior>
+                        <Link key={index} href="/ticketslist" legacyBehavior>
                             <div className="min-w-[30%] cursor-pointer">
                                 <Card title={card.title} icon={card.icon} image={card.image}>
                                     <ArtistListUi

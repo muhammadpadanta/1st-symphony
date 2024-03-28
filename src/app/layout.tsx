@@ -16,9 +16,7 @@ export default function RootLayout({
     <html lang="en">
     <head>
         <title>1st Symphony</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Pacifico&family=Permanent+Marker&family=Honk&family=Merienda:wght@300..900&family=Dancing+Script:wght@400..700&display=swap"
-            rel="stylesheet"/>
+        
     </head>
     <body>
     {children}
