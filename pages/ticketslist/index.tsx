@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavbarMenu } from "@/components/navbar";
 import Footer from "@/components/footer";
-import Ticketing from "@/components/ticketing";
-import TicketingList from "@/components/ticketinglist";
+import TicketAlbums from "@/components/ticketalbums";
+import TicketArtist from "@/components/ticketartist";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 const Index = () => {
@@ -28,8 +28,9 @@ const Index = () => {
 </div>
 
 
-            <Ticketing/>
-            <TicketingList />
+            <TicketAlbums/>
+            <TicketArtist />
+
 
             <Footer/>
 

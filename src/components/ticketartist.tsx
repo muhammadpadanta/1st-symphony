@@ -96,7 +96,7 @@ const features = [
 
 ]
 
-export default function TicketingList() {
+export default function TicketArtist() {
     return (
         <>
             <p className="text-4xl new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Ticket

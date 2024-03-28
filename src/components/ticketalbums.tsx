@@ -1,6 +1,6 @@
 import { PlayIcon, SpeakerWaveIcon } from '@heroicons/react/20/solid'
 import Image from "next/image";
-
+import { CardBody, CardContainer, CardItem } from "@/components/ui/ticket-list";
 
 
 const features = [
@@ -75,7 +75,7 @@ const features = [
 
 ]
 
-export default function Ticketing() {
+export default function TicketAlbums() {
     return (
         <>
             <p className="text-4xl pt-24 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Popular
@@ -93,6 +93,9 @@ export default function Ticketing() {
                     <div
                         className=" grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="h-[60vh] w-full rounded-xl p-5">
+                            <CardContainer className="h-[60vh] w-full rounded-xl p-5">
+                                <CardBody className="h-[60vh] w-full rounded-xl p-5">
+                                    <CardItem translateZ="100" className=" w-full rounded-xl p-5">
                             <Image
                                 src="https://lastfm.freetls.fastly.net/i/u/770x0/f565949a1ec26d06f0c9e56f762b31e2.jpg#f565949a1ec26d06f0c9e56f762b31e2"
                                 alt="Product screenshot"
@@ -100,7 +103,11 @@ export default function Ticketing() {
                                 width={1920}
                                 height={1080}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                style={{filter: "drop-shadow(12px 12px 4px rgba(0, 0, 0, 0.6))"}}
                             />
+                                    </CardItem>
+                                </CardBody>
+                            </CardContainer>
                         </div>
                         <div className="lg:pr-8 lg:pt-4">
 

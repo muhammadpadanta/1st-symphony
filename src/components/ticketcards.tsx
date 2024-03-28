@@ -71,7 +71,7 @@ const mostPopularTicket = [
   },
 ];
 
-export function CardSliderAnimation() {
+export function TicketCards() {
 
 
   return (

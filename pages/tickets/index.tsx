@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavbarMenu } from "@/components/navbar";
 import Footer from "@/components/footer";
-import {CardSliderAnimation} from "@/components/cards";
+import {TicketCards} from "@/components/ticketcards";
 import {ArtistList} from "@/components/artistlist";
 import HeroArtist from "@/components/heroartist";
 
@@ -32,7 +32,7 @@ const TicketsPage = () => {
 
 <HeroArtist/>
           <ArtistList/>
-        <CardSliderAnimation/>
+        <TicketCards/>
 
               <Footer/>
 
