@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavbarMenu } from "@/components/navbar";
 import Footer from "@/components/footer";
-import TicketAlbums from "@/components/ticketalbums";
-import TicketArtist from "@/components/ticketartist";
+import Login from "@/components/login";
+
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-const TicketListPage = () => {
+const LoginPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -21,16 +21,14 @@ const TicketListPage = () => {
         return <Loading />;
     }
 
+
+
     return (
         <main className="bg-[#0a0a0a]">
-<div className="py-10 ">
-    <NavbarMenu/>
-</div>
 
+            <NavbarMenu/>
 
-            <TicketAlbums/>
-            <TicketArtist />
-
+            <Login/>
 
             <Footer/>
 
@@ -39,4 +37,4 @@ const TicketListPage = () => {
     );
 };
 
-export default TicketListPage;
+export default LoginPage;

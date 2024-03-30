@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { NavbarMenu } from "@/components/navbar";
 import Footer from "@/components/footer";

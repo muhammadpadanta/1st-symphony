@@ -15,6 +15,7 @@ const nextConfig = {
       'lastfm.freetls.fastly.net',
         's9.gifyu.com',
         'assets.dryicons.com',
+        's12.gifyu.com',
       
       
     ],

@@ -84,19 +84,17 @@ export function HeroHome() {
                         </div >
 
                         <div className="btnborder ">
-                        <a href="https://youtube.com" >
+                        <Link href="/tickets" >
                 <ButtonBorder
                     borderRadius="1.75rem"
                     className="bg-[#0a0a0a]  text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl"
 
                     >
-                    <Link href="/pages/tickets" legacyBehavior>
                         <span className="animate-pulse">
                         GET TICKET
                         </span>
-                    </Link>
                 </ButtonBorder>
-            </a>
+            </Link>
                         </div>
                     
                     </div>

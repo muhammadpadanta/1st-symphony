@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 
 import Link from 'next/link';
-import {BsFillPersonFill, BsReverseLayoutTextSidebarReverse} from "react-icons/bs";
+import {BsFillPersonFill, BsClipboard2Check} from "react-icons/bs";
 
 export function NavbarMenu() {
   return (
@@ -58,9 +58,9 @@ function Navbar({ }: { className?: string }) {
               <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
 
 
-                  <a href="https://www.youtube.com" className="text-xl hover:scale-110 hover:opacity-80 transition-all cursor-pointer">
-                      <BsReverseLayoutTextSidebarReverse/>
-                  </a>
+                  <Link href="/inventory" className="text-xl hover:scale-110 hover:opacity-80 transition-all cursor-pointer">
+                      <BsClipboard2Check/>
+                  </Link>
 
                   <MenuItem
                       setActive={setActive}
@@ -71,9 +71,9 @@ function Navbar({ }: { className?: string }) {
                   >
 
                       <div className="flex flex-col space-y-4 text-sm ">
-                          <HoveredLink href="/individual">Account</HoveredLink>
-                          <HoveredLink href="/hobby">Login</HoveredLink>
-                          <HoveredLink href="/individual">Register</HoveredLink>
+                          <HoveredLink href="/account">Account</HoveredLink>
+                          <HoveredLink href="/login">Login</HoveredLink>
+                          <HoveredLink href="/register">Register</HoveredLink>
                       </div>
                   </MenuItem>
               </div>
