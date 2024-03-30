@@ -183,7 +183,7 @@ function Register() {
                                     className="checkbox checkbox-accent border-2"
                                 />
                                 <label className="text-white ml-2 font-mono">
-                                    Saya menyetujui Kebijakan dan Privasi dari Web FlipFlopper
+                                    I Agree to the Terms & Conditions of 1st Symphony.
                                 </label>
                             </div>
 
@@ -229,12 +229,12 @@ function Register() {
                                 }}
                             >
                                 <p className="text-white mt-5 flex justify-center">
-                                    Sudah punya akun?{" "}
+                                    Have an Account?{" "}
                                     <Link
                                         href="/login"
                                         className="text-blue-400 underline ml-1 hover:animate-bounce transition-all"
                                     >
-                                        LOGIN disini!
+                                        LOGIN Here!
                                     </Link>
                                 </p>
                             </motion.div>

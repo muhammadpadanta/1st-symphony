@@ -99,13 +99,13 @@ const features = [
 export default function TicketArtist() {
     return (
         <>
-            <p className="text-4xl new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Ticket
+            <p className="text-4xl pt-20 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Ticket
                 List</p>
             <p className="text-2xl new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">(Artist: Marshmello)</p>
             <div className="flex justify-center items center py-5">
 
                 <div
-                    className="w-[60vw] p-12 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl "
+                    className="w-[80vw] 2xl:w-[60vw] p-12 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl "
                     style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                 >
 

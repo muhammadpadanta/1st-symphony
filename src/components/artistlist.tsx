@@ -77,10 +77,10 @@ export function ArtistList() {
         >
 
             <div className="flex  justify-center items-center mt-20">
-                <h1 className="text-4xl font-bold new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">Artist List</h1>
+                <h1 className="text-4xl font-bold new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent px-5">Artist List</h1>
 
                 <div
-                    className=" p-10 h-[70vh] border-2 border-r-red-400 border-l-red-400 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg  flex flex-wrap items-center justify-center w-full gap-8  mx-auto overflow-auto rounded-xl"
+                    className=" p-10 h-[70vh] border-2 border-r-red-400 border-l-red-400 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg  flex flex-wrap items-center justify-center w-[70vw] 2xl:w-full gap-8  mx-auto overflow-auto rounded-xl"
                     style={{ filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                 >
 

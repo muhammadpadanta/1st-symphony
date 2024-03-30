@@ -16,6 +16,8 @@ const nextConfig = {
         's9.gifyu.com',
         'assets.dryicons.com',
         's12.gifyu.com',
+        'daisyui.com',
+        'avatars.githubusercontent.com',
       
       
     ],
