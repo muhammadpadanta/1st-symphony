@@ -3,7 +3,7 @@ import React from "react";
 import { HomeParallax } from "@/components/ui/home-parallax";
 import {featuredArtist} from "@/constants";
 
-export function HomeParallaxEffect() {
+export default function HomeParallaxEffect() {
   
   return <HomeParallax products={featuredArtist} />;
 

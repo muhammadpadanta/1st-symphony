@@ -1,6 +1,6 @@
 "use client";
-import {HeroHome} from "./home/herohome";
-import { HomeParallaxEffect } from "./home/homeparallax";
+import HeroHome from "./home/herohome";
+import  HomeParallaxEffect  from "./home/homeparallax";
 import {FaqMenu} from "./home/faq";
 import '../styles/globals.css';
 import React, { useState, useEffect } from 'react';

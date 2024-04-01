@@ -10,7 +10,7 @@ function getRandomColor() {
 }
 
 
-export function ArtistList() {
+export default function ArtistList() {
 
     return (
         <div

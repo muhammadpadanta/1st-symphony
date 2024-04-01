@@ -1,7 +1,7 @@
 
 import React from 'react';
-import {TicketCards} from "./ticketcards";
-import {ArtistList} from "./artistlist";
+import TicketCards from "./ticketcards";
+import ArtistList from "./artistlist";
 import HeroArtist from "./heroartist";
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';

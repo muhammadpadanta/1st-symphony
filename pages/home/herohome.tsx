@@ -6,7 +6,7 @@ import { ButtonBorder } from "@/components/ui/btn-border";
 import { HomeSlider } from "@/components/ui/home-slider";
 import Link from 'next/link';
 import {heroWords, heroImages} from "@/constants";
-export function HeroHome() {
+export default function HeroHome() {
 
     return (
         

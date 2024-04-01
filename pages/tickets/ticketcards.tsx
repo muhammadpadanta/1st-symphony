@@ -2,7 +2,7 @@
 
 import { CardSlider } from "@/components/ui/card-slider";
 import {upcomingTicket, mostPopularTicket} from "@/constants";
-export function TicketCards() {
+export default function TicketCards() {
 
 
   return (
