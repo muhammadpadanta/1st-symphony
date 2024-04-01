@@ -30,11 +30,11 @@ To get started with 1st Symphony Web app on your local machine, follow these ste
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/muhammadpadanta/1st-Symphony.git
+   git clone https://github.com/muhammadpadanta/1st-symphony.git
 
 2. Navigate to the project directory:
    ```bash
-   cd 1st-Symphony
+   cd 1st-symphony
 
 3. Install dependencies:
    ```bash
