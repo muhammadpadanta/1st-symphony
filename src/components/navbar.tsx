@@ -22,12 +22,12 @@ function Navbar({ }: { className?: string }) {
               onMouseLeave={() => setActive(null)} // resets the state
               className="w-screen top-0 sticky z-50 bg-[#092327] flex justify-between items-center p-4"
           >
-              <a href="/">
+              <Link href="/">
                   <div
                       className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st
                       Symphony
                   </div>
-              </a>
+              </Link>
 
               <Menu setActive={setActive}>
 
