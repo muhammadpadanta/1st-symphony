@@ -37,12 +37,12 @@ export default function Account() {
                             </div>
                         </div>
                         <div className="mt-6 flex justify-center items-center space-x-5">
-                            <Link href="/">
+                            <Link href="/public">
                                 <button
                                     className="btn bg-gray-800 text-white border-none hover:bg-gray-900 hover:text-white ">Back
                                 </button>
                             </Link>
-                            <Link href="/">
+                            <Link href="/public">
                                 <button className="btn bg-gray-600 text-white border-none hover:bg-gray-800">Edit
                                     Profile
                                 </button>

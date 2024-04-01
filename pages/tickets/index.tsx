@@ -1,11 +1,9 @@
 
 import React from 'react';
-import { NavbarMenu } from "@/components/navbar";
-import Footer from "@/components/footer";
-import {TicketCards} from "@/components/ticketcards";
-import {ArtistList} from "@/components/artistlist";
-import HeroArtist from "@/components/heroartist";
-
+import {TicketCards} from "./ticketcards";
+import {ArtistList} from "./artistlist";
+import HeroArtist from "./heroartist";
+import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 const TicketsPage = () => {
@@ -27,18 +25,11 @@ const TicketsPage = () => {
 
 
   return (
-      <main className="bg-[#0a0a0a]">
-
-              <NavbarMenu/>
-
-<HeroArtist/>
-          <ArtistList/>
-        <TicketCards/>
-
-              <Footer/>
-
-
-      </main>
+      <Layout>
+            <HeroArtist/>
+            <ArtistList/>
+            <TicketCards/>
+      </Layout>
 );
 };
 

@@ -1,8 +1,6 @@
 import React from 'react';
-import { NavbarMenu } from "@/components/navbar";
-import Footer from "@/components/footer";
-import Account from "@/components/account";
-
+import Account from "./account";
+import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 const AccountPage = () => {
@@ -24,19 +22,11 @@ const AccountPage = () => {
 
 
     return (
-        <main className="bg-[#0a0a0a]">
-
-            <NavbarMenu/>
+        <Layout>
 
             <Account/>
-
-
-                <Footer/>
-
-
-
-
-        </main>
+            
+        </Layout>
     );
 };
 

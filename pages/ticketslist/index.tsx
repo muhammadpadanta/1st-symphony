@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavbarMenu } from "@/components/navbar";
-import Footer from "@/components/footer";
-import TicketAlbums from "@/components/ticketalbums";
-import TicketArtist from "@/components/ticketartist";
+import TicketAlbums from "./ticketalbums";
+import TicketArtist from "./ticketartist";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
+import Layout from "@/components/layout";
 const TicketListPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -22,20 +21,12 @@ const TicketListPage = () => {
     }
 
     return (
-        <main className="bg-[#0a0a0a]">
-<div className="py-10 ">
-    <NavbarMenu/>
-</div>
-
+        <Layout>
 
             <TicketAlbums/>
             <TicketArtist />
 
-
-            <Footer/>
-
-
-        </main>
+        </Layout>
     );
 };
 

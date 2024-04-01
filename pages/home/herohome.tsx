@@ -19,6 +19,7 @@ export function HeroHome() {
                 loop
                 className="absolute w-full h-full object-cover z-1 brightness-50 opacity-25"
                 disablePictureInPicture
+                preload="auto"
             />
             <div className="w-full mx-auto p-4 ">
 

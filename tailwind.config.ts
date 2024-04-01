@@ -1,6 +1,6 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+
 const {nextui} = require("@nextui-org/react");
-const colors = require("tailwindcss/colors");
+
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -9,6 +9,7 @@ const {
 module.exports = {
   content: [
       "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
 
   ],

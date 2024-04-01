@@ -1,8 +1,6 @@
 import React from 'react';
-import { NavbarMenu } from "@/components/navbar";
-import Footer from "@/components/footer";
-import Inventory from "@/components/inventory";
-
+import Inventory from "./inventory";
+import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 const InventoryPage = () => {
@@ -24,16 +22,11 @@ const InventoryPage = () => {
 
 
     return (
-        <main className="bg-[#0a0a0a]">
-
-            <NavbarMenu/>
+        <Layout >
 
             <Inventory/>
 
-            <Footer/>
-
-
-        </main>
+        </Layout>
     );
 };
 

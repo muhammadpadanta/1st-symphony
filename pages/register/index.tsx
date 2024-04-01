@@ -1,9 +1,8 @@
 import React from 'react';
-import { NavbarMenu } from "@/components/navbar";
-import Footer from "@/components/footer";
-import Register from "@/components/register";
+import Register from "./register";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
+import Layout from "@/components/layout";
 const RegisterPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -23,16 +22,9 @@ const RegisterPage = () => {
 
 
     return (
-        <main className="bg-[#0a0a0a]">
-
-            <NavbarMenu/>
-
-            <Register/>
-
-            <Footer/>
-
-
-        </main>
+        <Layout>
+                <Register/>
+        </Layout>
     );
 };
 

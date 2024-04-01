@@ -5,7 +5,7 @@ import {songs} from "@/constants";
 export default function TicketAlbums() {
     return (
         <>
-            <p className="text-4xl pt-24 new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">Popular
+            <p className="text-4xl pt-24 new-rocker-regular text-gray-200 flex justify-center items-center">Popular
                 Album</p>
             <p className="text-2xl new-rocker-regular bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center">(Artist:
                 Marshmello)</p>
@@ -46,20 +46,20 @@ export default function TicketAlbums() {
                                             <dt className="inline ">
 
                                                 <div
-                                                    className="flex justify-between items-center space-x-10 text-2xl font-semibold text-red-400  ">
+                                                    className="flex justify-between items-center space-x-10 text-2xl font-semibold text-gray-200 ">
                                                     {songs.name}
                                                     <div
                                                         className="flex items-center space-x-10 ">
                                                         <div
-                                                            className="flex items-center space-x-10  hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
+                                                            className="flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
                                                             {songs.icon1}
                                                         </div>
                                                         <div
-                                                            className="flex text-xs items-center space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
+                                                            className="flex text-xs items-center text-red-400 space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
                                                             {songs.duration}
                                                         </div>
                                                         <div
-                                                            className="flex items-center space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
+                                                            className="flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
                                                             {songs.icon2}
                                                         </div>
                                                     </div>
