@@ -1,79 +1,6 @@
-import { PlayIcon, SpeakerWaveIcon } from '@heroicons/react/20/solid'
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/ticket-list";
-
-
-const features = [
-    {
-        name: 'Alone',
-        id: '1',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-
-    },
-    {
-        name: 'Happier',
-        id: '2',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-
-    },
-    {
-        name: 'Friends',
-        id: '3',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-
-    },
-
-    {
-        name: 'Project Dreams',
-        id: '4',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-
-    },
-    {
-        name: 'Wolves',
-        id: '5',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-
-    },
-
-    {
-        name: 'Silence',
-        id: '6',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-    },
-
-    {
-        name: 'Keep it Mello',
-        id: '6',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-    },
-
-    {
-        name: 'Fly',
-        id: '6',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-    },
-
-
-
-
-]
+import {songs} from "@/constants";
 
 export default function TicketAlbums() {
     return (
@@ -114,26 +41,26 @@ export default function TicketAlbums() {
                             <div className="lg:max-w-lg new-rocker-regular overflow-auto px-5"
                                  style={{maxHeight: '30rem'}}>
                                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none ">
-                                    {features.map((feature) => (
-                                        <div key={feature.name} className="relative pl-9 ">
+                                    {songs.map((songs) => (
+                                        <div key={songs.name} className="relative pl-9 ">
                                             <dt className="inline ">
 
                                                 <div
                                                     className="flex justify-between items-center space-x-10 text-2xl font-semibold text-red-400  ">
-                                                    {feature.name}
+                                                    {songs.name}
                                                     <div
                                                         className="flex items-center space-x-10 ">
                                                         <div
                                                             className="flex items-center space-x-10  hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
-                                                            {feature.icon1}
+                                                            {songs.icon1}
                                                         </div>
                                                         <div
                                                             className="flex text-xs items-center space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
-                                                            {feature.duration}
+                                                            {songs.duration}
                                                         </div>
                                                         <div
                                                             className="flex items-center space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
-                                                            {feature.icon2}
+                                                            {songs.icon2}
                                                         </div>
                                                     </div>
 

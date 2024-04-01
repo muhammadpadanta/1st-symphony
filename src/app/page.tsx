@@ -7,6 +7,9 @@ import {FaqMenu} from "@/components/faq";
 import '../../styles/globals.css';
 import React, { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
+
+
+
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 

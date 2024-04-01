@@ -19,13 +19,13 @@ function Register() {
         e.preventDefault();
 
         if (!(document.getElementById("cek") as HTMLInputElement).checked) {
-            alert("Tolong Centang Cekbox Yang tersedia");
+            alert("Please check the checkbox First!");
             return;
         }
 
         if (!username || !email || !password) {
 
-            alert("Semua kolom harus diisi");
+            alert("All Required information must be filled!");
             return;
         }
 
@@ -178,7 +178,7 @@ function Register() {
                                 <input
                                     required
                                     type="checkbox"
-                                    name="anjay"
+                                    name=""
                                     id="cek"
                                     className="checkbox checkbox-accent border-2"
                                 />

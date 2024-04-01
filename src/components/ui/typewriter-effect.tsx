@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import { cn } from "@/utils/cn";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
@@ -23,25 +23,26 @@ export const TypewriterEffect = ({
       text: word.text.split(""),
     };
   });
-
+  const [hasAnimated, setHasAnimated] = useState(false);
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated) {
       animate(
-        "span",
-        {
-          display: "inline-block",
-          opacity: 1,
-        },
-        {
-          duration: 0.3,
-          delay: stagger(0.1),
-          ease: "easeInOut",
-        }
+          "span",
+          {
+            display: "inline-block",
+            opacity: 1,
+          },
+          {
+            duration: 0.3,
+            delay: stagger(0.1),
+            ease: "easeInOut",
+          }
       );
+      setHasAnimated(true);
     }
-  }, [isInView, animate]); // Add animate to the dependencies array
+  }, [isInView, animate, hasAnimated]);
 
   const renderWords = () => {
     return (

@@ -1,3 +1,4 @@
+import withFonts from 'next-fonts';
 import withVideos from 'next-videos';
 
 const nextConfig = {
@@ -13,17 +14,16 @@ const nextConfig = {
       'cdn.pixabay.com',
       'aceternity.com',
       'lastfm.freetls.fastly.net',
-        's9.gifyu.com',
-        'assets.dryicons.com',
-        's12.gifyu.com',
-        'daisyui.com',
-        'avatars.githubusercontent.com',
-      
-      
+      's9.gifyu.com',
+      'assets.dryicons.com',
+      's12.gifyu.com',
+      'daisyui.com',
+      'avatars.githubusercontent.com',
     ],
   },
-  // Merge withVideos configuration
+  // Merge withVideos and withFonts configuration
   ...withVideos(),
+  ...withFonts(),
 };
 
 export default nextConfig;

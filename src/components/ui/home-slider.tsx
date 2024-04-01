@@ -80,23 +80,26 @@ if (autoplay) {
       },
     },
     upExit: {
-      opacity: 1,
+      opacity: 0,
       x: "-150%",
       transition: {
-        duration: 4,
+        duration: 2,
+        ease: [0.645, 0.045, 0.355, 1.0],
       },
     },
     downExit: {
-      opacity: 1,
+      opacity: 0,
       x: "150%",
       transition: {
-        duration: 4,
+        duration: 2,
+        ease: [0.645, 0.045, 0.355, 1.0],
       },
     },
   };
 
   return (
-    <div className="utama bg-transparent justify-center items-center flex">
+    <div className="bg-transparent justify-center items-center flex"
+         style={{ filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}>
       <div
         className={cn(
           "overflow-hidden w-[40vw] relative flex items-center justify-center top-0 mt-16 ",

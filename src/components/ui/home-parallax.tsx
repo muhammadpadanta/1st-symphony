@@ -154,8 +154,8 @@ export const ProductCard = ({
           loading="lazy"
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none transition-all"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white new-rocker-regular transition-all">
         {product.title}
       </h2>
     </motion.div>

@@ -94,24 +94,26 @@ export const CardSlider = ({
       >
  {/* Container */}
 {items.map((item,) => (
-  <li
-    className="w-[20vw] max-w-full relative rounded-2xl flex-shrink-0 transition-all group"
-    key={item.name}
-  >
-    {/* Image setting */}
-    <blockquote>
+    <li
+        className="w-[20vw] max-w-full relative rounded-2xl flex-shrink-0 transition-all group"
+        key={item.name}
+    >
+      {/* Image setting */}
+      <blockquote>
+        <div
+            aria-hidden="true"
+            className="user-select-none border  -z-1 pointer-events-none absolute  -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+        ></div>
+        <Image src={item.imageUrl} alt={item.name} width={1920} height={1080}
+               className="object-cover group-hover:opacity-40 group-hover:scale-105 group-hover:filter group-hover:blur-sm transition-all"/>
+      </blockquote>
+      {/* Text to display on hover */}
       <div
-        aria-hidden="true"
-        className="user-select-none border -z-1 pointer-events-none absolute  -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-      ></div>
-     {/* Change this img tag to use the Next.js Image component */}
-<Image src={item.imageUrl} alt={item.name} width={500} height={300} className="object-cover group-hover:opacity-40 group-hover:scale-105 group-hover:filter group-hover:blur-sm transition-all" />
-    </blockquote>
-    {/* Text to display on hover */}
-    <div className="absolute inset-0 flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 group-hover:scale-110  transition-all">
-      <p className="text-white">{item.name}</p>
-    </div>
-  </li>
+          className="absolute inset-0 flex flex-col items-center justify-center z-50 opacity-0 group-hover:opacity-100 group-hover:scale-110  transition-all">
+        <p className="text-white text-md 2xl:text-xl">{item.name}</p>
+        <button className="mt-2 bg-white text-black hover:scale-110 px-3 py-2 transition-all rounded-xl shadow-xl hover:opacity-60 ">Buy Ticket</button>
+      </div>
+    </li>
 ))}
       </ul>
     </div>

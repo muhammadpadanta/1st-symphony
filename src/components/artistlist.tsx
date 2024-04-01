@@ -3,72 +3,14 @@ import React from "react";
 import Link from 'next/link';
 import { AnimatePresence, motion } from "framer-motion";
 import { ArtistListUi } from "@/components/ui/artist-list";
-
+import {artistData } from "@/constants";
+import { Icon } from "@/components/icon/icon";
 function getRandomColor() {
     return [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)];
 }
 
 
 export function ArtistList() {
-
-    const artistData = [
-        {
-            title: "Twice",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/d98b6e954551c972386080b98ad7b60d.jpg#d98b6e954551c972386080b98ad7b60d",
-        },
-        {
-            title: "Virgoun",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/462378a051090cdde996f5ffd54380a3.jpg#462378a051090cdde996f5ffd54380a3",
-        },
-        {
-            title: "Mahalini",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-        },
-        {
-            title: "BTS",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
-        },
-
-
-        {
-            title: "Yoasobi",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/76b01e2f38be328ea61dd752e1c69d63.jpg#76b01e2f38be328ea61dd752e1c69d63",
-        },
-        {
-            title: "Newjeans",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/0970eefb5a3f0444f85429c2ddb5907c.jpg#0970eefb5a3f0444f85429c2ddb5907c",
-        },
-        {
-            title: "Armada",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/2ecde8495a2b9b3dddef9e0afaf98897.jpg#2ecde8495a2b9b3dddef9e0afaf98897",
-        },
-        {
-            title: "Blackpink",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/9663125192c3ba383344d0cbc5107f98.jpg#9663125192c3ba383344d0cbc5107f98",
-        },
-
-        {
-            title: "Raisa",
-            icon: <MusicIcon />,
-            image: "https://lastfm.freetls.fastly.net/i/u/770x0/f1ff45f4bb60312b3da0749d88a820e8.jpg#f1ff45f4bb60312b3da0749d88a820e8",
-        },
-
-
-
-
-
-
-
-
-    ];
 
     return (
         <div
@@ -162,36 +104,3 @@ const Card = ({
     );
 };
 
-const MusicIcon = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" className="w-10 h-10" fill="none" style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}>
-            <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#F59E0B"/>
-                    <stop offset="35%" stopColor="#F59E0B"/>
-                    <stop offset="65%" stopColor="#EC4899"/>
-                </linearGradient>
-            </defs>
-            <path strokeLinecap="round" strokeLinejoin="round" stroke="url(#gradient)"
-                  d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.660a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.660A2.25 2.25 0 0 0 9 15.553Z"/>
-        </svg>
-
-
-    );
-};
-
-export const Icon = ({className, ...rest}: any) => {
-    return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className={className}
-            {...rest}
-        >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6"/>
-        </svg>
-    );
-};

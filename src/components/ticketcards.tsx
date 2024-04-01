@@ -1,81 +1,12 @@
 "use client";
 
-
 import { CardSlider } from "@/components/ui/card-slider";
-
-
-
-const upcomingTicket = [
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Tulus - Monokrom",
-    title: "A Tale of Two Cities",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Newjeans - OMG",
-    title: "Hamlet",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Imagine Dragon - Believer",
-    title: "A Dream Within a Dream",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Yoasobi - Ano yume o Nazotte",
-    title: "Pride and Prejudice",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Virgoun - Bukti",
-    title: "Moby-Dick",
-  },
-];
-
-const mostPopularTicket = [
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Ed Sheeran - Perfect",
-    title: "A Tale of Two Cities",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Twice - What is Love?",
-    title: "Hamlet",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Coldplay - Paradise",
-    title: "A Dream Within a Dream",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "Artist - Unknown",
-    title: "Pride and Prejudice",
-  },
-  {
-    imageUrl:
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
-    name: "ITZY - Checkmate",
-    title: "Moby-Dick",
-  },
-];
-
+import {upcomingTicket, mostPopularTicket} from "@/constants";
 export function TicketCards() {
 
 
   return (
-      <div className="mt-20 "
+      <div className="mt-20 new-rocker-regular"
 
       >
           <br/><br/><br/>
@@ -91,15 +22,18 @@ export function TicketCards() {
               <hr className="w-3/4 border-t border-red-400 my-4"/>
 
               <CardSlider
-                  items={upcomingTicket}
+                  items={mostPopularTicket}
                   direction="right"
                   speed="slow"
+
               />
               <CardSlider
                   items={upcomingTicket}
                   direction="left"
                   speed="slow"
+
               />
+
 
           </div>
           <br/><br/><br/>
@@ -117,14 +51,16 @@ export function TicketCards() {
               <hr className="w-3/4 border-t border-red-400 my-4"/>
 
               <CardSlider
-                  items={mostPopularTicket}
+                  items={upcomingTicket}
                   direction="right"
                   speed="slow"
+
               />
               <CardSlider
                   items={mostPopularTicket}
                   direction="left"
                   speed="slow"
+
               />
 
           </div>

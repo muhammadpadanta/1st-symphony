@@ -1,29 +1,9 @@
-import { MagnifyingGlassIcon, CalendarDaysIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
+
 import Image from "next/image";
 import { Link } from 'react-scroll';
+import {ticketFeatures, textBlocks} from "@/constants";
 
 
-const features = [
-    {
-        name: 'Find By Artist',
-        description:
-            'Search Ticket by Finding your Favorite Artist.',
-        icon: MagnifyingGlassIcon,
-        link: 'artistList',
-    },
-    {
-        name: 'Find by Upcoming Concerts',
-        description: 'Search Ticket Based on Upcoming Events.',
-        icon: CalendarDaysIcon,
-        link: 'upcomingConcerts',
-    },
-    {
-        name: 'FInd by Most Popular concert',
-        description: 'Search Ticket Based on Most Popular Events.',
-        icon: ArrowTrendingUpIcon,
-        link: 'mostPopularConcerts',
-    },
-]
 
 export default function HeroArtist() {
     return (
@@ -37,32 +17,34 @@ export default function HeroArtist() {
                 <div className=" grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     <div className="lg:pr-8 lg:pt-4">
                         <div className="lg:max-w-lg new-rocker-regular">
-                            <h2 className="text-red-400 font-semibold leading-7 text-4xl">Find your Ticket Faster!</h2>
-                            <p className="mt-6 text-2xl font-bold tracking-tight text-white ">Use These Options:</p>
-                            <p className=" text-lg leading-8 text-gray-200">
-                                You can search for tickets by artist, Upcoming Concert, and Most Popular one Based on the Popularity of the Artist.
-                            </p>
+                            <div>
+                                {textBlocks.map((block, index) => (
+                                    <p key={index} className={block.className}>
+                                        {block.text}
+                                    </p>
+                                ))}
+                            </div>
                             <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                                {features.map((feature) => (
-                                    <div key={feature.name} className="relative pl-9 ">
+                                {ticketFeatures.map((ticketFeatures) => (
+                                    <div key={ticketFeatures.name} className="relative pl-9 ">
                                         <dt className="inline ">
-                                            <feature.icon
+                                            <ticketFeatures.icon
                                                 className="absolute text-4xl left-1 top-1 h-5 w-5 text-indigo-200"
                                                 aria-hidden="true"/>
                                             <Link
-                                                to={feature.link}
+                                                to={ticketFeatures.link}
                                                 smooth={true}
                                                 duration={500}
                                             >
-                                            <div
-                                                className="text-2xl animate-bounce font-semibold text-red-400 hover:bg-red-400 hover:rounded-sm hover:text-white transition-all cursor-pointer inline-block">
-                                                {feature.name}
-                                            </div>
+                                                <div
+                                                    className="text-2xl animate-bounce font-semibold text-red-400 hover:bg-red-400 hover:rounded-sm hover:text-white transition-all cursor-pointer inline-block">
+                                                    {ticketFeatures.name}
+                                                </div>
                                             </Link>
 
                                         </dt>
                                         {' '}
-                                        <dd className="block text-white">{feature.description}</dd>
+                                        <dd className="block text-white">{ticketFeatures.description}</dd>
                                     </div>
                                 ))}
                             </dl>

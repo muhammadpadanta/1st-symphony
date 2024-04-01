@@ -5,28 +5,9 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { ButtonBorder } from "@/components/ui/btn-border";
 import { HomeSlider } from "@/components/ui/home-slider";
 import Link from 'next/link';
-
+import {heroWords, heroImages} from "@/constants";
 export function HeroHome() {
-    const words = [
-        {
-            text: "We Are Ready To",
-            className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 text-4xl 2xl:text-[3rem] drop-shadow-xl",
-        },
 
-        {
-            text: "Tune in with You.",
-            className: "bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl 2xl:text-[3rem] drop-shadow-xl",
-        },
-        ];
-    
-    const images = [
-        "https://lastfm.freetls.fastly.net/i/u/770x0/ad255404a818dfbd6b2ccd17bda35988.jpg#ad255404a818dfbd6b2ccd17bda35988",
-        "https://lastfm.freetls.fastly.net/i/u/770x0/e8d2cd8575f54ccadb35a5dba78d524a.jpg#e8d2cd8575f54ccadb35a5dba78d524a",
-        "https://lastfm.freetls.fastly.net/i/u/770x0/509496d58e48cee9fb27767ff924724a.jpg#509496d58e48cee9fb27767ff924724a",
-        ];
-    
-    
-    
     return (
         
         <div className="h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
@@ -41,30 +22,24 @@ export function HeroHome() {
             />
             <div className="w-full mx-auto p-4 ">
 
-     
-  
-                
-                
-                    
                 
                 <div className="flex justify-center items-center space-x-10">
                     
-                    <div className="sliderimage w-1/2">
+                    <div className="">
                         
-                        <HomeSlider className="h-[40vh] top-2" images={images}>
+                        <HomeSlider className="h-[40vh] top-2" images={heroImages}>
                             <motion.div
                                 initial={{
                                 opacity: 0,
-                                    y: -80,
+
                                 }}
                                 animate={{
                                 opacity: 1,
-                                    y: 0,
+
                                 }}
                                 transition={{
-                                duration: 2,
+                                duration: 0.5,
                                 }}
-                                className="z-30 flex flex-col justify-center items-center"
                                 >
                             </motion.div>
                             
@@ -79,7 +54,7 @@ export function HeroHome() {
                                 The road to freedom starts from here
                             </p>
                             <TypewriterEffectSmooth
-                                words={words}
+                                words={heroWords}
                             />
                         </div >
 
@@ -98,15 +73,9 @@ export function HeroHome() {
                         </div>
                     
                     </div>
-                    
-                    
-                    
-                    
+
                 </div>
-                
-                
-                
-                
+
             </div>
             
         </div>

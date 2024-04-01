@@ -1,100 +1,4 @@
-import { MapPinIcon, CalendarDaysIcon, CurrencyDollarIcon } from '@heroicons/react/20/solid'
-
-
-
-const features = [
-    {
-        name: 'Alone',
-        id: '1',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-
-    },
-    {
-        name: 'Happier',
-        id: '2',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-    {
-        name: 'Friends',
-        id: '3',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-
-    {
-        name: 'Project Dreams',
-        id: '4',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-    {
-        name: 'Wolves',
-        id: '5',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-
-    {
-        name: 'Silence',
-        id: '6',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-
-    {
-        name: 'Keep it Mello',
-        id: '6',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-
-    {
-        name: 'Fly',
-        id: '6',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-
-
-
-
-
-
-]
+import {ticketDetails} from "@/constants";
 
 export default function TicketArtist() {
     return (
@@ -118,19 +22,19 @@ export default function TicketArtist() {
 
                             <div className="w-full new-rocker-regular ">
                                 <dl className=" space-y-8 text-base leading-7 text-gray-600 lg:max-w-none  gap-4">
-                                    {features.map((feature) => (
-                                        <div key={feature.name} className="relative pl-9 ">
+                                    {ticketDetails.map((ticketDetails) => (
+                                        <div key={ticketDetails.name} className="relative pl-9 ">
                                             <dt className="inline ">
 
                                                 <div
                                                     className="flex justify-between items-center space-x-10 text-2xl font-semibold text-red-400  ">
-                                                    {feature.name}
+                                                    {ticketDetails.name}
 
                                                     <div >
                                                         <div
                                                             className="flex text-xs items-center space-x-10  ">
-                                                            {feature.icon1}
-                                                            {feature.location}
+                                                            {ticketDetails.icon1}
+                                                            {ticketDetails.location}
                                                         </div>
                                                     </div>
 
@@ -138,13 +42,13 @@ export default function TicketArtist() {
                                                         className="flex items-center space-x-10 ">
                                                         <div
                                                             className="flex text-xs items-center space-x-10 ">
-                                                            {feature.icon2}
-                                                            {feature.date}
+                                                            {ticketDetails.icon2}
+                                                            {ticketDetails.date}
                                                         </div>
                                                         <div
                                                             className="flex text-xs items-center space-x-10 ">
-                                                            {feature.icon3}
-                                                            {feature.price}
+                                                            {ticketDetails.icon3}
+                                                            {ticketDetails.price}
                                                         </div>
                                                         <div
                                                             className="flex items-center space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer">
