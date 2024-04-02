@@ -24,9 +24,9 @@ export default function HeroHome() {
             <div className="w-full mx-auto p-4 ">
 
                 
-                <div className="flex justify-center items-center space-x-10">
+                <div className="flex xs:flex-col lg:flex-row justify-center items-center  ">
                     
-                    <div className="">
+                    <div className="p-16">
                         
                         <HomeSlider className="h-[40vh] top-2" images={heroImages}>
                             <motion.div
@@ -49,9 +49,9 @@ export default function HeroHome() {
                     </div>
                     
                     
-                    <div className="w-1/2 flex flex-col justify-center items-center new-rocker-regular ">
-                        <div className="b z-10 ">
-                            <p className="text-neutral-500 dark:text-neutral-200 text-xs sm:text-base text-center ">
+                    <div className="w-full flex flex-col justify-center items-center new-rocker-regular">
+                        <div className="z-10 ">
+                            <p className="text-neutral-500 dark:text-neutral-200 text-xs lg:text-base text-center ">
                                 The road to freedom starts from here
                             </p>
                             <TypewriterEffectSmooth

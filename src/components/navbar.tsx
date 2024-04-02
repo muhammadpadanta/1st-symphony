@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 
 import Link from 'next/link';
-import {BsFillPersonFill, BsClipboard2Check} from "react-icons/bs";
+import {BsFillPersonFill, BsClipboard2Check, BsJustify} from "react-icons/bs";
 
 export function NavbarMenu() {
   return (
@@ -24,19 +24,19 @@ function Navbar({ }: { className?: string }) {
           >
               <Link href="/">
                   <div
-                      className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  flex justify-between pacifico-regular text-2xl hover:opacity-70 transition-all">1st
+                      className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent whitespace-nowrap text-lg flex justify-between pacifico-regular xl:text-2xl  hover:opacity-70 transition-all ">1st
                       Symphony
                   </div>
               </Link>
 
               <Menu setActive={setActive}>
 
-                  <Link href="/" legacyBehavior>
-                      <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer ">Home</p>
-                  </Link>
-                  <Link href="/tickets" legacyBehavior>
-                      <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer">Ticket</p>
-                  </Link>
+                    <Link href="/" legacyBehavior>
+                        <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Home</p>
+                    </Link>
+                    <Link href="/tickets" legacyBehavior>
+                        <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Ticket</p>
+                    </Link>
 
 
                   <MenuItem
@@ -44,13 +44,14 @@ function Navbar({ }: { className?: string }) {
                       active={active}
                       item="About"
                       itemId={"about"}
-                      labelClassName="hover:scale-110 hover:opacity-50 transition-all"
+                      labelClassName="hover:scale-110 hover:opacity-50 transition-all xs:hidden lg:flex"
                   >
                       <div className="flex flex-col space-y-4 text-sm ">
                           <HoveredLink href="/hobby">Contact us</HoveredLink>
                           <HoveredLink href="/individual">Our Team</HoveredLink>
                       </div>
                   </MenuItem>
+
 
 
               </Menu>
@@ -74,6 +75,22 @@ function Navbar({ }: { className?: string }) {
                           <HoveredLink href="/account">Account</HoveredLink>
                           <HoveredLink href="/login">Login</HoveredLink>
                           <HoveredLink href="/register">Register</HoveredLink>
+                      </div>
+                  </MenuItem>
+
+                  <MenuItem
+                      setActive={setActive}
+                      active={active}
+                      itemId={"bar"}
+                      item={<BsJustify className="text-2xl" />}
+                      labelClassName="hover:scale-110 hover:opacity-50  transition-all xs:flex lg:hidden"
+                  >
+
+                      <div className="flex flex-col space-y-4 text-sm ">
+                          <HoveredLink href="/">Home</HoveredLink>
+                          <HoveredLink href="/tickets">Ticket</HoveredLink>
+                          <HoveredLink href="/">Contact us</HoveredLink>
+                          <HoveredLink href="/">Our Team</HoveredLink>
                       </div>
                   </MenuItem>
               </div>

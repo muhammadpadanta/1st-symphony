@@ -17,6 +17,9 @@ module.exports = {
   theme: {
     // rest of the code
     extend: {
+      screens: {
+        'xs': '300px',
+      },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",

@@ -580,12 +580,12 @@ export const userProfile = [
 export const heroWords = [
     {
         text: "We Are Ready To",
-        className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 text-4xl 2xl:text-[3rem] drop-shadow-xl",
+        className: "bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 text-xl xl:text-[2rem] 2xl:text-[3rem] drop-shadow-xl",
     },
 
     {
         text: "Tune in with You.",
-        className: "bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl 2xl:text-[3rem] drop-shadow-xl",
+        className: "bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl xl:text-[2rem]  2xl:text-[3rem] drop-shadow-xl",
     },
 ];
 

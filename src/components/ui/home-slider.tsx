@@ -124,13 +124,13 @@ if (autoplay) {
   className="image h-full w-full absolute inset-0 border rounded-xl border-red-400"
 
 >
-  <div className="h-full w-full overflow-hidden rounded-xl relative">
+  <div className="h-full w-full overflow-hidden rounded-xl relative ">
     <Image
       src={images[currentIndex]}
       alt=""
       width={1920}
       height={1080}
-      className="mask-image"
+      className="mask-image object-cover h-full"
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
   </div>
