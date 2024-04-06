@@ -59,7 +59,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions, suggestions, or feedback, feel free to reach out to us 
+If you have any questions, suggestions, or feedback, feel free to reach out to me
 <div align="left">
    
 
