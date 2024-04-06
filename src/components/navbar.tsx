@@ -11,7 +11,7 @@ export function Navbar({ className}: { className?: string }) {
       <div className={`${className}`}>
           <nav
               onMouseLeave={() => setActive(null)} // resets the state
-              className="w-screen bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg flex justify-between items-center p-4"
+              className="w-full bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg flex justify-between items-center p-4"
           >
               <Link href="/">
                   <div
