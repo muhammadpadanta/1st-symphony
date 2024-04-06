@@ -5,38 +5,29 @@ import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 import Link from 'next/link';
 import {BsFillPersonFill, BsClipboard2Check, BsJustify} from "react-icons/bs";
 
-export function NavbarMenu() {
-  return (
-    <div className="relative left-0 w-screen z-50 ">
-      <Navbar className="top-2  " />
-      
-    </div>
-  );
-}
-
-function Navbar({ }: { className?: string }) {
+export function Navbar({ className}: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-      <div className="fixed top-0 z-50 w-screen pacifico-regular">
+      <div className={`${className}`}>
           <nav
               onMouseLeave={() => setActive(null)} // resets the state
-              className="w-screen top-0 sticky z-50 bg-[#092327] flex justify-between items-center p-4"
+              className="w-screen bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg flex justify-between items-center p-4"
           >
               <Link href="/">
                   <div
-                      className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent whitespace-nowrap text-lg flex justify-between pacifico-regular xl:text-2xl  hover:opacity-70 transition-all ">1st
+                      className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent whitespace-nowrap text-lg flex justify-between xl:text-2xl  hover:opacity-70 transition-all ">1st
                       Symphony
                   </div>
               </Link>
 
               <Menu setActive={setActive}>
 
-                    <Link href="/" legacyBehavior>
-                        <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Home</p>
-                    </Link>
-                    <Link href="/tickets" legacyBehavior>
-                        <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Ticket</p>
-                    </Link>
+                  <Link href="/" legacyBehavior>
+                      <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Home</p>
+                  </Link>
+                  <Link href="/tickets" legacyBehavior>
+                      <p className="text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer xs:hidden lg:flex">Ticket</p>
+                  </Link>
 
 
                   <MenuItem
@@ -53,13 +44,13 @@ function Navbar({ }: { className?: string }) {
                   </MenuItem>
 
 
-
               </Menu>
 
               <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
 
 
-                  <Link href="/inventory" className="text-xl hover:scale-110 hover:opacity-50 transition-all cursor-pointer">
+                  <Link href="/inventory"
+                        className="text-xl hover:scale-110 hover:opacity-50 transition-all cursor-pointer">
                       <BsClipboard2Check/>
                   </Link>
 
@@ -67,7 +58,7 @@ function Navbar({ }: { className?: string }) {
                       setActive={setActive}
                       active={active}
                       itemId={"account"}
-                      item={<BsFillPersonFill className="text-2xl" />}
+                      item={<BsFillPersonFill className="text-2xl"/>}
                       labelClassName="hover:scale-110 hover:opacity-50  transition-all"
                   >
 
@@ -82,7 +73,7 @@ function Navbar({ }: { className?: string }) {
                       setActive={setActive}
                       active={active}
                       itemId={"bar"}
-                      item={<BsJustify className="text-2xl" />}
+                      item={<BsJustify className="text-2xl"/>}
                       labelClassName="hover:scale-110 hover:opacity-50  transition-all xs:flex lg:hidden"
                   >
 

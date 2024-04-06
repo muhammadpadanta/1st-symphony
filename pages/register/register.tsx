@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from 'next/link';
-import { FiEye, FiEyeOff } from "react-icons/fi";
-
+import Button from "@/components/btn";
+import '../../styles/twclass.css'
+import PasswordField from "@/components/inputfieldpw";
+import InputField from "@/components/inputfield";
+import Checkbox from "@/components/checkbox";
 
 function Register() {
     const [username, setName] = useState("");
@@ -42,24 +45,112 @@ function Register() {
     }
 
     return (
-        <div className="flex justify-center h-full overflow-hidden new-rocker-regular mt-16 py-10 2xl:mt-0 ">
-
+        <div >
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{
+                    y: 600,
+                    opacity: 0,
+                }}
+                animate={{
+                    y: 0,
+                    opacity: 1,
+                }}
                 transition={{
-                    duration: 1.2,
+                    duration: 2.6,
                     ease: "easeInOut",
-                    delay: 0.6
+                    delay: 0.6,
+                }}
+                className="mainContainer wp2">
 
-            }}
-                className="w-full "
-            >
-                <div className="hero min-h-screen ">
-                    <div className=" p-8 rounded w-[40vw] bg-[#2e3239] bg-opacity-20 backdrop-blur-lg z-0 ">
+                <div className="registerContainer">
+                    <motion.div
+                        initial={{
+                            y: -80,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            y: 0,
+                            opacity: 1,
+                        }}
+                        transition={{
+                            duration: 2.6,
+                            ease: "easeInOut",
+                            delay: 1,
+                        }}
+                    >
+                        <h2 className="h2RegisterTitle">
+                            Lets Register Your <span
+                            className="spanRegisterTitle">1st Symphony</span> Account!
+                        </h2>
+                    </motion.div>
+                    <hr/>
+                    <form onSubmit={signUp} className="mt-5">
+
+                        <InputField
+                            label="Username"
+                            id="username"
+                            name="username"
+                            type="text"
+                            placeholder="Choose Your Username"
+                            initialX={-80}
+                            delay={1.5}
+                        />
+
+                        <InputField
+                            label="Email"
+                            id="email"
+                            name="username"
+                            type="email"
+                            placeholder="Enter Your Valid E-mail address"
+                            initialX={-80}
+                            delay={1.5}
+                        />
+
+                        <PasswordField
+                            label="Password"
+                            value={password}
+                            setValue={setPassword}
+                            placeholder="Enter Your password."
+                            initialX={-80}
+                            delay={1.5}
+                            togglePasswordVisibility={togglePasswordVisibility}
+                        />
+
+                        <Checkbox
+                            id="cek"
+                            className="checkbox checkbox-accent border-2"
+                            label="I Agree to the Terms & Conditions of 1st Symphony."
+                            initialX={-80}
+                            delay={1.6}
+                        />
+
                         <motion.div
                             initial={{
-                                y: -80,
+                                x: -80,
+                                opacity: 0,
+                            }}
+                            animate={{
+                                x: 0,
+                                opacity: 1,
+                            }}
+                            transition={{
+                                duration: 2.0,
+                                ease: "easeInOut",
+                                delay: 1.6,
+                            }}
+                        >
+                            <Button type="submit" className="btnBack" href="/">
+                                Back
+                            </Button>
+
+                            <Button type="submit" className="btnPrimary">
+                                Register
+                            </Button>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{
+                                y: 80,
                                 opacity: 0,
                             }}
                             animate={{
@@ -67,179 +158,22 @@ function Register() {
                                 opacity: 1,
                             }}
                             transition={{
-                                duration: 2.6,
+                                duration: 1.0,
                                 ease: "easeInOut",
-                                delay: 0.6,
+                                delay: 2.0,
                             }}
                         >
-                            <h2 className="text-4xl font-semibold mb-6 italic font-deskripsi text-center text-white ">
-                                Lets Register Your 1st Symphony Account!
-                            </h2>
-                        </motion.div>
-                        <hr className="border-dashed " />
-                        <form onSubmit={signUp}>
-                            <motion.div
-                                initial={{
-                                    x: -80,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    duration: 2.0,
-                                    ease: "easeInOut",
-                                    delay: 0.6,
-                                }}
-                            >
-                                <div className="mb-4 mt-5">
-                                    <label className="block text-2xl text-white mb-2 text-md ">
-                                        Username
-                                    </label>
-                                    <input
-                                        id="username"
-                                        type="text"
-                                        value={username}
-                                        onChange={(e) => setName(e.target.value)}
-                                        className="w-full text-white p-3 px-3 rounded-xl shadow-md bg-gray-700 placeholder-gray-300 outline-none  "
-                                        placeholder="Choose Your Username"
-                                    />
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{
-                                    x: -80,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    duration: 2.0,
-                                    ease: "easeInOut",
-                                    delay: 0.6,
-                                }}
-                            >
-                                <div className="mb-4">
-                                    <label className="block text-2xl text-white  text-md mb-2">
-                                        Email
-                                    </label>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full px-3 p-3 text-white rounded-xl bg-gray-700 shadow-md placeholder-gray-300 outline-none"
-                                        placeholder="Enter Your Valid E-mail address"
-                                    />
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{
-                                    x: -80,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    duration: 2.0,
-                                    ease: "easeInOut",
-                                    delay: 0.6,
-                                }}
-                            >
-                                <div className="mb-4 relative">
-                                    <label className="block text-2xl text-white  text-md mb-2">
-                                        Password
-                                    </label>
-                                    <input
-                                        id="password"
-                                        type={showPassword ? "text" : "password"}
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full px-3 p-3 rounded-xl text-white bg-gray-700 shadow-md placeholder-gray-300 outline-none"
-                                        placeholder="Enter Your password."
-                                    />
-                                    <div
-                                        onClick={togglePasswordVisibility}
-                                        className="absolute inset-y-0 pt-10 right-0 pr-3 flex items-center cursor-pointer"
-                                    >
-                                        {showPassword ? <FiEyeOff/> : <FiEye/>}
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            <div className="flex">
-                                <input
-                                    required
-                                    type="checkbox"
-                                    name=""
-                                    id="cek"
-                                    className="checkbox checkbox-accent border-2"
-                                />
-                                <label className="text-white ml-2 font-mono">
-                                    I Agree to the Terms & Conditions of 1st Symphony.
-                                </label>
-                            </div>
-
-                            <motion.div
-                                initial={{
-                                    x: -80,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    duration: 2.0,
-                                    ease: "easeInOut",
-                                    delay: 1.6,
-                                }}
-                            >
-                                <Link href="/login">
-                                    <button
-                                        type="submit"
-
-                                        className="w-full bg-gray-700 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-600 mt-10 transition-all"
-                                    >
-                                        Register
-                                    </button>
+                            <p className="registerbottomText1">
+                                Have an Account?{" "}
+                                <Link
+                                    href="/login"
+                                    className="registerbottomText2"
+                                >
+                                    Login Here!
                                 </Link>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{
-                                    y: 80,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    y: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    duration: 1.0,
-                                    ease: "easeInOut",
-                                    delay: 2.0,
-                                }}
-                            >
-                                <p className="text-white mt-5 flex justify-center">
-                                    Have an Account?{" "}
-                                    <Link
-                                        href="/login"
-                                        className="text-blue-400 underline ml-1 hover:animate-bounce transition-all"
-                                    >
-                                        LOGIN Here!
-                                    </Link>
-                                </p>
-                            </motion.div>
-                        </form>
-                    </div>
+                            </p>
+                        </motion.div>
+                    </form>
                 </div>
             </motion.div>
         </div>

@@ -27,12 +27,7 @@ export default function TicketCards() {
                   speed="slow"
 
               />
-              <CardSlider
-                  items={upcomingTicket}
-                  direction="left"
-                  speed="slow"
 
-              />
 
 
           </div>
@@ -52,12 +47,6 @@ export default function TicketCards() {
 
               <CardSlider
                   items={upcomingTicket}
-                  direction="right"
-                  speed="slow"
-
-              />
-              <CardSlider
-                  items={mostPopularTicket}
                   direction="left"
                   speed="slow"
 

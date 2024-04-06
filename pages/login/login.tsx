@@ -3,11 +3,21 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import '../../styles/twclass.css'
+import InputField from "@/components/inputfield";
+import Button from "@/components/btn";
+import PasswordField from "@/components/inputfieldpw";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     let userInfoValue = localStorage.getItem("user-info");
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(showPassword => !showPassword);
+    };
 
     async function login(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -61,42 +71,41 @@ function Login() {
     }
 
     return (
-        <div className="flex items-center justify-center h-[90vh] overflow-hidden mt-16 2xl:mt-0">
-            <motion.div
-                initial={{
-                    width: 0,
-                    left: 0,
-                }}
-                animate={{
-                    width: "100%",
-                    left: 0,
-                }}
-                transition={{
-                    duration: 1.1,
-                    ease: "easeInOut",
-                    delay: 0.2,
-                }}
-                className="pattern4 h-full absolute top-0 bottom-0 left-0"
-            ></motion.div>
+        <motion.div
+            initial={{
+                y: 600,
+                opacity: 0,
+            }}
+            animate={{
+                y: 0,
+                opacity: 1,
+            }}
+            transition={{
+                duration: 2.6,
+                ease: "easeInOut",
+                delay: 0.2,
+            }}
 
-            <div className="s">
-                <motion.div
-                    initial={{
-                        y: 80,
-                        opacity: 0,
-                    }}
-                    animate={{
-                        y: 0,
-                        opacity: 1,
-                    }}
-                    transition={{
-                        duration: 1.4,
+            className="loginContainer wp3">
+
+        <motion.div
+            initial={{
+                y: 80,
+                opacity: 0,
+            }}
+            animate={{
+                y: 0,
+                opacity: 1,
+            }}
+            transition={{
+                duration: 1.4,
                         ease: "easeInOut",
                         delay: 0.6,
                     }}
                 >
-                    <div className="grid grid-cols-2 rounded-xl overflow-hidden">
-                        <div className="text-5xl font-semibold rounded-tl-xl rounded-bl-xl font-deskripsi text-center bg-gray-500 p-10 backdrop-blur-sm bg-opacity-30 shadow-md text-white transition-all">
+                     <div className="boxContainer">
+
+                        <div className="leftContainer">
                             <motion.div
                                 initial={{
                                     y: 80,
@@ -112,23 +121,23 @@ function Login() {
                                     delay: 1.1,
                                 }}
                             >
-                                <h2 className="new-rocker-regular">
-                                    Welcome to <p className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent " >1st Symphony</p>
-                                </h2>
+                                <h1>
+                                    Welcome to <p className="leftTitle" >1st Symphony</p>
+                                </h1>
 
-                                <div className="gambar mt-10 ">
+
                                     <Image
                                         width={300}
                                         height={300}
-                                        className="object-cover h-80 w-full "
+                                        className="leftImage"
                                         src="https://s12.gifyu.com/images/SV4lH.png"
                                         alt=""
                                     />
-                                </div>
+
                             </motion.div>
                         </div>
 
-                        <div className="p-8  bg-[#2e3239] bg-opacity-20 backdrop-blur-lg  rounded-tr-xl rounded-br-xl new-rocker-regular ">
+                        <div className="rightContainer">
                             <motion.div
                                 initial={{
                                     y: -80,
@@ -144,112 +153,33 @@ function Login() {
                                     delay: 1.3,
                                 }}
                             >
-                                <h2 className="text-2xl font-semibold mb-6 italic font-deskripsi text-center mt-5  text-white ">
+                                <h2 className="rightTitle">
                                     Please Login with your account!
                                 </h2>
                             </motion.div>
+                            <hr/>
 
-                            <hr className="border-dashed " />
-                            <form onSubmit={login}>
-                                <div className="mb-4 mt-10">
-                                    <motion.div
-                                        initial={{
-                                            x: -60,
-                                            opacity: 0,
-                                        }}
-                                        animate={{
-                                            x: 0,
-                                            opacity: 1,
-                                        }}
-                                        transition={{
-                                            duration: 1.5,
-                                            ease: "easeInOut",
-                                            delay: 1.5,
-                                        }}
-                                    >
-                                        <label
-                                            htmlFor="username"
-                                            className="block text-white mb-2 text-md font-deskripsi"
-                                        >
-                                            Username
-                                        </label>
-                                    </motion.div>
+                            <form onSubmit={login} className="mt-5">
 
-                                    <motion.div
-                                        initial={{
-                                            x: 80,
-                                            opacity: 0,
-                                        }}
-                                        animate={{
-                                            x: 0,
-                                            opacity: 1,
-                                        }}
-                                        transition={{
-                                            duration: 1.5,
-                                            ease: "easeInOut",
-                                            delay: 1.8,
-                                        }}
-                                    >
-                                        <input
-                                            type="text"
-                                            id="username"
-                                            name="username"
-                                            onChange={(e) => setUsername(e.target.value)}
-                                            className="w-full text-white p-2 px-3 rounded-xl shadow-md bg-gray-800 placeholder-gray-300 font-deskripsi outline-none "
-                                            placeholder="Enter your username"
-                                        />
-                                    </motion.div>
-                                </div>
+                                <InputField
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Enter your username"
+                                    label="Username"
+                                    initialX={-60}
+                                    delay={1.5}
+                                />
 
-                                <div className="mb-4">
-                                    <motion.div
-                                        initial={{
-                                            x: -60,
-                                            opacity: 0,
-                                        }}
-                                        animate={{
-                                            x: 0,
-                                            opacity: 1,
-                                        }}
-                                        transition={{
-                                            duration: 1.5,
-                                            ease: "easeInOut",
-                                            delay: 1.5,
-                                        }}
-                                    >
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-white mb-2 text-md font-deskripsi"
-                                        >
-                                            Password
-                                        </label>
-                                    </motion.div>
-
-                                    <motion.div
-                                        initial={{
-                                            x: 80,
-                                            opacity: 0,
-                                        }}
-                                        animate={{
-                                            x: 0,
-                                            opacity: 1,
-                                        }}
-                                        transition={{
-                                            duration: 1.5,
-                                            ease: "easeInOut",
-                                            delay: 1.8,
-                                        }}
-                                    >
-                                        <input
-                                            type="password"
-                                            id="password"
-                                            name="password"
-                                            onChange={(e) => setPassword(e.target.value)}
-                                            className="w-full text-white p-2 px-3 rounded-xl shadow-md bg-gray-800 placeholder-gray-300 font-deskripsi outline-none "
-                                            placeholder="Enter your password"
-                                        />
-                                    </motion.div>
-                                </div>
+                                <PasswordField
+                                    label="Password"
+                                    value={password}
+                                    setValue={setPassword}
+                                    placeholder="Enter Your password."
+                                    initialX={-80}
+                                    delay={1.5}
+                                    togglePasswordVisibility={togglePasswordVisibility}
+                                />
 
                                 <motion.div
                                     initial={{
@@ -266,13 +196,13 @@ function Login() {
                                         delay: 1.8,
                                     }}
                                 >
-                                    <button
-
-                                        type="submit"
-                                        className="w-full bg-gray-800 font-deskripsi backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-600 mt-10 transition-all"
-                                    >
+                                    <Button type="submit" className="btnBack" href="/">
+                                        Back
+                                    </Button>
+                                    <Button type="submit" className="btnPrimary">
                                         Login
-                                    </button>
+                                    </Button>
+
                                 </motion.div>
 
                                 <motion.div
@@ -290,11 +220,11 @@ function Login() {
                                         delay: 3.0,
                                     }}
                                 >
-                                    <p className="font-deskripsi text-white mt-5 flex justify-center">
+                                    <p className="bottomText1">
                                         Not Have one?
                                         <Link
                                             href="/register"
-                                            className="text-blue-300 underline ml-1 hover:animate-pulse"
+                                            className="bottomText2"
                                         >
                                             Register here!
                                         </Link>
@@ -304,8 +234,8 @@ function Login() {
                         </div>
                     </div>
                 </motion.div>
-            </div>
-        </div>
+            </motion.div>
+
     );
 }
 

@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 import Head from 'next/head';
+import 'tailwindcss/tailwind.css'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -23,13 +24,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <>
             <Head>
                 <title>1st Symphony</title>
             </Head>
-            <Component {...pageProps} />
+       <body>
+       <Component {...pageProps} />
+       </body>
 
-        </div>
+        </>
+
+
     );
 }
 

@@ -19,13 +19,9 @@ const InventoryPage = () => {
         return <Loading />;
     }
 
-
-
     return (
         <Layout >
-
             <Inventory/>
-
         </Layout>
     );
 };

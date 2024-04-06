@@ -22,11 +22,12 @@ const AccountPage = () => {
 
 
     return (
+        <body className="svgwave">
         <Layout>
-
             <Account/>
-            
         </Layout>
+        </body>
+
     );
 };
 

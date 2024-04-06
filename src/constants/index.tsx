@@ -6,9 +6,52 @@ import {
     MapPinIcon,
     PlayIcon,
     SpeakerWaveIcon,
+    ClockIcon,
 } from "@heroicons/react/20/solid";
 import React from 'react';
 import Musicicon from "@/components/icon/musicicon";
+import '../../styles/globals.css'
+
+
+export const artistData = [
+    {
+        icon: Musicicon,
+        title: "Tulus",
+        content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/67a6796a993c4ea3cee9f14f7500044b.jpg#67a6796a993c4ea3cee9f14f7500044b",
+    },
+    {
+        icon: Musicicon,
+        title: "Twice",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/d98b6e954551c972386080b98ad7b60d.jpg#d98b6e954551c972386080b98ad7b60d",
+    },
+    {
+        icon: Musicicon,
+        title: "Virgoun",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/462378a051090cdde996f5ffd54380a3.jpg#462378a051090cdde996f5ffd54380a3",
+    },
+    {
+        icon: Musicicon,
+        title: "Mahalini",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
+    },
+    {
+        icon: Musicicon,
+        title: "Yoasobi",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/76b01e2f38be328ea61dd752e1c69d63.jpg#76b01e2f38be328ea61dd752e1c69d63",
+    },
+    {
+        icon: Musicicon,
+        title: "BTS",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
+    },
+];
+
 
 
 export const upcomingTicket = [
@@ -81,89 +124,70 @@ export const mostPopularTicket = [
 
 export const ticketDetails = [
     {
-        name: 'Alone',
+        name:'JAN 19',
         id: '1',
-        date: '15 FEB',
+        date: 'Sat | 07.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
 
     },
     {
-        name: 'Happier',
-        id: '2',
-        date: '15 FEB',
+        name:'FEB 15',
+        id: '1',
+        date: 'Sat | 07.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-    {
-        name: 'Friends',
-        id: '3',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
 
+    },
     {
-        name: 'Project Dreams',
-        id: '4',
-        date: '15 FEB',
+        name:'MAR 15',
+        id: '1',
+        date: 'Sat | 07.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
-    {
-        name: 'Wolves',
-        id: '5',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
-    },
 
-    {
-        name: 'Silence',
-        id: '6',
-        date: '15 FEB',
-        price: 'Rp 200.000 - Rp 500.000',
-        location: 'Jakarta, Indonesia. BSD City',
-        icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
-        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
     },
-
     {
-        name: 'Keep it Mello',
-        id: '6',
-        date: '15 FEB',
+        name:'APR 5',
+        id: '1',
+        date: 'Sat | 07.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
+
     },
-
     {
-        name: 'Fly',
-        id: '6',
-        date: '15 FEB',
+        name:'MAY 3',
+        id: '1',
+        date: 'Sat | 07.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <CalendarDaysIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
+
+    },
+    {
+        name:'JUN 25',
+        id: '1',
+        date: 'Sat | 07.00 PM',
+        price: 'Rp 200.000 - Rp 500.000',
+        location: 'Jakarta, Indonesia. BSD City',
+        icon1: <MapPinIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5"/>,
+        icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
+
     },
 
 ]
@@ -270,6 +294,16 @@ export const purchasedTickets = [
             category: "REGULAR",
         },
     },
+    {
+        image: "https://s9.gifyu.com/images/SV4BX.png",
+        inventory: {
+            purchaseDate: "2024-01-03",
+            price: "Rp240.000",
+            category: "REGULAR",
+        },
+    },
+
+
 
 ];
 
@@ -391,16 +425,17 @@ export const ticketFeatures = [
         description:
             'Search Ticket by Finding your Favorite Artist.',
         icon: MagnifyingGlassIcon,
-        link: 'artistList',
+        link: 'swiperCard',
     },
     {
-        name: 'Find by Upcoming Concerts',
+        name: 'Find by Upcoming',
         description: 'Search Ticket Based on Upcoming Events.',
         icon: CalendarDaysIcon,
         link: 'upcomingConcerts',
+
     },
     {
-        name: 'FInd by Most Popular concert',
+        name: 'FInd by Most Popular',
         description: 'Search Ticket Based on Most Popular Events.',
         icon: ArrowTrendingUpIcon,
         link: 'mostPopularConcerts',
@@ -410,16 +445,10 @@ export const ticketFeatures = [
 export const textBlocks = [
     {
         text: "Find your Ticket Faster!",
-        className: "text-red-400 font-semibold leading-7 text-4xl",
+        className: "text-white font-semibold text-8xl w-[40rem]",
     },
-    {
-        text: "Use These Options:",
-        className: "mt-6 text-2xl font-bold tracking-tight text-white",
-    },
-    {
-        text: "You can search for tickets by artist, Upcoming Concert, and Most Popular one Based on the Popularity of the Artist.",
-        className: "text-lg leading-8 text-gray-200",
-    },
+
+
 
 ];
 
@@ -472,28 +501,28 @@ export const asideParagraphs = [
 
 export const faqs = [
     {
-        title: "What is 1st Symphony ?",
-        content:
-            'At 1st Symphony, we make getting tickets to your favorite concerts easy. Browse our curated selection of live music events, choose your seats, and book with confidence. From rock to jazz, classical to pop, find the perfect concert experience with us. Start planning your next unforgettable night out – get your tickets now at 1st Symphony!',
+        question: "What is 1st Symphony exactly?",
+        answer:
+            'we make getting tickets to your favorite concerts easy. Browse our curated selection of live music events, choose your seats, and book with confidence.',
     },
 
-    { title: "How can I receive my concert tickets after purchasing them on your website?",
-        content: "After you complete your ticket purchase on our website, you will receive a confirmation email with details about your order. Your concert tickets will be delivered to you electronically via email or through our mobile app. You can simply present the digital tickets on your smartphone at the venue, or print them out for entry." },
+    { question: "How To receive my tickets after purchasing them?",
+        answer: "After you complete your ticket purchase on our website, you will receive a confirmation email with details about your order. Your concert tickets will be delivered to you electronically via email." },
 
-    { title: "Can I cancel or exchange my concert tickets after purchasing them?",
-        content: "Unfortunately, we are unable to offer cancellations or exchanges for concert tickets once they have been purchased. All ticket sales are final, and we are unable to refund or exchange tickets for a different event or date. We recommend carefully reviewing the event details, including the date, time, and venue, before completing your ticket purchase." },
+    { question: "Can I cancel or exchange my concert tickets after purchasing them?",
+        answer: "Unfortunately, we are unable to offer cancellations or exchanges for concert tickets once they have been purchased." },
 
-    { title: "Are there any age restrictions for attending concerts listed on your website?",
-        content: "Age restrictions for concerts vary depending on the event and venue. Some concerts may be open to all ages, while others may have age restrictions imposed by the artist or venue. We recommend reviewing the event details provided on our website, which typically include information about any age restrictions or guidelines for attendees." },
+    { question: "Are there any age restrictions for attending concerts listed on your website?",
+        answer: "Age restrictions for concerts vary depending on the event and venue. Some concerts may be open to all ages, while others may have age restrictions imposed by the artist or venue." },
 
-    { title: "How do I know if my concert tickets are authentic?",
-        content: "We take the authenticity of concert tickets very seriously. When you purchase tickets through our website, you can rest assured that you are buying genuine tickets directly from authorized sellers or official ticketing partners. Additionally, all tickets sold on our platform are backed by our guarantee of authenticity." },
+    { question: "How do I know if my concert tickets are authentic?",
+        answer: "We take the authenticity of concert tickets very seriously. When you purchase tickets through our website, you can rest assured that you are buying genuine tickets directly from authorized sellers or official ticketing partners." },
 
 ];
 
 // ---------------------------------
 
-export const artistData = [
+export const artistDataold = [
     {
         title: "Twice",
         icon: <Musicicon />,

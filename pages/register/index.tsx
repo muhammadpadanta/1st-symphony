@@ -2,7 +2,7 @@ import React from 'react';
 import Register from "./register";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-import Layout from "@/components/layout";
+
 const RegisterPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -22,9 +22,7 @@ const RegisterPage = () => {
 
 
     return (
-        <Layout>
-                <Register/>
-        </Layout>
+        <Register/>
     );
 };
 

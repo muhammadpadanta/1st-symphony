@@ -3,6 +3,7 @@
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
+import { useSwipeable } from 'react-swipeable';
 
 
 export const CardSlider = ({
@@ -22,9 +23,13 @@ export const CardSlider = ({
   pauseOnHover?: boolean;
   className?: string;
 }) => {
+
+
+
+
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-  const [start, setStart] = useState(false); 
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     function addAnimation() {

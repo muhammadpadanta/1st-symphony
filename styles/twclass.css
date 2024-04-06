@@ -1,0 +1,432 @@
+/*~~~~~~~~~~~~~~~~hero~~~~~~~~~~~~~~~~~~~~~*/
+.heroContainer {
+    @apply h-screen w-full flex flex-col items-center justify-center ;
+
+}
+
+.heroHomeTitleSpan1 {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 xs:text-[1rem] xl:text-[2rem] 2xl:text-[3rem] drop-shadow-xl;
+}
+
+.heroHomeTitleSpan2 {
+    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent xs:text-[1rem] xl:text-[2rem]  2xl:text-[3rem] drop-shadow-xl;
+}
+
+.itemContainer {
+    @apply w-full p-4 absolute 2xl:top-48 xs:top-20 xl:top-32;
+}
+
+.videoContainer {
+    @apply absolute w-full h-full object-cover brightness-50 opacity-50;
+}
+
+.imageSliderContainer {
+    @apply flex xs:flex-col lg:flex-row justify-center items-center space-y-5 px-16;
+}
+
+.typewriterContainer {
+    @apply w-full flex flex-col justify-center items-center;
+}
+
+.heroText1 {
+    @apply text-neutral-500 dark:text-neutral-200 text-xs lg:text-base text-center
+}
+.btnContainer {
+    @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl
+}
+
+.faqContainer {
+    @apply w-[80vw] mx-auto flex flex-col mb-10 justify-center items-center space-y-5 2xl:h-screen ;
+}
+
+.faqItemsContainer {
+    @apply flex flex-col sm:flex-row justify-between space-y-5 space-x-5;
+}
+
+.faqTitle {
+    @apply xl:text-7xl  2xl:text-7xl mb-5 text-red-400 xs:text-2xl;
+
+}
+
+.faqItem {
+    @apply flex flex-col items-start space-y-2 w-full sm:w-1/3;
+
+}
+
+.faqItem:first-child {
+    @apply mt-5; /* Remove top margin from the first FAQ */
+}
+
+.faqItemTitle {
+    @apply  text-3xl text-white ;
+}
+
+.faqItemContent {
+    @apply  text-gray-300 text-xl;
+}
+
+/*~~~~~~~~~~~~~~~~hero~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~account~~~~~~~~~~~~~~~~~~~~*/
+.accountContainer {
+    @apply w-full 2xl:h-screen flex items-center justify-center bg-black bg-opacity-30 backdrop-blur-lg;
+}
+
+.accountBox {
+    @apply  p-6 rounded-xl;
+}
+
+.accountImage {
+    @apply w-32 h-32 rounded-full;
+}
+
+.flexContainer {
+    @apply flex flex-col justify-between;
+}
+
+.profileContainer {
+    @apply max-w-xl w-full p-5;
+}
+
+.profileImage {
+    @apply flex justify-center mb-6;
+}
+
+.borderLine {
+    @apply border-t border-gray-300;
+}
+
+.infoContainer {
+    @apply mt-5;
+}
+
+.infoItem {
+    @apply flex justify-between items-center mb-2;
+}
+
+.buttonContainer {
+    @apply flex justify-center items-center space-x-5;
+}
+
+.backButton {
+    @apply btn bg-gray-800 text-white border-none hover:bg-gray-900 hover:text-white;
+}
+
+.editButton {
+    @apply btn bg-gray-600 text-white border-none hover:bg-gray-800;
+}
+
+/*~~~~~~~~~~~~~~~~~account~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~inventory~~~~~~~~~~~~~~~~~~~~*/
+
+.inventoryContainer {
+    @apply text-4xl pt-3 flex justify-center items-center ;
+}
+
+.inventoryBox {
+    @apply flex justify-center py-6 pb-24;
+}
+
+.inventoryContent {
+    @apply max-w-7xl p-6 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl overflow-auto h-[70vh] 2xl:h-[60vh];
+}
+
+.gridContainerInventory {
+    @apply grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-20 lg:mx-0 lg:grid-cols-2 ;
+}
+
+.ticketItem {
+    @apply w-full rounded-xl p-5;
+}
+
+.ticketImageInventory {
+    @apply w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-center h-full;
+}
+
+.infoContainer {
+    @apply flex flex-col text-left text-red-400;
+}
+
+.infoItem {
+    @apply text-xl items-center mt-4;
+}
+
+/*~~~~~~~~~~~~~~~~~inventory~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~Login~~~~~~~~~~~~~~~~~~~~*/
+
+.loginContainer {
+    @apply flex items-center justify-center h-[90vh] overflow-hidden mt-10 ;
+}
+
+.motionDiv {
+    @apply h-full absolute top-0 bottom-0 left-0;
+}
+
+.boxContainer {
+    @apply grid grid-cols-2 rounded-xl overflow-hidden;
+}
+
+.leftContainer {
+    @apply text-5xl font-semibold rounded-tl-xl rounded-bl-xl text-center bg-gray-500 p-10 backdrop-blur-sm bg-opacity-50 shadow-md text-white transition-all
+}
+
+.rightContainer {
+    @apply p-8  bg-[#2e3239] bg-opacity-50 backdrop-blur-lg rounded-tr-xl rounded-br-xl transition-all ;
+}
+
+.leftTitle {
+    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+.rightTitle {
+    @apply text-2xl font-semibold mb-6 italic text-center mt-5  text-white;
+}
+
+.leftImage {
+    @apply object-cover h-80 w-full mt-10;
+}
+
+.inputBox {
+    @apply w-full text-white p-2 px-3 rounded-xl shadow-md bg-gray-800 placeholder-gray-300 outline-none;
+}
+
+.btnPrimary {
+    @apply w-1/2 bg-gray-800 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-950 mt-10 transition-all;
+}
+.btnBack{
+    @apply w-1/2 bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-600 mt-10 transition-all;
+}
+
+.bottomText1 {
+    @apply text-white mt-5 flex justify-center;
+}
+
+.bottomText2 {
+    @apply text-red-400 hover:scale-105 hover:underline ml-1 hover:animate-pulse transition-all;
+}
+/*~~~~~~~~~~~~~~~~~Login~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~Register~~~~~~~~~~~~~~~~~~~~*/
+
+.mainContainer {
+    @apply flex justify-center items-center min-h-screen ;
+}
+
+.registerContainer {
+    @apply p-8 rounded w-[40vw] bg-[#2e3239] bg-opacity-50 backdrop-blur-sm z-10 ;
+}
+
+.h2RegisterTitle {
+    @apply 2xl:text-4xl text-2xl font-semibold mb-6 italic text-center text-white;
+}
+
+.spanRegisterTitle {
+    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+.registerbottomText1 {
+    @apply text-white mt-5 flex justify-center;
+}
+
+.registerbottomText2 {
+    @apply text-red-400 hover:underline ml-1 hover:animate-pulse transition-all;
+}
+
+
+/*~~~~~~~~~~~~~~~~~Register~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~artistlist~~~~~~~~~~~~~~~~~~~~*/
+
+.artistListContainer {
+    @apply flex flex-col items-center justify-center mx-auto;
+}
+
+.artistListTitle {
+    @apply text-4xl font-bold mb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent px-5;
+}
+
+.artistCardContainer {
+    @apply p-10 h-[70vh] border-2 border-r-red-400 border-l-red-400 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg flex flex-wrap items-center justify-center w-[70vw] 2xl:w-full gap-8 mx-auto overflow-auto rounded-xl;
+}
+
+.artistCard {
+    @apply min-w-[30%] cursor-pointer;
+}
+
+
+/*~~~~~~~~~~~~~~~~~artistlist~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~herotickets~~~~~~~~~~~~~~~~~~~~*/
+
+.heroTicketsContainer {
+    @apply mx-auto 2xl:flex 2xl:justify-center 2xl:items-center h-screen w-full  ;
+}
+
+.heroTicketsBox {
+    @apply max-w-7xl p-10 rounded-xl   ;
+}
+
+.heroTicketImage {
+    @apply w-full object-center xl:h-[80vh] 2xl:h-full transition-all ease-in-out overflow-hidden;
+}
+
+.heroTicketImageContainer {
+    @apply flex w-1/2 ;
+}
+
+.gridContainer {
+    @apply flex justify-between ;
+}
+
+.textContainer {
+    @apply lg:pr-8 lg:pt-4;
+}
+
+.textWrapper {
+    @apply w-full ;
+}
+
+.ticketFeaturesContainer {
+    @apply flex space-x-4 relative pl-9 ;
+}
+
+.ticketFeaturesIcon {
+    @apply absolute text-4xl left-1 top-1 h-5 w-5 text-indigo-200;
+}
+
+.ticketFeaturesLink {
+    @apply text-2xl font-semibold text-red-400 hover:scale-105 hover:rounded-sm hover:text-white transition-all cursor-pointer inline-block;
+}
+
+.ticketImageContainer {
+    @apply h-[60vh] w-full rounded-xl p-5;
+}
+
+.ticketImage {
+    @apply w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-center h-full;
+}
+
+.featureWrapper {
+    @apply mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none;
+}
+
+/*~~~~~~~~~~~~~~~~~herotickets~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~ticketalbums~~~~~~~~~~~~~~~~~~~~*/
+
+/* styles.css */
+
+.ticketAlbumsTitle {
+    @apply text-4xl xs:pt-24 xl:pt-0 2xl:pt-24 text-gray-200 flex justify-center items-center;
+}
+
+.ticketAlbumsArtistName {
+    @apply text-2xl bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
+}
+
+.ticketAlbumsScreenContainer {
+    @apply flex justify-center h-screen;
+}
+
+.albumsContainer {
+    @apply max-w-7xl bg-transparent;
+}
+
+.ticketAlbumsGridContainer {
+    @apply grid grid-cols-1 mt-3 lg:grid-cols-2 xl:p-5 2xl:p-0 rounded-xl;
+}
+
+.albumCard {
+    @apply h-[60vh] w-full rounded-xl p-5;
+}
+
+.albumImage {
+    @apply w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-center h-full;
+}
+
+.ticketAlbumsSongList {
+    @apply lg:max-w-lg overflow-auto px-5;
+}
+
+.ticketAlbumsSongName {
+    @apply flex justify-between items-center space-x-10 text-2xl font-semibold text-gray-200;
+}
+
+.ticketAlbumsSongIcon {
+    @apply flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+}
+
+.ticketAlbumsSongDuration {
+    @apply flex text-xs items-center  text-red-400 space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+}
+
+.ticketAlbumsSongWrapper {
+    @apply mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none;
+}
+
+.ticketAlbumsIconHoverEffect {
+    @apply flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+}
+
+
+/*~~~~~~~~~~~~~~~~~ticketalbums~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~ticketartist~~~~~~~~~~~~~~~~~~~~*/
+
+/* styles/twclass.css */
+
+.ticketArtistScreen {
+    @apply 2xl:h-screen;
+}
+
+.ticketArtistTitle {
+    @apply text-4xl pt-20 text-gray-200 flex justify-center items-center;
+}
+
+.ticketArtistSubtitle {
+    @apply text-2xl bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
+}
+
+.ticketArtistMainContainer {
+    @apply flex justify-center items-center py-5;
+}
+
+.ticketArtistCardContainer {
+    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg rounded-xl;
+}
+
+.ticketArtistContentContainer {
+    @apply w-full gap-x-8 gap-y-16 overflow-auto px-5;
+}
+
+.ticketArtistTextContainer {
+    @apply lg:pr-8 lg:pt-4;
+}
+
+.ticketArtistDetailsContainer {
+    @apply w-full;
+}
+
+.ticketArtistDetailsItem {
+    @apply relative pl-9;
+}
+
+.ticketArtistDetailsTitle {
+    @apply flex justify-between items-center space-x-10 text-lg font-semibold text-gray-200;
+}
+
+.ticketArtistDetailsIcon {
+    @apply w-8 h-8 text-red-400;
+}
+
+.ticketArtistDetailsText {
+    @apply flex text-xs items-center space-x-10;
+}
+
+.ticketArtistDetailsButton {
+    @apply btn text-white border-none mb-2 bg-[#2e3239] bg-opacity-60 backdrop-blur-lg;
+}
+
+/*~~~~~~~~~~~~~~~~~ticketartist~~~~~~~~~~~~~~~~~~~~*/

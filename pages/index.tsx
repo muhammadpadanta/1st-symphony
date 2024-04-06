@@ -25,13 +25,10 @@ export default function Home() {
 
 
   return (
-
-    <Layout>
-
-      <HeroHome />
-      <HomeParallaxEffect/>
-      <FaqMenu />
-
-    </Layout>
+          <Layout>
+              <HeroHome />
+              <HomeParallaxEffect/>
+              <FaqMenu />
+          </Layout>
   );
 }

@@ -1,8 +1,7 @@
 
 import React from 'react';
-import TicketCards from "./ticketcards";
-import ArtistList from "./artistlist";
-import HeroArtist from "./heroartist";
+import Herotickets from "./herotickets";
+import ActiveSlider from "@/components/swipercard";
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
@@ -25,12 +24,15 @@ const TicketsPage = () => {
 
 
   return (
-      <Layout>
-            <HeroArtist/>
-            <ArtistList/>
-            <TicketCards/>
-      </Layout>
-);
+
+    <Layout>
+        <Herotickets />
+        <ActiveSlider/>
+    </Layout>
+
+
+
+  );
 };
 
 export default TicketsPage;

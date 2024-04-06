@@ -29,9 +29,11 @@
     "react-player": "^2.15.1",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
+    "react-swipeable": "^7.0.1",
     "shadcn-ui": "^0.8.0",
     "simplex-noise": "^4.0.1",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.162.0"
