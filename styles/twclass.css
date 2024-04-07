@@ -32,7 +32,7 @@
     @apply text-neutral-500 dark:text-neutral-200 text-xs lg:text-base text-center
 }
 .btnContainer {
-    @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:bg-[#092327] hover:text-yellow-300 transition-all text-xl shadow-xl
+    @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:bg-[#0a0a0a] hover:text-yellow-300 transition-all text-xl shadow-xl
 }
 
 .faqContainer {
@@ -121,7 +121,7 @@
 /*~~~~~~~~~~~~~~~~~inventory~~~~~~~~~~~~~~~~~~~~*/
 
 .inventoryContainer {
-    @apply text-4xl pt-3 flex justify-center items-center ;
+    @apply text-4xl pt-3 flex justify-center items-center text-white;
 }
 
 .inventoryBox {
@@ -422,7 +422,9 @@
 }
 
 .ticketArtistDetailsText {
-    @apply flex text-xs items-center space-x-10;
+    @apply flex items-center space-x-10;
+    font-size: 1rem;
+
 }
 
 .ticketArtistDetailsButton {
@@ -430,3 +432,46 @@
 }
 
 /*~~~~~~~~~~~~~~~~~ticketartist~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/
+
+.artistcardlistContainer {
+    @apply flex items-center justify-center flex-col h-screen bg-transparent;
+}
+
+.artistcardlistContainerWidth {
+    @apply xs:max-w-[70%] lg:max-w-[80%] 2xl:max-w-[80%] ;
+}
+
+.artistcardlistCardBg {
+    @apply absolute inset-0 bg-cover bg-center ;
+}
+
+.artistcardlistCardTextContainer {
+    @apply relative flex flex-col gap-3;
+}
+
+.artistcardlistArtistDesc {
+    @apply lg:text-[18px] ;
+}
+
+.artistcardlistArtistName {
+    @apply text-xl lg:text-2xl group-hover:text-red-400 transition-all;
+}
+
+.artistcardlistIcon {
+    @apply absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-blue-500 group-hover:rotate-45 duration-100;
+}
+
+.artistcardlistCardIconContainer {
+    @apply w-[32px] h-[32px] group-hover:animate-pulse;
+}
+
+.artistcardlistCardCover {
+    @apply absolute inset-0 bg-black opacity-10 group-hover:opacity-50 transition-all ;
+}
+
+.artistcardlistCardShaper {
+    @apply flex hover:scale-105 mt-10 transition-all border-1 border-red-400 flex-col gap-6 mb-20 relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ;
+}
+/*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/

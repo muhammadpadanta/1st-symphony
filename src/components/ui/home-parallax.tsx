@@ -10,17 +10,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const HomeParallax = ({
-  products,
+                                 artist,
 }: {
-  products: {
+    artist: {
     title: string;
     link: string;
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const firstRow = artist.slice(0, 5);
+  const secondRow = artist.slice(5, 10);
+  const thirdRow = artist.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -62,29 +62,29 @@ export const HomeParallax = ({
         className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
+          {firstRow.map((artist) => (
               <ProductCard
-                  product={product}
+                  artist={artist}
                   reverse={false}
-                  key={product.title}
+                  key={artist.title}
               />
           ))}
         </motion.div>
         <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
+          {secondRow.map((artist) => (
               <ProductCard
-                  product={product}
+                  artist={artist}
                   reverse={true}
-                  key={product.title}
+                  key={artist.title}
               />
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
+          {thirdRow.map((artist) => (
               <ProductCard
-                  product={product}
+                  artist={artist}
                   reverse={false}
-                  key={product.title}
+                  key={artist.title}
               />
           ))}
         </motion.div>
@@ -110,10 +110,10 @@ export const Header = () => {
 };
 
 export const ProductCard = ({
-                              product,
+                                artist,
                               reverse = false,
                             }: {
-  product: {
+    artist: {
     title: string;
     link: string;
     thumbnail: string;
@@ -138,25 +138,25 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      key={product.title}
+      key={artist.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link
-        href={product.link}
+        href={artist.link}
         className="block group-hover/product:shadow-2xl "
       >
         <Image
-          src={product.thumbnail}
+          src={artist.thumbnail}
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
+          alt={artist.title}
           loading="lazy"
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none transition-all"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white new-rocker-regular transition-all">
-        {product.title}
+        {artist.title}
       </h2>
     </motion.div>
   );

@@ -28,7 +28,7 @@ export default function TicketAlbums() {
                                 <CardBody className="h-[60vh] w-full rounded-xl p-5">
                                     <CardItem translateZ="100" className=" w-full rounded-xl p-5">
                             <Image
-                                src="https://lastfm.freetls.fastly.net/i/u/770x0/f565949a1ec26d06f0c9e56f762b31e2.jpg#f565949a1ec26d06f0c9e56f762b31e2"
+                                src="/images/ticketAlbumBanner1.webp"
                                 alt="Product screenshot"
                                 className="albumImage"
                                 width={1920}

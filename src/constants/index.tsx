@@ -17,38 +17,38 @@ export const artistData = [
     {
         icon: Musicicon,
         title: "Tulus",
-        content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/67a6796a993c4ea3cee9f14f7500044b.jpg#67a6796a993c4ea3cee9f14f7500044b",
+        content: "Artist, SongWriter, Producer, and Performer.",
+        backgroundImage: "/images/artistList1.webp",
     },
     {
         icon: Musicicon,
         title: "Twice",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/d98b6e954551c972386080b98ad7b60d.jpg#d98b6e954551c972386080b98ad7b60d",
+        content: "Artist, SongWriter, Producer, and Performer, Production Team.",
+        backgroundImage: "images/artistList2.webp",
     },
     {
         icon: Musicicon,
         title: "Virgoun",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/462378a051090cdde996f5ffd54380a3.jpg#462378a051090cdde996f5ffd54380a3",
+        content: "Artist, SongWriter, Producer, and Performer.",
+        backgroundImage: "images/artistList3.webp",
     },
     {
         icon: Musicicon,
         title: "Mahalini",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
+        content: "Artist, SongWriter.",
+        backgroundImage: "images/artistList4.webp",
     },
     {
         icon: Musicicon,
         title: "Yoasobi",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/76b01e2f38be328ea61dd752e1c69d63.jpg#76b01e2f38be328ea61dd752e1c69d63",
+        content: "Artist, SongWriter.",
+        backgroundImage: "images/artistList5.webp",
     },
     {
         icon: Musicicon,
         title: "BTS",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        backgroundImage: "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
+        content: "Artist, SongWriter, Producer, and Performer, Production Team.",
+        backgroundImage: "images/artistList6.webp",
     },
 ];
 
@@ -130,14 +130,14 @@ export const ticketDetails = [
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
-        icon2: <ClockIcon className="w-5 h-5"/>,
+        icon2: <ClockIcon className="w-5 h-5 "/>,
         icon3: <CurrencyDollarIcon className="w-5 h-5"/>,
 
     },
     {
         name:'FEB 15',
         id: '1',
-        date: 'Sat | 07.00 PM',
+        date: 'Wed | 09.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
@@ -148,7 +148,7 @@ export const ticketDetails = [
     {
         name:'MAR 15',
         id: '1',
-        date: 'Sat | 07.00 PM',
+        date: 'Tue | 06.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
@@ -159,7 +159,7 @@ export const ticketDetails = [
     {
         name:'APR 5',
         id: '1',
-        date: 'Sat | 07.00 PM',
+        date: 'Mon | 09.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
@@ -170,7 +170,7 @@ export const ticketDetails = [
     {
         name:'MAY 3',
         id: '1',
-        date: 'Sat | 07.00 PM',
+        date: 'Sun | 08.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
@@ -181,7 +181,7 @@ export const ticketDetails = [
     {
         name:'JUN 25',
         id: '1',
-        date: 'Sat | 07.00 PM',
+        date: 'Sat | 11.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
         icon1: <MapPinIcon className="w-5 h-5"/>,
@@ -271,7 +271,7 @@ export const songs = [
 
 export const purchasedTickets = [
     {
-        image: "https://s9.gifyu.com/images/SV4BX.png",
+        image: "/images/sampleTicket.png",
         inventory: {
             purchaseDate: "2024-01-01",
             price: "Rp600.000",
@@ -279,7 +279,7 @@ export const purchasedTickets = [
         },
     },
     {
-        image: "https://s9.gifyu.com/images/SV4BX.png",
+        image: "/images/sampleTicket.png",
         inventory: {
             purchaseDate: "2024-01-02",
             price: "Rp400.000",
@@ -287,7 +287,7 @@ export const purchasedTickets = [
         },
     },
     {
-        image: "https://s9.gifyu.com/images/SV4BX.png",
+        image: "/images/sampleTicket.png",
         inventory: {
             purchaseDate: "2024-01-03",
             price: "Rp240.000",
@@ -295,7 +295,7 @@ export const purchasedTickets = [
         },
     },
     {
-        image: "https://s9.gifyu.com/images/SV4BX.png",
+        image: "/images/sampleTicket.png",
         inventory: {
             purchaseDate: "2024-01-03",
             price: "Rp240.000",
@@ -316,32 +316,32 @@ export const featuredArtist = [
         title: "Justin Bieber",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/8f7eba3a2d50d1b0fc46082745d08bcb.jpg#8f7eba3a2d50d1b0fc46082745d08bcb",
+            "/images/homeFeaturedArtist1.webp",
     },
     {
         title: "Yoasobi",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/76b01e2f38be328ea61dd752e1c69d63.jpg#76b01e2f38be328ea61dd752e1c69d63",
+            "/images/homeFeaturedArtist2.webp",
     },
     {
         title: "Newjeans",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/0970eefb5a3f0444f85429c2ddb5907c.jpg#0970eefb5a3f0444f85429c2ddb5907c",
+            "/images/homeFeaturedArtist3.webp",
     },
 
     {
         title: "Tulus",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/da6d2e951865106e74a9597af83b8f8b.jpg#da6d2e951865106e74a9597af83b8f8b",
+            "/images/homeFeaturedArtist4.webp",
     },
     {
         title: "Blackpink",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/9663125192c3ba383344d0cbc5107f98.jpg#9663125192c3ba383344d0cbc5107f98",
+            "/images/homeFeaturedArtist5.webp",
     },
 
 // --------------- row1 ---------------
@@ -351,32 +351,32 @@ export const featuredArtist = [
         title: "Twice",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/d98b6e954551c972386080b98ad7b60d.jpg#d98b6e954551c972386080b98ad7b60d",
+            "/images/homeFeaturedArtist6.webp",
     },
 
     {
         title: "Imagine Dragons",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/987bdbaa877869aabd948f54e0d9e198.jpg#987bdbaa877869aabd948f54e0d9e198",
+            "/images/homeFeaturedArtist7.webp",
     },
     {
         title: "Virgoun",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/462378a051090cdde996f5ffd54380a3.jpg#462378a051090cdde996f5ffd54380a3",
+            "/images/homeFeaturedArtist8.webp",
     },
     {
         title: "Raisa",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/f1ff45f4bb60312b3da0749d88a820e8.jpg#f1ff45f4bb60312b3da0749d88a820e8",
+            "/images/homeFeaturedArtist9.webp",
     },
     {
         title: "Armada",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/2ecde8495a2b9b3dddef9e0afaf98897.jpg#2ecde8495a2b9b3dddef9e0afaf98897",
+            "/images/homeFeaturedArtist10.webp",
     },
 
     // --------------- row2 ---------------
@@ -386,32 +386,32 @@ export const featuredArtist = [
         title: "Coldplay",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/eff831d167319d67bec90d33ea1284cf.jpg#eff831d167319d67bec90d33ea1284cf",
+            "/images/homeFeaturedArtist11.webp",
     },
 
     {
         title: "BTS",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/0b1292a13c9a56b54886ebd58d452122.jpg#0b1292a13c9a56b54886ebd58d452122",
+            "/images/homeFeaturedArtist12.webp",
     },
     {
         title: "Charlie Puth",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/86f32b1e88edbe5b15f5ab31746d518a.jpg#86f32b1e88edbe5b15f5ab31746d518a",
+            "/images/homeFeaturedArtist13.webp",
     },
     {
         title: "Mahalini",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/e319c808bb2538b77e02cb667c1f7394.jpg#e319c808bb2538b77e02cb667c1f7394",
+            "/images/homeFeaturedArtist14.webp",
     },
     {
         title: "Tiara Andhini",
         link: "",
         thumbnail:
-            "https://lastfm.freetls.fastly.net/i/u/770x0/1a56050b2418cd9beff0da7ba1cdd285.jpg#1a56050b2418cd9beff0da7ba1cdd285",
+            "/images/homeFeaturedArtist15.webp",
     },
 
 // --------------- row3 ---------------
@@ -619,7 +619,7 @@ export const heroWords = [
 ];
 
 export const heroImages = [
-    "https://lastfm.freetls.fastly.net/i/u/770x0/ad255404a818dfbd6b2ccd17bda35988.jpg#ad255404a818dfbd6b2ccd17bda35988",
-    "https://lastfm.freetls.fastly.net/i/u/770x0/e8d2cd8575f54ccadb35a5dba78d524a.jpg#e8d2cd8575f54ccadb35a5dba78d524a",
-    "https://lastfm.freetls.fastly.net/i/u/770x0/509496d58e48cee9fb27767ff924724a.jpg#509496d58e48cee9fb27767ff924724a",
+    "/images/heroImages1.webp",
+    "/images/heroImages2.webp",
+    "/images/heroImages3.webp",
 ];

@@ -49,7 +49,7 @@ export default function Herotickets() {
                     </div>
                     <div className="heroTicketImageContainer">
                         <Image
-                            src="https://s9.gifyu.com/images/SVOxy.png"
+                            src="/images/heroTicketBanner.png"
                             alt="hero tickets image"
                             className="heroTicketImage"
                             width={1920}

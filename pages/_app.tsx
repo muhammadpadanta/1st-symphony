@@ -6,7 +6,6 @@ import Loading  from '@/components/loading';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css'
 
-
 function MyApp({ Component, pageProps }: AppProps) {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -28,13 +27,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <title>1st Symphony</title>
             </Head>
-       <body>
-       <Component {...pageProps} />
-       </body>
-
+            <div>
+                <Component {...pageProps} />
+            </div>
         </>
-
-
     );
 }
 

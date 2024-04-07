@@ -14,11 +14,12 @@ export default function HeroHome() {
         
         <div className="heroContainer">
             <video
-                src="/epicvid.mp4"
+                src="/videos/herohome.webm"
                 playsInline
                 autoPlay
                 muted
                 loop
+                poster="/images/herohomeposter.webp"
                 className="videoContainer"
                 disablePictureInPicture
                 preload="auto"

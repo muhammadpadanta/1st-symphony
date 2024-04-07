@@ -130,7 +130,7 @@ function Login() {
                                         width={300}
                                         height={300}
                                         className="leftImage"
-                                        src="https://s12.gifyu.com/images/SV4lH.png"
+                                        src="/images/loginLeftIcon.png"
                                         alt=""
                                     />
 

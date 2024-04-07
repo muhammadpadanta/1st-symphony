@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Herotickets from "./herotickets";
-import ActiveSlider from "@/components/swipercard";
+import ActiveSlider from "./artistcardlist";
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';

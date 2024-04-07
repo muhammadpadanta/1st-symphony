@@ -40,12 +40,12 @@ body {
 }
 
 .wp {
-  background-image: url("https://s9.gifyu.com/images/SViOI.jpg");
+    background-image: url("../public/images/footerWallpaper.webp");
   opacity: 0.5;
 }
 
 .wp2 {
-    background-image: url("https://s12.gifyu.com/images/SV17r.png");
+    background-image: url("../public/images/registerWallpaper.png");
     background-position: center;
     background-size: 101%;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@ body {
 }
 
 .wp3 {
-    background-image: url("https://s9.gifyu.com/images/SV1ID.png");
+    background-image: url("../public/images/loginWallpaper.webp");
     background-position: center;
     background-size: 101%;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@ body {
 }
 
 .wp4 {
-    background-image: url("https://s9.gifyu.com/images/SVOqt.png");
+    background-image: url("../public/images/wp4.png");
     background-position: center;
     background-size: 101%;
     background-repeat: no-repeat;
@@ -110,7 +110,6 @@ body {
 }
 
 .text-white.font-semibold.text-8xl {
-    -webkit-text-stroke: 1px black;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
 }
 

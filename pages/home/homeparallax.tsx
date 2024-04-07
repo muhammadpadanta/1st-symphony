@@ -5,7 +5,7 @@ import {featuredArtist} from "@/constants";
 
 export default function HomeParallaxEffect() {
   
-  return <HomeParallax products={featuredArtist} />;
+  return <HomeParallax artist={featuredArtist} />;
 
 }
 

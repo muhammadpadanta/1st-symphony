@@ -3,7 +3,6 @@
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
-import { useSwipeable } from 'react-swipeable';
 
 
 export const CardSlider = ({
