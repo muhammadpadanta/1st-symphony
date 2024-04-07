@@ -5,7 +5,7 @@ import Layout from "@/components/layout";
 import TeamPbl from '../../about/ourteam/teampbl';
 import '../../../styles/globals.css';
 
-export default function ourteam() {
+export default function OurTeam() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
