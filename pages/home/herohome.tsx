@@ -19,10 +19,10 @@ export default function HeroHome() {
                 autoPlay
                 muted
                 loop
-                poster="/images/herohomeposter.webp"
                 className="videoContainer"
                 disablePictureInPicture
                 preload="auto"
+               
             />
             <div className="itemContainer">
 

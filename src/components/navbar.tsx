@@ -38,8 +38,8 @@ export function Navbar({ className}: { className?: string }) {
                       labelClassName="hover:scale-110 hover:opacity-50 transition-all xs:hidden lg:flex"
                   >
                       <div className="flex flex-col space-y-4 text-sm ">
-                          <HoveredLink href="/hobby">Contact us</HoveredLink>
-                          <HoveredLink href="/individual">Our Team</HoveredLink>
+                          <HoveredLink href="/about/contactus">Contact us</HoveredLink>
+                          <HoveredLink href="/about/ourteam">Our Team</HoveredLink>
                       </div>
                   </MenuItem>
 
