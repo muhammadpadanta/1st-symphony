@@ -3,22 +3,22 @@ import withVideos from 'next-videos';
 
 const nextConfig = {
   images: {
-    domains: [
-      'images3.alphacoders.com',
-      'assets.aceternity.com',
-      'images.unsplash.com',
-      'upload.wikimedia.org',
-      'e7.pngegg.com',
-      'w7.pngwing.com',
-      'i.pinimg.com',
-      'cdn.pixabay.com',
-      'aceternity.com',
-      'lastfm.freetls.fastly.net',
-      's9.gifyu.com',
-      'assets.dryicons.com',
-      's12.gifyu.com',
-      'daisyui.com',
-      'avatars.githubusercontent.com',
+    remotePatterns: [
+      { hostname: 'images3.alphacoders.com' },
+      { hostname: 'assets.aceternity.com' },
+      { hostname: 'images.unsplash.com' },
+      { hostname: 'upload.wikimedia.org' },
+      { hostname: 'e7.pngegg.com' },
+      { hostname: 'w7.pngwing.com' },
+      { hostname: 'i.pinimg.com' },
+      { hostname: 'cdn.pixabay.com' },
+      { hostname: 'aceternity.com' },
+      { hostname: 'lastfm.freetls.fastly.net' },
+      { hostname: 's9.gifyu.com' },
+      { hostname: 'assets.dryicons.com' },
+      { hostname: 's12.gifyu.com' },
+      { hostname: 'daisyui.com' },
+      { hostname: 'avatars.githubusercontent.com' },
     ],
   },
   // Merge withVideos and withFonts configuration
