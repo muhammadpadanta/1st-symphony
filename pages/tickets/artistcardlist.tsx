@@ -16,7 +16,7 @@ const ActiveSlider = () => {
         <div className="artistcardlistContainer swiperCard">
             <h1 className="artistListTitle">Artist List</h1>
             <Swiper
-
+                style={{filter: "drop-shadow(2px 2px 5px rgba(180, 180, 180, 0.7))"}}
                 breakpoints={{
                     340: {
                         slidesPerView: 1,
@@ -50,7 +50,7 @@ const ActiveSlider = () => {
             >
                 {artistData.map((item, index) => (
                     <SwiperSlide key={index} >
-                        <Link href="/ticketslist">
+                        <Link href="/pages/ticketlists">
                             <div className="group artistcardlistCardShaper">
                                 <div className="artistcardlistCardBg" style={{backgroundImage: `url(${item.backgroundImage})`}}/>
                                 <div className="artistcardlistCardCover"/>

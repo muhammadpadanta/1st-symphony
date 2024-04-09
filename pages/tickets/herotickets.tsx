@@ -49,6 +49,7 @@ export default function Herotickets() {
                     </div>
                     <div className="heroTicketImageContainer">
                         <Image
+                            priority={true}
                             src="/images/heroTicketBanner.png"
                             alt="hero tickets image"
                             className="heroTicketImage"

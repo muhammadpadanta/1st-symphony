@@ -197,70 +197,50 @@ export const ticketDetails = [
 
 export const songs = [
     {
-        name: 'Alone',
+        name: 'Monokrom',
         id: '1',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
 
     },
     {
-        name: 'Happier',
+        name: 'Sewindu',
         id: '2',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
 
     },
     {
-        name: 'Friends',
+        name: 'Ruang Sendiri',
         id: '3',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
 
     },
 
     {
-        name: 'Project Dreams',
+        name: 'Hati-Hati Di Jalan ',
         id: '4',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
 
     },
     {
-        name: 'Wolves',
+        name: 'Gajah',
         id: '5',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
 
     },
-
     {
-        name: 'Silence',
-        id: '6',
+        name: 'Manusia',
+        id: '5',
         duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
+        volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
+
     },
 
-    {
-        name: 'Keep it Mello',
-        id: '6',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-    },
 
-    {
-        name: 'Fly',
-        id: '6',
-        duration: '0:00',
-        icon1: <PlayIcon className="w-5 h-5"/>,
-        icon2: <SpeakerWaveIcon className="w-5 h-5"/> ,
-    },
 
 
 
@@ -623,3 +603,135 @@ export const heroImages = [
     "/images/heroImages2.webp",
     "/images/heroImages3.webp",
 ];
+
+// ---------------------------------
+
+export const PurpleImages = [
+    {
+        src: "/images/homeFeaturedArtist1.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist2.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist3.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist4.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist5.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist6.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist7.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist8.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist9.webp",
+    },
+
+
+
+];
+
+export const OrangeImages = [
+    {
+        src: "/images/homeFeaturedArtist10.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist11.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist12.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist13.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist14.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist15.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist1.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist2.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist3.webp",
+    },
+];
+
+// ---------------------------------
+
+// ---------------------------------
+export const PurplesImages = [
+    {
+        src: "/images/homeFeaturedArtist1.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist2.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist3.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist4.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist5.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist6.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist7.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist8.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist9.webp",
+    },
+
+
+
+];
+
+export const OrangesImages = [
+    {
+        src: "/images/homeFeaturedArtist10.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist11.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist12.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist13.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist14.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist15.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist1.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist2.webp",
+    },
+    {
+        src: "/images/homeFeaturedArtist3.webp",
+    },
+];
+// ---------------------------------

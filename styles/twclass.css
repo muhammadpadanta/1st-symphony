@@ -319,7 +319,7 @@
 /* styles.css */
 
 .ticketAlbumsTitle {
-    @apply text-4xl xs:pt-24 xl:pt-0 2xl:pt-24 text-gray-200 flex justify-center items-center;
+    @apply text-4xl xs:pt-24 xl:pt-0 2xl:pt-5 text-white flex justify-center items-center ;
 }
 
 .ticketAlbumsArtistName {
@@ -327,15 +327,15 @@
 }
 
 .ticketAlbumsScreenContainer {
-    @apply flex justify-center h-screen;
+    @apply h-screen 2xl:mt-20 xl:mt-0;
 }
 
 .albumsContainer {
-    @apply max-w-7xl bg-transparent;
+    @apply flex justify-center;
 }
 
 .ticketAlbumsGridContainer {
-    @apply grid grid-cols-1 mt-3 lg:grid-cols-2 xl:p-5 2xl:p-0 rounded-xl;
+    @apply grid grid-cols-1 mt-3 xl:p-5 2xl:p-0 rounded-xl;
 }
 
 .albumCard {
@@ -347,19 +347,19 @@
 }
 
 .ticketAlbumsSongList {
-    @apply lg:max-w-lg overflow-auto px-5;
+    @apply w-full overflow-auto p-10;
 }
 
 .ticketAlbumsSongName {
-    @apply flex justify-between items-center space-x-10 text-2xl font-semibold text-gray-200;
+    @apply flex justify-between items-center space-x-10 text-xl font-semibold text-gray-200;
 }
 
 .ticketAlbumsSongIcon {
-    @apply flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+    @apply flex items-center space-x-10 text-red-400 hover:scale-110 mr-10 hover:rounded-sm hover:text-white transition-all cursor-pointer;
 }
 
 .ticketAlbumsSongDuration {
-    @apply flex text-xs items-center  text-red-400 space-x-10 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+    @apply grid grid-cols-2 text-xs items-center  text-white space-x-10 transition-all cursor-pointer;
 }
 
 .ticketAlbumsSongWrapper {
@@ -367,7 +367,7 @@
 }
 
 .ticketAlbumsIconHoverEffect {
-    @apply flex items-center space-x-10 text-red-400 hover:scale-110  hover:rounded-sm hover:text-white transition-all cursor-pointer;
+    @apply flex items-center space-x-10 text-red-400 hover:rounded-sm hover:text-white transition-all cursor-pointer;
 }
 
 
@@ -382,11 +382,11 @@
 }
 
 .ticketArtistTitle {
-    @apply text-4xl pt-20 text-gray-200 flex justify-center items-center;
+    @apply text-4xl  flex justify-center items-center bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent;
 }
 
 .ticketArtistSubtitle {
-    @apply text-2xl bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
+    @apply text-2xl pb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
 }
 
 .ticketArtistMainContainer {
@@ -475,3 +475,18 @@
     @apply flex hover:scale-105 mt-10 transition-all border-1 border-red-400 flex-col gap-6 mb-20 relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ;
 }
 /*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/
+
+.swipercon {
+    transform: scaleX(-1);
+}
+
+.swiperslid {
+        transform: scaleX(-1);
+}
+
+.mostPopularSlider img, .mostPopularSlider .absolute {
+    transform: scaleX(-1);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
