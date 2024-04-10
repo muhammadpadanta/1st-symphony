@@ -1,61 +1,60 @@
-
 import {songs} from "@/constants";
 import '../../styles/twclass.css'
-import React, {useRef, useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {PauseCircleIcon, PlayCircleIcon} from "@heroicons/react/20/solid";
 
 
 export default function TicketAlbums() {
 
+    const [currentSongIndex, setCurrentSongIndex] = useState(-1); // Add this line
     const [play, setPlay] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
-    const oceanRef = useRef<HTMLAudioElement>(null);
+
+    const musicRefs = songs.map(() => React.createRef<HTMLAudioElement>());
     const MAX = 20;
 
-    function toggleAudio(): void {
-        if (play) {
-            oceanRef.current?.pause();
+    function toggleAudio(index: number): void {
+        if (play && currentSongIndex === index) {
+            musicRefs[index].current!.pause();
             setPlay(false);
         } else {
-            void oceanRef.current?.play();
+            if (currentSongIndex !== -1) {
+                musicRefs[currentSongIndex].current!.pause();
+            }
+            musicRefs[index].current!.play();
             setPlay(true);
+            setCurrentSongIndex(index); // Add this line
         }
     }
 
-    function handleVolume(e: React.ChangeEvent<HTMLInputElement>): void {
+    function handleVolume(e: React.ChangeEvent<HTMLInputElement>, index: number): void {
         const { value } = e.target;
-        const volume = Number(value) / MAX;
-        if (oceanRef.current) {
-            oceanRef.current.volume = volume;
-        }
+        musicRefs[index].current!.volume = Number(value) / MAX;
     }
 
-    function handleTimeChange(e: React.ChangeEvent<HTMLInputElement>): void {
+    function handleTimeChange(e: React.ChangeEvent<HTMLInputElement>, index: number): void {
         const { value } = e.target;
-        if (oceanRef.current) {
-            oceanRef.current.currentTime = Number(value);
-            setCurrentTime(Number(value));
-        }
+        musicRefs[index].current!.currentTime = Number(value);
+        setCurrentTime(Number(value)); // Add this line
     }
-
 
 
 
     useEffect(() => {
-        if (oceanRef.current) {
-            oceanRef.current.ontimeupdate = () => {
-                setCurrentTime(oceanRef.current?.currentTime || 0);
-            };
-            oceanRef.current.onloadedmetadata = () => {
-                setDuration(oceanRef.current?.duration || 0);
+        const currentMusicRef = musicRefs.find(ref => ref.current && !ref.current.paused);
+
+        if (currentMusicRef?.current) {
+            currentMusicRef.current.ontimeupdate = () => {
+                setCurrentTime(currentMusicRef.current?.currentTime || 0);
+                setDuration(currentMusicRef.current?.duration || 0);
             };
         }
-    }, []);
+    }, [play, musicRefs, duration]);
 
     return (
         <div>
-            <p className=" font-semibold text-8xl flex justify-center text-white pt-10 animate-bounce">
+            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center text-white 2xl:pt-20 2xl:mt-20 xl:pt-5 xl:mt-5 animate-bounce ">
                 Checkout the Album!
             </p>
 
@@ -82,21 +81,20 @@ export default function TicketAlbums() {
                             <div className="ticketAlbumsSongList"
                                  style={{maxHeight: '25rem'}}>
                                 <dl className="ticketAlbumsSongWrapper">
-                                    {songs.map((songs) => (
+                                    {songs.map((songs, index) => (
                                         <div key={songs.name} className="relative pl-9 ">
                                             <dt className="inline ">
 
                                                 <div
                                                     className="ticketAlbumsSongName">
                                                     <div className="flex flex-row">
-                                                        <button
-                                                            onClick={toggleAudio}
-                                                            className="ticketAlbumsSongIcon">
-                                                            {!play ? (
-                                                                <PlayCircleIcon className="h-6 w-6" aria-hidden="true"/>
-                                                            ) : (
+                                                        <button onClick={() => toggleAudio(index)}
+                                                                className="ticketAlbumsSongIcon">
+                                                            {play && currentSongIndex === index ? (
                                                                 <PauseCircleIcon className="h-6 w-6"
                                                                                  aria-hidden="true"/>
+                                                            ) : (
+                                                                <PlayCircleIcon className="h-6 w-6" aria-hidden="true"/>
                                                             )}
                                                         </button>
                                                         {songs.name}
@@ -109,12 +107,14 @@ export default function TicketAlbums() {
                                                         <div
                                                             className="ticketAlbumsSongDuration">
                                                             <div className="">
-                                                                <input type="range"
-                                                                       min={0}
-                                                                       max={duration}
-                                                                       value={currentTime}
-                                                                       onChange={(e) => handleTimeChange(e)}
-                                                                       className="no-thumb"/>
+                                                                <input
+                                                                    type="range"
+                                                                    min={0}
+                                                                    max={duration}
+                                                                    value={currentSongIndex === index ? currentTime : 0}
+                                                                    onChange={(e) => handleTimeChange(e, index)}
+                                                                    className="no-thumb"
+                                                                />
 
                                                             </div>
 
@@ -131,11 +131,11 @@ export default function TicketAlbums() {
                                                             <input type="range"
                                                                    min={0}
                                                                    max={MAX}
-                                                                   onChange={(e) => handleVolume(e)}
+                                                                   onChange={(e) => handleVolume(e, index)}
                                                                    className="range range-error range-xs transition-all"/>
                                                         </div>
                                                     </div>
-                                                    <audio ref={oceanRef} loop src={"/music/Monokrom.mp3"}/>
+                                                    <audio ref={musicRefs[index]} loop src={songs.music}/>
                                                 </div>
 
 

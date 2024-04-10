@@ -201,6 +201,7 @@ export const songs = [
         id: '1',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
+        music: "/music/Monokrom.mp3",
 
     },
     {
@@ -208,14 +209,14 @@ export const songs = [
         id: '2',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
-
+        music: "/music/Sewindu.mp3",
     },
     {
         name: 'Ruang Sendiri',
         id: '3',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
-
+        music: "/music/Ruangsendiri.mp3",
     },
 
     {
@@ -223,21 +224,21 @@ export const songs = [
         id: '4',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
-
+        music: "/music/Hatihatidijalan.mp3",
     },
     {
         name: 'Gajah',
         id: '5',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
-
+        music: "/music/Gajah.mp3",
     },
     {
-        name: 'Manusia',
+        name: 'Pamit',
         id: '5',
         duration: '0:00',
         volumeIcon: <SpeakerWaveIcon className="w-5 h-5"/>,
-
+        music: "/music/Pamit.mp3",
     },
 
 

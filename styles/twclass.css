@@ -116,6 +116,9 @@
     @apply btn bg-gray-600 text-white border-none hover:bg-gray-800;
 }
 
+.imageAccount {
+    @apply w-32 h-32 rounded-full;
+}
 /*~~~~~~~~~~~~~~~~~account~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~inventory~~~~~~~~~~~~~~~~~~~~*/
@@ -327,27 +330,19 @@
 }
 
 .ticketAlbumsScreenContainer {
-    @apply h-screen 2xl:mt-20 xl:mt-0;
+    @apply h-screen ;
 }
 
 .albumsContainer {
-    @apply flex justify-center;
+    @apply flex justify-center ;
 }
 
 .ticketAlbumsGridContainer {
     @apply grid grid-cols-1 mt-3 xl:p-5 2xl:p-0 rounded-xl;
 }
 
-.albumCard {
-    @apply h-[60vh] w-full rounded-xl p-5;
-}
-
-.albumImage {
-    @apply w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-center h-full;
-}
-
 .ticketAlbumsSongList {
-    @apply w-full overflow-auto p-10;
+    @apply xl:h-[40vh] 2xl:h-full w-full overflow-auto p-10;
 }
 
 .ticketAlbumsSongName {
@@ -378,7 +373,7 @@
 /* styles/twclass.css */
 
 .ticketArtistScreen {
-    @apply 2xl:h-screen;
+    @apply 2xl:h-screen pb-24;
 }
 
 .ticketArtistTitle {
@@ -390,19 +385,19 @@
 }
 
 .ticketArtistMainContainer {
-    @apply flex justify-center items-center py-5;
+    @apply flex justify-center items-center py-5 ;
 }
 
 .ticketArtistCardContainer {
-    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg rounded-xl;
+    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg rounded-xl ;
 }
 
 .ticketArtistContentContainer {
-    @apply w-full gap-x-8 gap-y-16 overflow-auto px-5;
+    @apply w-full gap-x-8 gap-y-16 overflow-auto 2xl:h-full  xl:h-[40vh] px-5 ;
 }
 
 .ticketArtistTextContainer {
-    @apply lg:pr-8 lg:pt-4;
+    @apply lg:pr-8 lg:pt-4 ;
 }
 
 .ticketArtistDetailsContainer {

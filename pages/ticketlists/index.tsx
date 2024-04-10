@@ -24,7 +24,6 @@ const TicketListPage = () => {
     return (
         <Layout>
             <TicketAlbums/>
-
             <TicketArtist />
         </Layout>
     );

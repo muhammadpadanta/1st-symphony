@@ -63,9 +63,9 @@ export function Navbar({ className}: { className?: string }) {
                   >
 
                       <div className="flex flex-col space-y-4 text-sm ">
-                          <HoveredLink href="/account">Account</HoveredLink>
-                          <HoveredLink href="/login">Login</HoveredLink>
-                          <HoveredLink href="/register">Register</HoveredLink>
+                          <HoveredLink href="/account/profile">Account</HoveredLink>
+                          <HoveredLink href="/auth/login">Login</HoveredLink>
+                          <HoveredLink href="/auth/register">Register</HoveredLink>
                       </div>
                   </MenuItem>
 

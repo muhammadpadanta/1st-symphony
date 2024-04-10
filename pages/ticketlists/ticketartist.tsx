@@ -6,7 +6,7 @@ import '../../styles/twclass.css'
 export default function TicketArtist() {
     return (
         <div className="svgwave2 ticketArtistScreen">
-            <p className=" font-semibold text-8xl flex justify-center items-center bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent ">
+            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center items-center bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent ">
                 Get your Ticket Now!
             </p>
             <div className="ticketArtistMainContainer ">
@@ -18,7 +18,7 @@ export default function TicketArtist() {
                         Tickets</p>
                     <p style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                        className="ticketArtistSubtitle">(Artist:
-                        Marshmello)</p>
+                        Tulus)</p>
                     <div className="ticketArtistContentContainer" style={{maxHeight: '30rem'}}>
                         <div className="ticketArtistTextContainer">
 
