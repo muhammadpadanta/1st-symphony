@@ -141,6 +141,9 @@ const MostPopularSlider = () => {
                         backdropFilter: 'blur(3px)', //
                     },
                     content: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         border: '1px solid #FFFFFF',
                         borderRadius: '10px',
                         width: '60%',

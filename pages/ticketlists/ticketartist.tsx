@@ -60,9 +60,9 @@ export default function TicketArtist() {
     };
 
     return (
-        <div className="svgwave2 ticketArtistScreen">
-            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center items-center bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent ">
-                Get your Ticket Now!
+        <div className="svgwave ticketArtistScreen">
+            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center items-center text-white">
+                Get your Ticket Now
             </p>
             <div className="ticketArtistMainContainer ">
                 <div className="ticketArtistCardContainer "
@@ -151,6 +151,9 @@ export default function TicketArtist() {
                         backdropFilter: 'blur(3px)',
                     },
                     content: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         border: '1px solid #FFFFFF',
                         borderRadius: '10px',
                         width: '60%',
@@ -209,8 +212,9 @@ export default function TicketArtist() {
                                 </div>
 
                                 <div className="pt-3">
-                                    <select className="p-2 bg-gray-900 text-xl text-left" onChange={handleSelectChange}>
-                                        <option value="option1" selected disabled>- Choose Ticket Category -</option>
+                                    <select className="p-2 bg-gray-900 text-xl text-left" value={selectedCategory.id}
+                                            onChange={handleSelectChange}>
+                                        <option value="" disabled>- Choose Ticket Category -</option>
                                         {ticketCategories.map(category => (
                                             <option key={category.id} value={category.id}>{category.name}</option>
                                         ))}

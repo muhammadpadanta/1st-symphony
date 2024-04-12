@@ -16,6 +16,7 @@ export default function Profile() {
                         <div className="profileContainer">
                             <div className="profileImage">
                                 <Image className="imageAccount"
+                                       priority={true}
                                        src="https://avatars.githubusercontent.com/u/115600378?v=4" alt="Profile Picture"
                                        width={128} height={128}
                                 />

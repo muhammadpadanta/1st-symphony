@@ -69,11 +69,11 @@
 
 /*~~~~~~~~~~~~~~~~~account~~~~~~~~~~~~~~~~~~~~*/
 .accountContainer {
-    @apply w-full 2xl:h-screen flex items-center justify-center bg-black bg-opacity-30 backdrop-blur-lg;
+    @apply w-full 2xl:h-screen flex items-center justify-center bg-black bg-opacity-70 ;
 }
 
 .accountBox {
-    @apply  p-6 rounded-xl;
+    @apply  p-6 rounded-xl bg-[#0a0a0a];
 }
 
 .accountImage {
@@ -389,7 +389,7 @@
 }
 
 .ticketArtistCardContainer {
-    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg rounded-xl ;
+    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-80 backdrop-blur-md rounded-xl ;
 }
 
 .ticketArtistContentContainer {

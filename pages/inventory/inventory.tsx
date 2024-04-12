@@ -26,6 +26,7 @@ export default function Inventory() {
                                                 <Image
                                                     src={purchasedTickets.image}
                                                     alt="Product screenshot"
+                                                    priority={true}
                                                     className="ticketImageInventory"
                                                     width={1920}
                                                     height={1080}

@@ -24,11 +24,11 @@ const EditProfilePage = () => {
 
 
     return (
-        <body className="svgwave">
+        <div className="svgwave">
         <Layout>
             <UpdateUser/>
         </Layout>
-        </body>
+        </div>
 
     );
 };

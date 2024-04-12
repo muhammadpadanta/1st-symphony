@@ -93,7 +93,7 @@ export function UpdateUser() {
         }
     }
     return (
-        <div className="flex justify-center items-center 2xl:h-screen bg-[#0a0a0a] bg-opacity-90 backdrop-blur-md w-full">
+        <div className="flex justify-center items-center 2xl:h-screen bg-[#0a0a0a] bg-opacity-90 backdrop-blur-sm w-full">
             <form className="bg-transparent rounded px-8 pt-6 pb-8 mb-4 w-2/4 text-white">
 
                 <div className="mb-4">

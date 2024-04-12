@@ -24,11 +24,11 @@ const ContactUsPage = () => {
 
 
     return (
-        <body className="svgwave">
+
         <Layout>
             <Kontak/>
         </Layout>
-        </body>
+
 
     );
 };

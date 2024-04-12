@@ -16,7 +16,7 @@ export default function HeroHome() {
 
     return (
         
-        <div className="heroContainer">
+        <div className="heroContainer" >
             <video
                 src="/videos/herohome.webm"
                 playsInline

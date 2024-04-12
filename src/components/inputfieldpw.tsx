@@ -85,7 +85,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, p
                         onClick={handleTogglePasswordVisibility}
                         className="absolute inset-y-0 pt-10 right-0 pr-3 flex items-center cursor-pointer"
                     >
-                        {showPassword ? <FiEyeOff/> : <FiEye/>}
+                        {showPassword ? <FiEyeOff className="text-white"/> : <FiEye className="text-white"/>}
                     </div>
                 </motion.div>
                 </motion.div>

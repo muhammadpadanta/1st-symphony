@@ -11,8 +11,8 @@ export function FaqMenu() {
           <h1 className="faqTitle">FAQ</h1>
           <div className="faqItemsContainer">
               {faqs.map((faq, index) => (
-                  <div key={index} className="faqItem">
-                      <h2 className="faqItemTitle">
+                  <div key={index} className="faqItem hover:scale-110 transition-all">
+                      <h2 className="faqItemTitle ">
                           {faq.question}
                       </h2>
                       <p className="faqItemContent">

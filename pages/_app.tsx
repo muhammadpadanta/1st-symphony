@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css'
+import Modal from 'react-modal';
 
 function MyApp({ Component, pageProps }: AppProps) {
-
+    Modal.setAppElement('#__next')
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

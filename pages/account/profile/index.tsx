@@ -23,11 +23,11 @@ const ProfilePage = () => {
 
 
     return (
-        <body className="svgwave">
-        <Layout>
-            <Profile/>
-        </Layout>
-        </body>
+        <div className="svgwave">
+            <Layout>
+                <Profile/>
+            </Layout>
+        </div>
 
     );
 };
