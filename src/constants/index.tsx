@@ -4,7 +4,6 @@ import {
     CurrencyDollarIcon,
     MagnifyingGlassIcon,
     MapPinIcon,
-    PlayIcon,
     SpeakerWaveIcon,
     ClockIcon,
 } from "@heroicons/react/20/solid";

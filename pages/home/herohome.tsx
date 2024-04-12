@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { ButtonBorder } from "@/components/ui/btn-border";
@@ -7,6 +7,10 @@ import { HomeSlider } from "@/components/ui/home-slider";
 import Link from 'next/link';
 import {heroWords, heroImages} from "@/constants";
 import '../../styles/twclass.css'
+import Modal from 'react-modal';
+import Image from "next/image";
+import Button from "@/components/btn";
+
 
 export default function HeroHome() {
 
@@ -47,8 +51,7 @@ export default function HeroHome() {
 
                         </HomeSlider>
 
-                    
-                    
+
                     <div className="typewriterContainer">
                         <div className="z-10">
                             <p className="heroText1">
@@ -74,20 +77,19 @@ export default function HeroHome() {
                                     className="btnContainer"
 
                                 >
-                        <span className="animate-pulse">
-                        GET TICKET
-                        </span>
-                </ButtonBorder>
-            </Link>
+                                    <span className="animate-pulse">GET TICKET</span>
+                                </ButtonBorder>
+                            </Link>
                         </div>
-                    
+
                     </div>
 
                 </div>
 
             </div>
-            
+
+
         </div>
-        
-        );
+
+    );
 }

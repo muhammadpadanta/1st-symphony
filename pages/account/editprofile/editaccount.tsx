@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Link from 'next/link';
 import Image from "next/image";
 import Button from "@/components/btn";
 import '../../../styles/twclass.css'

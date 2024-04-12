@@ -485,3 +485,11 @@
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+.animate-modal {
+    transition: transform 0.3s ease-out;
+    transform: scale(0);
+}
+
+.animate-modal-after-open {
+    transform: scale(1);
+}

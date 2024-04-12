@@ -23,6 +23,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.22.3",
     "react-scroll": "^1.9.0",
     "simplex-noise": "^4.0.1",
@@ -35,13 +36,14 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-modal": "^3.16.3",
     "@types/react-scroll": "^1.8.10",
     "@types/three": "^0.162.0",
     "autoprefixer": "^10.0.1",
+    "postcss": "^8.4.38",
     "daisyui": "^4.7.2",
     "eslint": "^8",
     "eslint-config-next": "14.1.2",
-    "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

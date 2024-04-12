@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Link } from 'react-scroll';
 import {ticketFeatures, textBlocks} from "@/constants";
 import '../../styles/twclass.css'
-
+import {motion} from "framer-motion";
 
 export default function Herotickets() {
     return (
@@ -47,7 +47,14 @@ export default function Herotickets() {
                         </div>
 
                     </div>
-                    <div className="heroTicketImageContainer">
+                    <motion.div
+                        whileHover={{ scale: 1.2, rotate: 30 }}
+                        whileTap={{
+                            scale: 0.8,
+                            rotate: -30,
+                            borderRadius: "100%",
+                        }}
+                        className="heroTicketImageContainer">
                         <Image
                             priority={true}
                             src="/images/heroTicketBanner.png"
@@ -58,7 +65,7 @@ export default function Herotickets() {
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             style={{filter: "drop-shadow(12px 12px 4px rgba(0, 0, 0, 0.6))"}}
                         />
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

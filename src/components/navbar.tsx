@@ -35,7 +35,7 @@ export function Navbar({ className}: { className?: string }) {
                       active={active}
                       item="About"
                       itemId={"about"}
-                      labelClassName="hover:scale-110 hover:opacity-50 transition-all xs:hidden lg:flex"
+                      labelClassName="text-white hover:scale-110 hover:opacity-40 transition-all xs:hidden lg:flex"
                   >
                       <div className="flex flex-col space-y-4 text-sm ">
                           <HoveredLink href="/about/contactus">Contact us</HoveredLink>
@@ -59,7 +59,7 @@ export function Navbar({ className}: { className?: string }) {
                       active={active}
                       itemId={"account"}
                       item={<BsFillPersonFill className="text-2xl"/>}
-                      labelClassName="hover:scale-110 hover:opacity-50  transition-all"
+                      labelClassName="hover:scale-110 hover:opacity-40  transition-all"
                   >
 
                       <div className="flex flex-col space-y-4 text-sm ">

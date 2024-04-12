@@ -9,9 +9,21 @@ import '../../styles/twclass.css';
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import { RxArrowTopRight } from "react-icons/rx";
 import { artistData } from "@/constants";
-import React from "react";
+import React, {useState} from "react";
+import Modal from "react-modal";
+import Image from "next/image";
+import Button from "@/components/btn";
 
 const ActiveSlider = () => {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+
+
     return (
         <div className="artistcardlistContainer swiperCard">
             <h1 className="artistListTitle">Artist List</h1>
@@ -50,7 +62,7 @@ const ActiveSlider = () => {
             >
                 {artistData.map((item, index) => (
                     <SwiperSlide key={index} >
-                        <Link href="/ticketlists">
+                        <Link href="/ticketlists" >
                             <div className="group artistcardlistCardShaper">
                                 <div className="artistcardlistCardBg" style={{backgroundImage: `url(${item.backgroundImage})`}}/>
                                 <div className="artistcardlistCardCover"/>
@@ -68,6 +80,85 @@ const ActiveSlider = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+
+
+
+
+
+            {/*modal*/}
+            <Modal
+                isOpen={showModal}
+                onRequestClose={handleCloseModal}
+                contentLabel="LoginModal"
+                className={{
+                    base: 'animate-modal',
+                    afterOpen: 'animate-modal-after-open',
+                    beforeClose: 'animate-modal'
+                }}
+                style={{
+                    overlay: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 1000,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        backdropFilter: 'blur(3px)', //
+                    },
+                    content: {
+                        width: '60%',
+                        height: '60%',
+                        top: '0',
+                        left: '0',
+                        right: '0',
+                        bottom: '0',
+                        margin: 'auto',
+                        backgroundColor: '#0a0a0a',
+                    },
+                }}
+            >
+                <div className="flex justify-center items-center pt-10">
+                    <div className="text-white ">
+                        <h1 className="font-bold text-2xl text-center">Join Us!</h1>
+
+                        <div className="flex flex-row justify-center items-center">
+
+                            <div className="">
+                                <Image
+                                    priority={true}
+                                    src="/images/livemusic.png"
+                                    alt="hero tickets image"
+                                    className="w-2/3 text-white "
+                                    width={1920}
+                                    height={1080}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    style={{filter: "drop-shadow(12px 12px 4px rgba(0, 0, 0, 0.6)) brightness(10) saturate(0)", }}
+                                />
+                            </div>
+
+                            <div>
+                                <p className="py-4 text-2xl text-center">
+                                    You are just few steps away to enjoy our full features!
+                                </p>
+
+
+                                <Button type="submit" className="btnBack " href="/auth/login">
+                                    Login
+                                </Button>
+                                <Button type="submit" className="btnPrimary" href="/auth/register">
+                                    Register
+                                </Button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal>
+
+
         </div>
     );
 };
