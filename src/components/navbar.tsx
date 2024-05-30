@@ -1,19 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
-
+import UserContext from "../../pages/UserContext";
 import Link from 'next/link';
 import {BsFillPersonFill, BsClipboard2Check, BsJustify} from "react-icons/bs";
+import '../../styles/twclass.css';
+
+
 
 export function Navbar({ className}: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
+    const userContext = useContext(UserContext);
+
+    if (!userContext) {
+        throw new Error('Navbar must be used within a UserProvider');
+    }
+
+    const { checkUserLoggedIn, setIsLoggedIn } = userContext;
+    const [active, setActive] = useState<string | null>(null);
+    const handleLogout = () => {
+        setIsLoggedIn(false); // Set isLoggedIn state to false
+        localStorage.removeItem('user-info');
+    };
+
+
   return (
       <div className={`${className}`}>
           <nav
               onMouseLeave={() => setActive(null)} // resets the state
               className="w-full bg-[#0a0a0a] bg-opacity-50 backdrop-blur-lg flex justify-between items-center p-4"
           >
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                   <div
                       className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent whitespace-nowrap text-lg flex justify-between xl:text-2xl  hover:opacity-70 transition-all ">1st
                       Symphony
@@ -49,25 +65,50 @@ export function Navbar({ className}: { className?: string }) {
               <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8">
 
 
-                  <Link href="/inventory"
-                        className="text-xl hover:scale-110 hover:opacity-50 transition-all cursor-pointer">
-                      <BsClipboard2Check/>
-                  </Link>
+                  {checkUserLoggedIn() ? (
+                      <>
+                          <Link href="/inventory" legacyBehavior
+                                className="text-xl hover:scale-110 hover:opacity-50 transition-all">
+                              <BsClipboard2Check className="cursor-pointer hover:scale-110 hover:opacity-50 transition-all"/>
+                          </Link>
 
-                  <MenuItem
-                      setActive={setActive}
-                      active={active}
-                      itemId={"account"}
-                      item={<BsFillPersonFill className="text-2xl"/>}
-                      labelClassName="hover:scale-110 hover:opacity-40  transition-all"
-                  >
+                          <MenuItem
+                              setActive={setActive}
+                              active={active}
+                              itemId={"account"}
+                              item={<BsFillPersonFill className="text-2xl"/>}
+                              labelClassName="hover:scale-110 hover:opacity-40  transition-all"
+                          >
+                              <div className="flex flex-col space-y-4 text-sm ">
+                                  {checkUserLoggedIn() ? (
+                                      <>
+                                          <HoveredLink href="/account/profile">Account</HoveredLink>
+                                          <div onClick={handleLogout}>
+                                              <HoveredLink href="/auth/login">Logout</HoveredLink>
+                                          </div>
+                                      </>
+                                  ) : (
+                                      <HoveredLink href="/auth/register">Register</HoveredLink>
+                                  )}
+                              </div>
+                          </MenuItem>
+                      </>
+                  ) : (
+                      <>
+                          <Link href="/auth/register" legacyBehavior>
+                              <div
+                                  className="text-md text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer">
+                                  Sign Up
+                              </div>
+                          </Link>
 
-                      <div className="flex flex-col space-y-4 text-sm ">
-                          <HoveredLink href="/account/profile">Account</HoveredLink>
-                          <HoveredLink href="/auth/login">Login</HoveredLink>
-                          <HoveredLink href="/auth/register">Register</HoveredLink>
-                      </div>
-                  </MenuItem>
+                          <Link href="/auth/login" legacyBehavior>
+                              <div className="text-md text-white hover:scale-110 hover:opacity-50 transition-all cursor-pointer">
+                                  Login
+                              </div>
+                          </Link>
+                      </>
+                  )}
 
                   <MenuItem
                       setActive={setActive}

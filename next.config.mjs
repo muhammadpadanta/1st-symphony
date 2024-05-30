@@ -19,6 +19,7 @@ const nextConfig = {
       { hostname: 's12.gifyu.com' },
       { hostname: 'daisyui.com' },
       { hostname: 'avatars.githubusercontent.com' },
+      { hostname: 'localhost' },
     ],
   },
   // Merge withVideos and withFonts configuration

@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
@@ -7,13 +8,23 @@ import '../../../styles/twclass.css'
 import InputField from "@/components/inputfield";
 import Button from "@/components/btn";
 import PasswordField from "@/components/inputfieldpw";
+import UserContext from '../../UserContext';
+
 
 function Login() {
+    const context = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     let userInfoValue = localStorage.getItem("user-info");
 
-    const [showPassword, setShowPassword] = useState(false);
+    const setIsLoggedIn = context?.setIsLoggedIn;
+
+    if (!setIsLoggedIn) {
+        // Handle the case where setIsLoggedIn is undefined
+        // For example, you might want to return null from the component
+        return null;
+    }
 
     const togglePasswordVisibility = () => {
         setShowPassword(showPassword => !showPassword);
@@ -50,14 +61,11 @@ function Login() {
             if (Array.isArray(result) && result.includes("error")) {
                 // Handle wrong credentials
                 alert("Password atau Username Salah");
-            } else if (typeof result === "object" && result.id) {
+            } else if (typeof result === "object" && result.username) {
                 // Handle correct credentials
                 localStorage.setItem("user-info", JSON.stringify(result));
-                window.location.replace("/shop");
-
-            } else if (typeof result === "object" && result.role) {
-                localStorage.setItem("user-info", JSON.stringify(result));
-                window.location.replace("/admin");
+                setIsLoggedIn!(true);
+                window.location.replace("/");
 
 
             } else {
@@ -169,6 +177,8 @@ function Login() {
                                     label="Username"
                                     initialX={-60}
                                     delay={1.5}
+                                    value={username}
+                                    onChange={e => setUsername(e.target.value)}
                                 />
 
                                 <PasswordField
@@ -179,6 +189,7 @@ function Login() {
                                     initialX={-80}
                                     delay={1.5}
                                     togglePasswordVisibility={togglePasswordVisibility}
+
                                 />
 
                                 <motion.div

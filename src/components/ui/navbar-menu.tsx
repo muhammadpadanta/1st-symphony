@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { AnimatePresence } from 'framer-motion';
 
+interface HoveredLinkProps {
+    href: string;
+    children: React.ReactNode;
+}
+
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -87,13 +92,11 @@ export const Menu = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
-  return (
-    <Link
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
-    >
-      {children}
-    </Link>
+
+export const HoveredLink: React.FC<HoveredLinkProps> = ({ href, children }) => {
+    return (
+        <Link href={href} legacyBehavior>
+            <a className="text-neutral-700 dark:text-neutral-200 hover:text-black ">{children}</a>
+        </Link>
   );
 };

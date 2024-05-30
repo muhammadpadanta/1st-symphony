@@ -4,6 +4,8 @@
 
 }
 
+
+
 .heroHomeTitleSpan1 {
     @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 xs:text-[1rem] xl:text-[2rem] 2xl:text-[3rem] drop-shadow-xl;
 }

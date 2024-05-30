@@ -9,11 +9,14 @@ interface InputFieldProps {
     placeholder: string;
     initialX: number;
     delay: number;
+    value: string; // Add this line
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    required?: boolean;
 }
 
-const InputField: React.FC<InputFieldProps> = ({ label, type, placeholder, initialX, delay }) => {
+const InputField: React.FC<InputFieldProps> = ({ label, type, placeholder, initialX, delay, value, onChange, required }) => {
     return (
-        <div className="mb-4">
+        <div className="">
             <motion.div
                 initial={{
                     x: initialX,
@@ -54,6 +57,9 @@ const InputField: React.FC<InputFieldProps> = ({ label, type, placeholder, initi
                     type={type}
                     className="inputBox"
                     placeholder={placeholder}
+                    value={value} // Use the value prop here
+                    onChange={onChange} // Use the onChange prop here
+                    required={required}
                 />
             </motion.div>
         </div>

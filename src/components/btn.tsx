@@ -6,13 +6,14 @@ interface ButtonProps {
     className: string;
     children: React.ReactNode;
     href?: string;
+    disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ type, className, children, href }) => {
+const Button: React.FC<ButtonProps> = ({ type, disabled, className, children, href }) => {
     if (href) {
         return (
             <Link href={href}>
-                <button type={type} className={className}>
+                <button type={type} className={className} >
                     {children}
                 </button>
             </Link>
@@ -20,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({ type, className, children, href }) => {
     }
 
     return (
-        <button type={type} className={className}>
+        <button type={type} className={className} disabled={disabled}>
             {children}
         </button>
     );

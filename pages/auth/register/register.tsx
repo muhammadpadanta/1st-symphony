@@ -9,11 +9,13 @@ import InputField from "@/components/inputfield";
 import Checkbox from "@/components/checkbox";
 
 function Register() {
-    const [username, setName] = useState("");
+    const [gender, setGender] = useState("");
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const [name, setName] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [usernameError, setUsernameError] = useState("");
 
     const togglePasswordVisibility = () => {
         setShowPassword(showPassword => !showPassword);
@@ -32,7 +34,7 @@ function Register() {
             return;
         }
 
-        let item = { username, email, password };
+        let item = { name, username, email, password };
         let result = await fetch("http://localhost:8000/api/register", {
             method: "POST",
             body: JSON.stringify(item),
@@ -41,7 +43,7 @@ function Register() {
                 Accept: "application/json",
             },
         });
-        window.location.replace("/login");
+        window.location.replace("/auth/login");
     }
 
     return (
@@ -84,7 +86,20 @@ function Register() {
                         </h2>
                     </motion.div>
                     <hr/>
-                    <form onSubmit={signUp} className="mt-5">
+                    <form onSubmit={signUp} className="mt-5 space-y-2">
+
+                        <InputField
+                            label="Full Name"
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Please Enter Your Full Name"
+                            initialX={-80}
+                            delay={1.5}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required={true}
+                        />
 
                         <InputField
                             label="Username"
@@ -94,16 +109,31 @@ function Register() {
                             placeholder="Choose Your Username"
                             initialX={-80}
                             delay={1.5}
+                            required={true}
+                            value={username}
+                            onChange={(e) => {
+                                const username = e.target.value;
+                                if (username.includes(' ')) {
+                                    setUsernameError("Usernames can't use space");
+                                } else {
+                                    setUsernameError("");
+                                }
+                                setUsername(username);
+                            }}
                         />
+                        {usernameError && <div style={{color: 'red'}}>{usernameError}</div>}
 
                         <InputField
                             label="Email"
                             id="email"
-                            name="username"
+                            name="email"
                             type="email"
                             placeholder="Enter Your Valid E-mail address"
                             initialX={-80}
                             delay={1.5}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required={true}
                         />
 
                         <PasswordField
@@ -114,7 +144,26 @@ function Register() {
                             initialX={-80}
                             delay={1.5}
                             togglePasswordVisibility={togglePasswordVisibility}
+                            required={true}
                         />
+
+                        <div className="mb-4">
+                            <label
+                                className="block mb-2 text-l font-bold text-slate-200 ">Gender:</label>
+                            <select
+                                id="gender"
+                                name="gender"
+                                value={gender}
+                                required={true}
+                                onChange={(e) => setGender(e.target.value)}
+                                className="inputBox"
+                            >
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+
+                        </div>
 
                         <Checkbox
                             id="cek"
@@ -122,6 +171,7 @@ function Register() {
                             label="I Agree to the Terms & Conditions of 1st Symphony."
                             initialX={-80}
                             delay={1.6}
+
                         />
 
                         <motion.div
@@ -143,7 +193,7 @@ function Register() {
                                 Back
                             </Button>
 
-                            <Button type="submit" className="btnPrimary">
+                            <Button type="submit" className="btnPrimary" disabled={!!usernameError}>
                                 Register
                             </Button>
                         </motion.div>

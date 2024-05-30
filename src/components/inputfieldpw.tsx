@@ -10,18 +10,17 @@ interface PasswordFieldProps {
     initialX: number;
     delay: number;
     togglePasswordVisibility: () => void;
+    required?: boolean; // Add this line
 }
-
-const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, placeholder, initialX, delay, togglePasswordVisibility }) => {
+const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, placeholder, initialX, delay, togglePasswordVisibility, required }) => {
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleTogglePasswordVisibility = () => {
         togglePasswordVisibility();
-        setShowPassword(!showPassword);
+        setShowPassword(prevState => !prevState);
     };
 
     return (
-
         <div className="mb-4 relative">
             <motion.div
                 initial={{
@@ -38,13 +37,11 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, p
                     delay: delay,
                 }}
             >
-                <label
-
-                    className="block text-white mb-2 text-md "
-                >
+                <label className="block text-white mb-2 text-md">
                     {label}
                 </label>
             </motion.div>
+
             <motion.div
                 initial={{
                     x: initialX,
@@ -66,13 +63,14 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, p
                     onChange={(e) => setValue(e.target.value)}
                     className="inputBox"
                     placeholder={placeholder}
+                    required={required}
                 />
+
                 <motion.div
                     initial={{
                         opacity: 0,
                     }}
                     animate={{
-
                         opacity: 1,
                     }}
                     transition={{
@@ -88,11 +86,9 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, p
                         {showPassword ? <FiEyeOff className="text-white"/> : <FiEye className="text-white"/>}
                     </div>
                 </motion.div>
-                </motion.div>
+            </motion.div>
         </div>
-
-)
-;
+    );
 }
 
 export default PasswordField;
