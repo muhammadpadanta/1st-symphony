@@ -36,6 +36,8 @@ const UpcomingSlider = () => {
                         className="text-[16px] max-w-[400px] text-gray-200 md:text-gray-100">
                         Get ready for an unforgettable night of music with our upcoming concert series! Featuring a lineup of top artists spanning various genres, this event promises non-stop entertainment and good vibes. From rock to pop, indie to EDM, theres something for everyone. Dont miss out – grab your tickets now and secure your spot for a night to remember! 🎶🎟️
                     </p>
+
+                    <button className="btn btn-primary mx-auto"> Check All Ticket</button>
                 </h1>
             </div>
             <div className="w-[70%] md:w-[40%]">

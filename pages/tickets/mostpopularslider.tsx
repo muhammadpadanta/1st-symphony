@@ -118,6 +118,7 @@ const MostPopularSlider = () => {
                         place to be for music lovers everywhere. Dont miss your chance to be part of history – grab
                         your tickets now before theyre gone! 🎤🎸🎉
                     </p>
+                    <button className="btn btn-primary mx-auto"> Check All Ticket</button>
                 </h1>
             </div>
 

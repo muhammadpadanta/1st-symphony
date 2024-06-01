@@ -61,10 +61,11 @@ const ActiveSlider = () => {
                 className="artistcardlistContainerWidth"
             >
                 {artistData.map((item, index) => (
-                    <SwiperSlide key={index} >
-                        <Link href="/ticketlists" >
+                    <SwiperSlide key={index}>
+                        <Link href="/ticketlists">
                             <div className="group artistcardlistCardShaper">
-                                <div className="artistcardlistCardBg" style={{backgroundImage: `url(${item.backgroundImage})`}}/>
+                                <div className="artistcardlistCardBg"
+                                     style={{backgroundImage: `url(${item.backgroundImage})`}}/>
                                 <div className="artistcardlistCardCover"/>
                                 <div className="artistcardlistCardTextContainer">
                                     <div className="artistcardlistCardIconContainer">
@@ -76,14 +77,14 @@ const ActiveSlider = () => {
                                 <RxArrowTopRight
                                     className="artistcardlistIcon"/>
                             </div>
+
                         </Link>
                     </SwiperSlide>
+
                 ))}
+
             </Swiper>
-
-
-
-
+            <button className="btn btn-primary mx-auto"> Check All Artist</button>
 
 
             {/*modal*/}
@@ -132,7 +133,7 @@ const ActiveSlider = () => {
                                     width={1920}
                                     height={1080}
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    style={{filter: "drop-shadow(12px 12px 4px rgba(0, 0, 0, 0.6)) brightness(10) saturate(0)", }}
+                                    style={{filter: "drop-shadow(12px 12px 4px rgba(0, 0, 0, 0.6)) brightness(10) saturate(0)",}}
                                 />
                             </div>
 

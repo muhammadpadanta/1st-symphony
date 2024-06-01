@@ -473,17 +473,7 @@
 }
 /*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/
 
-.swipercon {
-    transform: scaleX(-1);
-}
 
-.swiperslid {
-        transform: scaleX(-1);
-}
-
-.mostPopularSlider img, .mostPopularSlider .absolute {
-    transform: scaleX(-1);
-}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -494,4 +484,8 @@
 
 .animate-modal-after-open {
     transform: scale(1);
+}
+
+.transparent-navbar {
+    background-color: transparent;
 }

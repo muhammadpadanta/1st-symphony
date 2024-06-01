@@ -16,6 +16,7 @@ function Register() {
     const [name, setName] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [usernameError, setUsernameError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
 
     const togglePasswordVisibility = () => {
         setShowPassword(showPassword => !showPassword);
@@ -23,18 +24,7 @@ function Register() {
     async function signUp(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        if (!(document.getElementById("cek") as HTMLInputElement).checked) {
-            alert("Please check the checkbox First!");
-            return;
-        }
-
-        if (!username || !email || !password) {
-
-            alert("All Required information must be filled!");
-            return;
-        }
-
-        let item = { name, username, email, password };
+        let item = { name, username, email, password, gender };
         let result = await fetch("http://localhost:8000/api/register", {
             method: "POST",
             body: JSON.stringify(item),
@@ -139,13 +129,18 @@ function Register() {
                         <PasswordField
                             label="Password"
                             value={password}
-                            setValue={setPassword}
+                            setValue={(value) => {
+                                setPassword(value);
+                                setPasswordError(value.length < 8 ? "Minimal of 8 characters" : "");
+                            }}
                             placeholder="Enter Your password."
                             initialX={-80}
                             delay={1.5}
                             togglePasswordVisibility={togglePasswordVisibility}
                             required={true}
                         />
+
+                        {passwordError && <div style={{color: 'red'}}>{passwordError}</div>}
 
                         <div className="mb-4">
                             <label
@@ -189,11 +184,11 @@ function Register() {
                                 delay: 1.6,
                             }}
                         >
-                            <Button type="submit" className="btnBack" href="/">
+                            <Button className="btnBack" href="/">
                                 Back
                             </Button>
 
-                            <Button type="submit" className="btnPrimary" disabled={!!usernameError}>
+                            <Button type="submit" className="btnPrimary" disabled={!!usernameError || !!passwordError}>
                                 Register
                             </Button>
                         </motion.div>

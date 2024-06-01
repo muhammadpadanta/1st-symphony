@@ -133,7 +133,7 @@ export function UpdateUser() {
             const result = await fetch(`http://localhost:8000/api/updateuser/${id}?_method=PUT`, {
                 method: "POST",
                 body: formData,
-            });
+            } as RequestInit);
 
             if (result.ok) {
                 alert("Updated Successfully!")
@@ -180,7 +180,6 @@ export function UpdateUser() {
                                 defaultValue={userData.username}
                                 onChange={handleInputChange}
                                 className="shadow appearance-none  bg-transparent border border-gray-400 text-xl rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                                pattern=".{1,15}"
                                 type="text"
                                 placeholder="Enter New Username"
                                 required

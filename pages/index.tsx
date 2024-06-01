@@ -25,7 +25,7 @@ export default function Home() {
 
 
   return (
-          <Layout>
+          <Layout >
               <HeroHome />
               <HomeParallaxEffect/>
               <FaqMenu />

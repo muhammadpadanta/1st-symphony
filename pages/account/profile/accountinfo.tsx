@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Image from "next/image";
 import Button from "@/components/btn";
 import '../../../styles/twclass.css'
-import defaultImage from "../../../public/images/artistList1.webp";
 
 function getUserIdFromLocalStorage() {
     // Get the 'user-info' item from local storage
@@ -40,9 +39,6 @@ export default function Profile() {
         pfp_path: "",
     });
 
-    const [image, setImage] = useState(null); // To store the selected image
-    const [imagePreview, setImagePreview] = useState(""); // To display the preview of the selected image
-    const [formData, setFormData] = useState(new FormData()); // To handle form data
 
     useEffect(() => {
         const fetchData = async () => {
@@ -145,7 +141,6 @@ export default function Profile() {
                                 name="phone"
                                 defaultValue={userData.phone !== null && userData.phone !== undefined ? userData.phone : "Empty"}
                                 className="shadow appearance-none  bg-transparent  text-xl rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                                pattern=".{1,15}"
                                 type="text"
                                 placeholder="Enter New Phone Number"
                                 readOnly
@@ -212,7 +207,6 @@ export default function Profile() {
                                 <Image
                                     width={500}
                                     height={500}
-                                    // src={imagePreview}
                                     src={userData.pfp_path ? `http://localhost:8000/${userData.pfp_path}` : `/images/defaultAvatar.webp`}
                                     alt="Preview"
                                     className="mt-4 rounded-lg shadow-md  mx-auto  hover:scale-105 transition-all"
