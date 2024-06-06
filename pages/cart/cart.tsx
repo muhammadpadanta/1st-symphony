@@ -1,6 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
-function ShoppingCart({ items, onRemove, onQuantityChange }) {
+import Image from 'next/image';
+
+interface Item {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+}
+
+interface ShoppingCartProps {
+    items: Item[];
+    onRemove: (id: string) => void;
+    onQuantityChange: (id: string, quantity: number) => void;
+}
+
+function ShoppingCart({ items, onRemove, onQuantityChange }: ShoppingCartProps) {
     const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     return (
@@ -14,8 +29,13 @@ function ShoppingCart({ items, onRemove, onQuantityChange }) {
                             <div key={item.id} className="flex justify-between items-center mb-4 p-4 border-b bg-gray-800 rounded-xl">
                                 {/* Image Container */}
                                 <div className="w-16 h-16 bg-gray-200 mr-4 flex-shrink-0 rounded-xl bg-white">
-                                    <img src="/images/artistList1.webp" alt={item.name}
-                                         className="w-full h-full object-cover rounded" />
+                                    <Image
+                                        src="/images/artistList1.webp"
+                                        alt={item.name}
+                                        width={64} // specify the width
+                                        height={64} // specify the height
+                                        className="object-cover rounded"
+                                    />
                                 </div>
                                 <div>
                                     <h3 className="text-xl">{item.name}</h3>

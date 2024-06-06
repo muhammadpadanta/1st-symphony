@@ -4,28 +4,7 @@ import Image from "next/image";
 import Button from "@/components/btn";
 import '../../../styles/twclass.css'
 
-function getUserIdFromLocalStorage() {
-    // Get the 'user-info' item from local storage
-    const userInfo = localStorage.getItem('user-info');
-
-    // Check if the 'user-info' item exists
-    if (userInfo) {
-        // Parse the 'user-info' item as JSON to convert it back into an object
-        const parsedUserInfo = JSON.parse(userInfo);
-
-        // Return the 'id' property of the object
-        return parsedUserInfo.id;
-    }
-
-    // If the 'user-info' item does not exist, return null
-    return null;
-}
-
-
 export default function Profile() {
-
-    const id=  getUserIdFromLocalStorage()
-    console.log("Item ID:", id);
 
     const [userData, setUserData] = useState({
         name: "",
@@ -39,22 +18,19 @@ export default function Profile() {
         pfp_path: "",
     });
 
-
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`http://localhost:8000/api/cariuser/${id}`);
-                const data = await response.json();
-                setUserData(data);
-                // setImagePreview(`http://localhost:8000/${data.file_path}`);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                // Handle error as needed
-            }
-        };
+        const token = localStorage.getItem('token');
+        if (token) {
+            fetch('http://localhost:8000/api/me', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => setUserData(data));
+        }
+    }, []);
 
-        fetchData();
-    }, [id]);
 
 
     return (

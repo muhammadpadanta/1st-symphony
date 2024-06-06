@@ -21,7 +21,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, setValue, p
     };
 
     return (
-        <div className="mb-4 relative">
+        <div className="relative">
             <motion.div
                 initial={{
                     x: initialX,

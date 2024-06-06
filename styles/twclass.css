@@ -7,15 +7,15 @@
 
 
 .heroHomeTitleSpan1 {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 xs:text-[1rem] xl:text-[2rem] 2xl:text-[3rem] drop-shadow-xl;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 xs:text-[1rem] xl:text-[3rem] 2xl:text-[4rem] drop-shadow-xl ;
 }
 
 .heroHomeTitleSpan2 {
-    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent xs:text-[1rem] xl:text-[2rem]  2xl:text-[3rem] drop-shadow-xl;
+    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent xs:text-[1rem] xl:text-[3rem]  2xl:text-[4rem] drop-shadow-xl ;
 }
 
 .itemContainer {
-    @apply w-full p-4 absolute 2xl:top-48 xs:top-20 xl:top-32;
+    @apply w-full p-4 absolute 2xl:top-48 xs:top-20 xl:top-32 ;
 }
 
 .videoContainer {
@@ -23,49 +23,31 @@
 }
 
 .imageSliderContainer {
-    @apply flex xs:flex-col lg:flex-row justify-center items-center space-y-5 px-16;
+    @apply flex xs:flex-col lg:flex-row justify-center items-center space-y-5 px-16 xl:ml-20 xl:pl-20 2xl:pl-24 2xl:ml-24 ;
 }
 
 .typewriterContainer {
-    @apply w-full flex flex-col justify-center items-center;
+    @apply w-full flex flex-col justify-center items-center ;
 }
 
 .heroText1 {
-    @apply text-neutral-500 dark:text-neutral-200 text-xs lg:text-base text-center
+    @apply text-neutral-500 dark:text-neutral-200 text-lg text-center
 }
 .btnContainer {
-    @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:bg-[#0a0a0a] hover:text-yellow-300 transition-all text-xl shadow-xl
+    @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:text-[#8BC34A] transition-all text-xl shadow-xl
 }
 
-.faqContainer {
-    @apply w-[80vw] mx-auto flex flex-col mb-10 justify-center items-center space-y-5 2xl:h-screen ;
-}
 
-.faqItemsContainer {
-    @apply flex flex-col sm:flex-row justify-between space-y-5 space-x-5;
-}
 
-.faqTitle {
-    @apply xl:text-7xl  2xl:text-7xl mb-5 text-red-400 xs:text-2xl;
 
-}
 
-.faqItem {
-    @apply flex flex-col items-start space-y-2 w-full sm:w-1/3;
 
-}
 
-.faqItem:first-child {
-    @apply mt-5; /* Remove top margin from the first FAQ */
-}
 
-.faqItemTitle {
-    @apply  text-3xl text-white ;
-}
 
-.faqItemContent {
-    @apply  text-gray-300 text-xl;
-}
+
+
+
 
 /*~~~~~~~~~~~~~~~~hero~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -174,7 +156,7 @@
 }
 
 .leftContainer {
-    @apply text-5xl font-semibold rounded-tl-xl rounded-bl-xl text-center bg-gray-500 p-10 backdrop-blur-sm bg-opacity-50 shadow-md text-white transition-all
+    @apply text-5xl font-semibold rounded-tl-xl rounded-bl-xl text-center bg-gray-800 p-10 backdrop-blur-sm bg-opacity-80 shadow-md text-white transition-all
 }
 
 .rightContainer {
@@ -186,7 +168,7 @@
 }
 
 .rightTitle {
-    @apply text-2xl font-semibold mb-6 italic text-center mt-5  text-white;
+    @apply text-2xl font-semibold mb-6 italic text-center mt-5  text-[#FFC107];
 }
 
 .leftImage {
@@ -198,10 +180,10 @@
 }
 
 .btnPrimary {
-    @apply w-1/2 bg-gray-800 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-950 mt-10 transition-all;
+    @apply w-1/2 bg-green-800  backdrop-blur-sm text-white p-2 rounded hover:bg-green-900 mt-10 transition-all w-full;
 }
 .btnBack{
-    @apply w-1/2 bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:bg-gray-600 mt-10 transition-all;
+    @apply w-1/2 bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:opacity-80 mt-10 transition-all;
 }
 
 .bottomText1 {
@@ -209,7 +191,7 @@
 }
 
 .bottomText2 {
-    @apply text-red-400 hover:scale-105 hover:underline ml-1 hover:animate-pulse transition-all;
+    @apply text-[#FFC107] hover:opacity-80 hover:underline ml-1 hover:animate-pulse transition-all;
 }
 /*~~~~~~~~~~~~~~~~~Login~~~~~~~~~~~~~~~~~~~~*/
 
@@ -220,7 +202,7 @@
 }
 
 .registerContainer {
-    @apply p-8 rounded w-[40vw] bg-[#2e3239] bg-opacity-50 backdrop-blur-sm z-10 ;
+    @apply p-8 rounded xl:w-[60vw] 2xl:w-[50vw] bg-[#2e3239] bg-opacity-50 backdrop-blur-sm z-10;
 }
 
 .h2RegisterTitle {
@@ -236,7 +218,7 @@
 }
 
 .registerbottomText2 {
-    @apply text-red-400 hover:underline ml-1 hover:animate-pulse transition-all;
+    @apply text-[#FFC107] hover:underline ml-1 hover:animate-pulse transition-all;
 }
 
 
@@ -286,7 +268,7 @@
 }
 
 .textContainer {
-    @apply lg:pr-8 lg:pt-4;
+    @apply lg:pr-8 lg:pt-4 ;
 }
 
 .textWrapper {
@@ -302,7 +284,7 @@
 }
 
 .ticketFeaturesLink {
-    @apply text-2xl font-semibold text-red-400 hover:scale-105 hover:rounded-sm hover:text-white transition-all cursor-pointer inline-block;
+    @apply text-2xl font-semibold hover:scale-105 hover:rounded-sm transition-all cursor-pointer inline-block;
 }
 
 .ticketImageContainer {
@@ -314,7 +296,7 @@
 }
 
 .featureWrapper {
-    @apply mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none;
+    @apply mt-10 max-w-xl space-y-8 text-base leading-7  lg:max-w-none;
 }
 
 /*~~~~~~~~~~~~~~~~~herotickets~~~~~~~~~~~~~~~~~~~~*/
@@ -328,7 +310,7 @@
 }
 
 .ticketAlbumsArtistName {
-    @apply text-2xl bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
+    @apply text-2xl text-[#8BC34A] flex justify-center items-center;
 }
 
 .ticketAlbumsScreenContainer {
@@ -344,7 +326,7 @@
 }
 
 .ticketAlbumsSongList {
-    @apply xl:h-[40vh] 2xl:h-full w-full overflow-auto p-10;
+    @apply h-full w-full p-10;
 }
 
 .ticketAlbumsSongName {
@@ -352,7 +334,7 @@
 }
 
 .ticketAlbumsSongIcon {
-    @apply flex items-center space-x-10 text-red-400 hover:scale-110 mr-10 hover:rounded-sm hover:text-white transition-all cursor-pointer;
+    @apply flex items-center space-x-10 text-[#FFC107] hover:scale-110 mr-10 hover:rounded-sm hover:brightness-110 transition-all cursor-pointer;
 }
 
 .ticketAlbumsSongDuration {
@@ -360,11 +342,11 @@
 }
 
 .ticketAlbumsSongWrapper {
-    @apply mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none;
+    @apply  max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none;
 }
 
 .ticketAlbumsIconHoverEffect {
-    @apply flex items-center space-x-10 text-red-400 hover:rounded-sm hover:text-white transition-all cursor-pointer;
+    @apply flex items-center space-x-10 text-[#FFC107]  hover:rounded-sm hover:brightness-110 transition-all cursor-pointer;
 }
 
 
@@ -375,15 +357,15 @@
 /* styles/twclass.css */
 
 .ticketArtistScreen {
-    @apply 2xl:h-screen pb-24;
+    @apply h-screen pb-24 xl:mt-24 xl:pt-24 2xl:pt-0 2xl:mt-0;
 }
 
 .ticketArtistTitle {
-    @apply text-4xl  flex justify-center items-center bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent;
+    @apply text-4xl flex justify-center items-center text-white;
 }
 
 .ticketArtistSubtitle {
-    @apply text-2xl pb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent flex justify-center items-center;
+    @apply text-2xl pb-5 text-[#8BC34A] flex justify-center items-center;
 }
 
 .ticketArtistMainContainer {
@@ -391,11 +373,11 @@
 }
 
 .ticketArtistCardContainer {
-    @apply w-[80vw] 2xl:w-[60vw] p-12 bg-[#0a0a0a] bg-opacity-80 backdrop-blur-md rounded-xl ;
+    @apply w-[80vw] 2xl:w-[60vw] p-12 rounded-xl ;
 }
 
 .ticketArtistContentContainer {
-    @apply w-full gap-x-8 gap-y-16 overflow-auto 2xl:h-full  xl:h-[40vh] px-5 ;
+    @apply w-full gap-x-8 gap-y-16 px-5 ;
 }
 
 .ticketArtistTextContainer {
@@ -424,9 +406,6 @@
 
 }
 
-.ticketArtistDetailsButton {
-    @apply btn text-white border-none mb-2 bg-[#2e3239] bg-opacity-60 backdrop-blur-lg;
-}
 
 /*~~~~~~~~~~~~~~~~~ticketartist~~~~~~~~~~~~~~~~~~~~*/
 
@@ -453,11 +432,11 @@
 }
 
 .artistcardlistArtistName {
-    @apply text-xl lg:text-2xl group-hover:text-red-400 transition-all;
+    @apply text-xl lg:text-2xl group-hover:text-[#FFC107] transition-all;
 }
 
 .artistcardlistIcon {
-    @apply absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-blue-500 group-hover:rotate-45 duration-100;
+    @apply absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-[#8BC34A] group-hover:rotate-45 duration-100;
 }
 
 .artistcardlistCardIconContainer {
@@ -469,7 +448,7 @@
 }
 
 .artistcardlistCardShaper {
-    @apply flex hover:scale-105 mt-10 transition-all border-1 border-red-400 flex-col gap-6 mb-20 relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ;
+    @apply flex hover:scale-105 mt-10 transition-all border-2 border-[#8BC34A] flex-col gap-6 mb-20 relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ;
 }
 /*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/
 

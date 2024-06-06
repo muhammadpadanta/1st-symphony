@@ -135,7 +135,7 @@ export const ticketDetails = [
     },
     {
         name:'FEB 15',
-        id: '1',
+        id: '2',
         date: 'Wed | 09.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
@@ -146,7 +146,7 @@ export const ticketDetails = [
     },
     {
         name:'MAR 15',
-        id: '1',
+        id: '3',
         date: 'Tue | 06.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
@@ -157,7 +157,7 @@ export const ticketDetails = [
     },
     {
         name:'APR 5',
-        id: '1',
+        id: '4',
         date: 'Mon | 09.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
@@ -168,7 +168,7 @@ export const ticketDetails = [
     },
     {
         name:'MAY 3',
-        id: '1',
+        id: '5',
         date: 'Sun | 08.00 PM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
@@ -179,7 +179,7 @@ export const ticketDetails = [
     },
     {
         name:'JUN 25',
-        id: '1',
+        id: '6',
         date: 'Sat | 11.00 AM',
         price: 'Rp 200.000 - Rp 500.000',
         location: 'Jakarta, Indonesia. BSD City',
@@ -425,7 +425,7 @@ export const ticketFeatures = [
 export const textBlocks = [
     {
         text: "Find your Ticket Faster!",
-        className: "text-white font-semibold text-8xl w-[40rem]",
+        className: " font-semibold text-8xl w-[40rem] text-[#FFC107] ",
     },
 
 
@@ -481,7 +481,7 @@ export const asideParagraphs = [
 
 export const faqs = [
     {
-        question: "What is 1st Symphony exactly?",
+        question: "What does your website offer and how does it works?",
         answer:
             'we make getting tickets to your favorite concerts easy. Browse our curated selection of live music events, choose your seats, and book with confidence.',
     },
@@ -489,15 +489,19 @@ export const faqs = [
     { question: "How To receive my tickets after purchasing them?",
         answer: "After you complete your ticket purchase on our website, you will receive a confirmation email with details about your order. Your concert tickets will be delivered to you electronically via email." },
 
-    { question: "Can I cancel or exchange my concert tickets after purchasing them?",
+    { question: "Can I cancel my concert tickets after purchasing them?",
         answer: "Unfortunately, we are unable to offer cancellations or exchanges for concert tickets once they have been purchased." },
 
-    { question: "Are there any age restrictions for attending concerts listed on your website?",
+    { question: "age restrictions for concerts listed on your website?",
         answer: "Age restrictions for concerts vary depending on the event and venue. Some concerts may be open to all ages, while others may have age restrictions imposed by the artist or venue." },
 
     { question: "How do I know if my concert tickets are authentic?",
-        answer: "We take the authenticity of concert tickets very seriously. When you purchase tickets through our website, you can rest assured that you are buying genuine tickets directly from authorized sellers or official ticketing partners." },
+        answer: "When you purchase tickets through our website, you can rest assured that you are buying genuine tickets directly from authorized sellers." },
 
+    {
+        question: "What payment methods do you accept?",
+        answer: "We accept a variety of payment methods including credit/debit cards, PayPal, and other secure payment options to ensure your transaction is safe and convenient."
+    },
 ];
 
 // ---------------------------------

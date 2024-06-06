@@ -32,7 +32,7 @@ export function ButtonBorder({
     return (
         <Component
             className={cn(
-                "bg-transparent relative text-xl hover:scale-110 transition-all h-16 w-40 p-[1px] overflow-hidden ",
+                "relative scale-110 transition-all h-16 w-40 p-[1px] overflow-hidden ",
                 containerClassName
                 )}
             style={{
@@ -41,13 +41,13 @@ export function ButtonBorder({
             {...otherProps}
             >
             <div
-                className="absolute inset-0"
+                className="absolute inset-0 "
                 style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
                 >
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-200)_40%,transparent_100%)]",
+                            "h-20 w-20 bg-[radial-gradient(var(--yellow-200)_40%,transparent_100%)]",
                             borderClassName
                             )}
                     />
@@ -56,7 +56,7 @@ export function ButtonBorder({
 
             <div
                 className={cn(
-                    "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+                    "relative bg-white border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm ",
                     className
                     )}
                 style={{

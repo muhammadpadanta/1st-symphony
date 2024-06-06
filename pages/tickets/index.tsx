@@ -31,7 +31,10 @@ const TicketsPage = () => {
         <Herotickets />
         <ActiveSlider/>
         <UpcomingSlider/>
-        <MostPopularSlider/>
+        <div className="mt-20">
+            <MostPopularSlider/>
+        </div>
+
     </Layout>
 
 

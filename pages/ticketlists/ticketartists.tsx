@@ -10,10 +10,68 @@ import {
     MapPinIcon,
 } from "@heroicons/react/20/solid";
 
+interface Details {
+    name: string;
+    icon1: React.ReactNode;
+    location: string;
+    icon2: React.ReactNode;
+    date: string;
+    icon3: React.ReactNode;
+    price: string;
+    id: string;
+}
 
+interface TicketDetailsItemProps {
+    details: Details;
+    onButtonClick: () => void;
+}
+
+const TicketDetailsItem: React.FC<TicketDetailsItemProps> = ({ details, onButtonClick }) => {
+    const { name, icon1, location, icon2, date, icon3, price } = details;
+
+    return (
+        <div style={{filter: "drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.8))"}}>
+            <div
+                 className="ticketArtistDetailsItem bg-gray-800 hover:bg-green-900 p-3 rounded-full transition-all border border-1">
+                <dt
+
+                    className="inline ">
+                    <div className="ticketArtistDetailsTitle">
+                        <div className="flex items-center">
+                            <CalendarDaysIcon className="ticketArtistDetailsIcon"/>
+                            <span className="w-[1rem] text-center flex">{name}</span>
+                        </div>
+                        <div className="ticketArtistDetailsText">
+                            <div className="text-red-400">{icon1}</div>
+                            {location}
+                        </div>
+                        <div className="flex items-center space-x-10 ">
+                            <div className="ticketArtistDetailsText">
+                                <div className="text-red-400">{icon2}</div>
+                                {date}
+                            </div>
+                            <div className="ticketArtistDetailsText">
+                                <div className="text-red-400">{icon3}</div>
+                                {price}
+                            </div>
+
+
+                                <button
+                                    style={{filter: "drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8))"}}
+                                    className="flex items-center space-x-10  cursor-pointer btn bg-gray-800 hover:bg-green-800 text-white border-none mb-2 " onClick={onButtonClick}>Get Ticket
+                                </button>
+
+                        </div>
+                    </div>
+                </dt>
+                <dd className="block text-white"></dd>
+            </div>
+        </div>
+
+    );
+};
 
 export default function TicketArtist() {
-
     const [counter, setCounter] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const handleButtonClick = () => {
@@ -24,12 +82,10 @@ export default function TicketArtist() {
         setShowModal(false);
     };
 
-
-
     const ticketCategories = [
-        { id: 'option2', name: 'Regular', price: 200000, stock: 100 },
-        { id: 'option3', name: 'Vip I', price: 300000, stock: 80 },
-        { id: 'option4', name: 'Vip II', price: 500000, stock: 50 },
+        {id: 'option2', name: 'Regular', price: 200000, stock: 100},
+        {id: 'option3', name: 'Vip I', price: 300000, stock: 80},
+        {id: 'option4', name: 'Vip II', price: 500000, stock: 50},
     ];
 
     const [selectedCategory, setSelectedCategory] = useState(ticketCategories[0]);
@@ -60,69 +116,20 @@ export default function TicketArtist() {
     };
 
     return (
-        <div className="svgwave ticketArtistScreen">
-            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center items-center text-white">
+        <div className="svgwave ticketArtistScreen ">
+        <p className="font-semibold 2xl:text-8xl xl:text-6xl flex justify-center items-center text-[#FFC107]">
                 Get your Ticket Now
             </p>
-            <div className="ticketArtistMainContainer ">
-                <div className="ticketArtistCardContainer "
-                     style={{filter: "drop-shadow(2px 2px 5px rgba(180, 180, 180, 0.7))"}}
-                >
-                    <p style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.6))"}}
-                       className="ticketArtistTitle ">Available
-                        Tickets</p>
-                    <p style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
-                       className="ticketArtistSubtitle">(Artist:
-                        Tulus)</p>
-                    <div className="ticketArtistContentContainer" style={{maxHeight: '30rem'}}>
-                        <div className="ticketArtistTextContainer">
-
-                            <div className="ticketArtistDetailsContainer">
-
-                                <dl className="space-y-8 text-base leading-7 text-gray-600 lg:max-w-none gap-4">
-                                    {ticketDetails.map((ticketDetails) => (
-                                        <div key={ticketDetails.name} className="ticketArtistDetailsItem">
-                                            <dt className="inline ">
-                                                <div className="ticketArtistDetailsTitle">
-                                                    <div className="flex items-center">
-                                                        <CalendarDaysIcon className="ticketArtistDetailsIcon"/>
-                                                        <span className="w-[1rem] text-center flex">
-                                                    {ticketDetails.name}
-                                                </span>
-                                                    </div>
-                                                    <div>
-                                                        <div className="ticketArtistDetailsText">
-                                                            <div className="text-red-400">
-                                                                {ticketDetails.icon1}
-                                                            </div>
-                                                            {ticketDetails.location}
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex items-center space-x-10 ">
-                                                        <div className="ticketArtistDetailsText">
-                                                            <div className="text-red-400">
-                                                                {ticketDetails.icon2}
-                                                            </div>
-                                                            {ticketDetails.date}
-                                                        </div>
-                                                        <div className="ticketArtistDetailsText">
-                                                            <div className="text-red-400">
-                                                                {ticketDetails.icon3}
-                                                            </div>
-                                                            {ticketDetails.price}
-                                                        </div>
-                                                        <div
-                                                            className="flex items-center space-x-10 hover:scale-105 hover:opacity-80 hover:rounded-sm hover:text-white transition-all cursor-pointer">
-                                                            <button className="ticketArtistDetailsButton" onClick={handleButtonClick}>Get Ticket
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </dt>
-                                            {' '}
-                                            <dd className="block text-white"></dd>
-                                            <hr className="w-full border-t border-red-400 "/>
-                                        </div>
+            <div className="ticketArtistMainContainer">
+                <div className="ticketArtistCardContainer">
+                    <p className="ticketArtistTitle">Available Tickets</p>
+                    <p className="ticketArtistSubtitle">(Artist: Tulus)</p>
+                    <div className="ticketArtistContentContainer ">
+                        <div className="ticketArtistTextContainer ">
+                            <div className="ticketArtistDetailsContainer ">
+                                <dl className="space-y-8 text-base leading-7 text-gray-600 lg:max-w-none gap-4 ">
+                                    {ticketDetails.map((details) => (
+                                        <TicketDetailsItem key={details.id} details={details} onButtonClick={handleButtonClick} />
                                     ))}
                                 </dl>
                             </div>
@@ -130,8 +137,6 @@ export default function TicketArtist() {
                     </div>
                 </div>
             </div>
-
-            {/*modal*/}
             <Modal
                 isOpen={showModal}
                 onRequestClose={handleCloseModal}
@@ -247,10 +252,7 @@ export default function TicketArtist() {
                     </div>
                 </div>
             </Modal>
-
-
         </div>
-    )
 
-
+    );
 }

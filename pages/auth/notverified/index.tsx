@@ -1,11 +1,8 @@
 import React from 'react';
-import TicketAlbums from "./ticketalbums";
-import TicketArtist from "./ticketartists";
+import EmailVerificationSent from "./notverified";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-import Layout from "@/components/layout";
-
-const TicketListPage = () => {
+const NotVerifiedPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -21,12 +18,11 @@ const TicketListPage = () => {
         return <Loading />;
     }
 
+
+
     return (
-        <Layout>
-            <TicketAlbums/>
-            <TicketArtist />
-        </Layout>
+        <EmailVerificationSent/>
     );
 };
 
-export default TicketListPage;
+export default NotVerifiedPage;

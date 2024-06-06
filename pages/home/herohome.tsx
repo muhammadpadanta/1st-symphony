@@ -53,25 +53,29 @@ export default function HeroHome() {
 
 
                     <div className="typewriterContainer">
-                        <div className="z-10">
+                        <div className="z-10 text-center">
                             <p className="heroText1">
                                 The road to freedom starts from here
                             </p>
                             <div
                                 style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                                 className="pb-10 pt-5 ">
-                                <span
-
-                                    className="heroHomeTitleSpan1">
-                                We are ready to <span
-                                    className="heroHomeTitleSpan2">Tune in With You</span>
-                            </span>
+                                <div>
+                                    <span className="heroHomeTitleSpan1">We are ready to </span>
+                                </div>
+                                <div>
+                                    <span className="heroHomeTitleSpan2">Tune in With You</span>
+                                </div>
                             </div>
 
                         </div>
 
-                        <div className="btnborder">
-                            <Link href="/tickets">
+                        <div
+
+                            className="btnborder">
+                            <Link
+
+                                href="/tickets">
                                 <ButtonBorder
                                     borderRadius="1.75rem"
                                     className="btnContainer"

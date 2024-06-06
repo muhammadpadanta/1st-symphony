@@ -26,9 +26,9 @@ const ActiveSlider = () => {
 
     return (
         <div className="artistcardlistContainer swiperCard">
-            <h1 className="artistListTitle">Artist List</h1>
+            <h1 className="artistListTitle">Featured Artist</h1>
             <Swiper
-                style={{filter: "drop-shadow(2px 2px 5px rgba(180, 180, 180, 0.7))"}}
+                style={{filter: "drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.8))"}}
                 breakpoints={{
                     340: {
                         slidesPerView: 1,
@@ -72,20 +72,24 @@ const ActiveSlider = () => {
                                         <item.icon/>
                                     </div>
                                     <h1 className="artistcardlistArtistName">{item.title} </h1>
-                                    <p className="">{item.content} </p>
+                                    <p className="text-second group-hover:text-[#8BC34A]"
+                                       style={{filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.8))"}}>{item.content} </p>
                                 </div>
                                 <RxArrowTopRight
                                     className="artistcardlistIcon"/>
                             </div>
 
                         </Link>
+
                     </SwiperSlide>
 
                 ))}
 
             </Swiper>
-            <button className="btn btn-primary mx-auto"> Check All Artist</button>
-
+            <button
+                style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                className="btn bg-gray-800 text-white hover:bg-green-800 "> Check All Artist
+            </button>
 
             {/*modal*/}
             <Modal

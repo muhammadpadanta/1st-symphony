@@ -1,34 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Image from "next/image";
 import Button from "@/components/btn";
 import '../../../styles/twclass.css'
 
-
-function getUserIdFromLocalStorage() {
-    // Get the 'user-info' item from local storage
-    const userInfo = localStorage.getItem('user-info');
-
-    // Check if the 'user-info' item exists
-    if (userInfo) {
-        // Parse the 'user-info' item as JSON to convert it back into an object
-        const parsedUserInfo = JSON.parse(userInfo);
-
-        // Return the 'id' property of the object
-        return parsedUserInfo.id;
-    }
-
-    // If the 'user-info' item does not exist, return null
-    return null;
-}
-
-
 export function UpdateUser() {
 
-    const id=  getUserIdFromLocalStorage()
-    console.log("Item ID:", id);
-
     const [userData, setUserData] = useState({
+        user_id: "",
         name: "",
         username: "",
         phone: "",
@@ -39,25 +17,25 @@ export function UpdateUser() {
         pfp_path: "",
     });
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            fetch('http://localhost:8000/api/me', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // Log the fetched user data
+                    setUserData(data);
+                });
+        }
+    }, []);
+
     const [image, setImage] = useState(null); // To store the selected image
     const [imagePreview, setImagePreview] = useState(""); // To display the preview of the selected image
-    const [formData, setFormData] = useState(new FormData()); // To handle form data
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`http://localhost:8000/api/cariuser/${id}`);
-                const data = await response.json();
-                setUserData(data);
-                // setImagePreview(`http://localhost:8000/${data.file_path}`);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                // Handle error as needed
-            }
-        };
-
-        fetchData();
-    }, [id]);
+    const [formData, setFormData] = useState(new FormData());
 
     const handleFileChange = (e: any) => {
         const file = e.target.files[0];
@@ -103,43 +81,54 @@ export function UpdateUser() {
         e.preventDefault(); // Prevent the default form submission behavior
 
         try {
-            // Create a new FormData object
-            const formData = new FormData();
-
-            // Append the selected file to the form data
-            if (image) {
-                formData.append("profile_picture", image);
-            }
-
-            // Update form data fields only if they are not empty
-            Object.keys(userData).forEach((key) => {
-                const typedKey = key as keyof typeof userData;
-                if (userData[typedKey]) {
-                    let value = userData[typedKey];
-
-                    // If the key is 'birth', format the date as 'yyyy-mm-dd'
-                    if (typedKey === 'birth') {
-                        const date = new Date(value);
-                        const year = date.getFullYear();
-                        const month = ('0' + (date.getMonth() + 1)).slice(-2); // Months are 0-based in JavaScript
-                        const day = ('0' + date.getDate()).slice(-2);
-                        value = `${year}-${month}-${day}`;
+            const token = localStorage.getItem('token');
+            if (token) {
+                const response = await fetch('http://localhost:8000/api/me', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
                     }
+                });
+                const data = await response.json();
+                setUserData(data);
 
-                    formData.set(typedKey, value);
+                // Create a new FormData object
+                const formData = new FormData();
+
+                // Append the selected file to the form data
+                if (image) {
+                    formData.append("profile_picture", image);
                 }
-            });
 
-            const result = await fetch(`http://localhost:8000/api/updateuser/${id}?_method=PUT`, {
-                method: "POST",
-                body: formData,
-            } as RequestInit);
+                // Update form data fields only if they are not empty
+                Object.keys(userData).forEach((key) => {
+                    const typedKey = key as keyof typeof userData;
+                    if (userData[typedKey]) {
+                        let value = userData[typedKey];
 
-            if (result.ok) {
-                alert("Updated Successfully!")
-                window.history.back();
-            } else {
-                alert("Failed to update user");
+                        // If the key is 'birth', format the date as 'yyyy-mm-dd'
+                        if (typedKey === 'birth') {
+                            const date = new Date(value);
+                            const year = date.getFullYear();
+                            const month = ('0' + (date.getMonth() + 1)).slice(-2); // Months are 0-based in JavaScript
+                            const day = ('0' + date.getDate()).slice(-2);
+                            value = `${year}-${month}-${day}`;
+                        }
+
+                        formData.set(typedKey, value);
+                    }
+                });
+
+                const result = await fetch(`http://localhost:8000/api/updateuser/${userData.user_id}?_method=PUT`, {
+                    method: "POST",
+                    body: formData,
+                } as RequestInit);
+
+                if (result.ok) {
+                    alert("Updated Successfully!")
+                    window.history.back();
+                } else {
+                    alert("Failed to update user");
+                }
             }
         } catch (error) {
             console.error("Error updating User:", error);

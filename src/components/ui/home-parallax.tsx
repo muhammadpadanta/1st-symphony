@@ -49,7 +49,7 @@ export const HomeParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[500vh] 2xl:h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className=" h-[400vh] 2xl:h-[300vh] py-40 overflow-hidden relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -95,58 +95,74 @@ export const HomeParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-white new-rocker-regular">
-      <span className="underline">Symphony Sources</span><br/>Your Gateway to Unforgettable Concerts
-      </h1>
-      <p className="max-w-2xl md:text-xl mt-8 text-neutral-200 new-rocker-regular">
-      Welcome to <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>, your go-to destination for purchasing music concert tickets online! 
-      Browse our wide selection of concerts, from rock to pop to jazz, and secure your tickets with ease. 
-      With a straightforward booking process and reliable customer support, getting your tickets has never been simpler. 
-      Dont miss out on the chance to experience live music  start booking your tickets now at <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">1st Symphony</span>
-      </p>
-    </div>
+      <>
+          <div className="max-w-7xl relative mx-auto  px-4 w-full  left-0 top-0 ">
+              <h1
+                  style={{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.8))"}}
+                  className="text-8xl font-bold text-prime pt-20 md:pt-40">
+                  Your Gateway to Unforgettable Concerts
+              </h1>
+              <p
+                  style={{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.8))"}}
+                  className="max-w-2xl md:text-2xl text-second ">
+                  Welcome to <span
+                  className="accent-primary">1st Symphony</span>,
+                  your go-to destination for purchasing music concert tickets online!
+                  Browse our wide selection of concerts, from rock to pop to jazz, and secure your tickets with ease.
+                  With a straightforward booking process and reliable customer support, getting your tickets has never
+                  been simpler.
+              </p>
+          </div>
+
+
+
+
+      </>
+
+
   );
 };
 
 export const ProductCard = ({
                                 artist,
-                              reverse = false,
+                                reverse = false,
                             }: {
     artist: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
-  reverse?: boolean;
+        title: string;
+        link: string;
+        thumbnail: string;
+    };
+    reverse?: boolean;
 }) => {
-  const { scrollYProgress } = useScroll({
-    offset: ["start start", "end start"],
-  });
+    const {scrollYProgress} = useScroll({
+        offset: ["start start", "end start"],
+    });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+    const springConfig = {stiffness: 300, damping: 30, bounce: 100};
 
-  const translate = useSpring(
-      useTransform(scrollYProgress, [0, 1], reverse ? [0, -1000] : [0, 1000]),
-      springConfig
-  );
-  return (
-    <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -20,
-      }}
-      key={artist.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
-    >
+    const translate = useSpring(
+        useTransform(scrollYProgress, [0, 1], reverse ? [0, -1000] : [0, 1000]),
+        springConfig
+    );
+    return (
+        <motion.div
+            style={{
+                x: translate,
+                filter: "drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.8))"
+            }}
+            whileHover={{
+                y: -20,
+            }}
+            key={artist.title}
+            className="group/product h-96 w-[30rem] relative flex-shrink-0  "
 
-        <Image
-          src={artist.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+        >
+
+            <Image
+                src={artist.thumbnail}
+                height="600"
+                width="600"
+                className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={artist.title}
           loading="lazy"
         />

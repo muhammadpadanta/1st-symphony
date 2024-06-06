@@ -13,10 +13,10 @@ class MyDocument extends Document {
                 <Head>
 
                 </Head>
-                <body className="bg-[#0a0a0a]">
+
                 <Main />
                 <NextScript />
-                </body>
+
             </Html>
         )
     }

@@ -55,7 +55,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white dark:bg-white backdrop-blur-sm rounded-2xl  border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-gray-800 bg-opacity-70  rounded-2xl  border border-gray-300 shadow-xl"
               >
                 <motion.div
                   layout
@@ -93,10 +93,12 @@ export const Menu = ({
 };
 
 
-export const HoveredLink: React.FC<HoveredLinkProps> = ({ href, children }) => {
+export function HoveredLink({ href, children }: HoveredLinkProps) {
     return (
         <Link href={href} legacyBehavior>
-            <a className="text-neutral-700 dark:text-neutral-200 hover:text-black ">{children}</a>
+            <a className={`text-white cursor-pointer hover:scale-110 hover:text-[#8BC34A] transition-all`}>
+                {children}
+            </a>
         </Link>
-  );
-};
+    );
+}

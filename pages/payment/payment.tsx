@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 function PaymentPage() {
     const [paymentMethods] = useState([
@@ -9,16 +10,27 @@ function PaymentPage() {
         { id: 5, name: 'CIMB Niaga', accountNumber: '87654321' }
     ]);
 
-    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
-    const [selectedFile, setSelectedFile] = useState(null);
+    interface PaymentMethod {
+        id: number;
+        name: string;
+        accountNumber: string;
+    }
 
-    const handlePaymentMethodClick = (method) => {
-        setSelectedPaymentMethod(method);
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+
+
+
+    const handlePaymentMethodClick = (method: PaymentMethod) => {
+        setSelectedPaymentMethod(method.name);
     };
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        setSelectedFile(file);
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            setSelectedFile(file);
+        }
     };
 
     return (
@@ -29,7 +41,7 @@ function PaymentPage() {
                     <div
                         key={method.id}
                         className={`border p-4 cursor-pointer ${selectedPaymentMethod === method.name ? 'border-blue-500' : 'border-gray-200'}`}
-                        onClick={() => handlePaymentMethodClick(method.name)}
+                        onClick={() => handlePaymentMethodClick(method)}
                     >
                         <h2 className="text-lg font-semibold">{method.name}</h2>
                         <p>{method.accountNumber}</p>
@@ -47,7 +59,13 @@ function PaymentPage() {
                 {selectedFile && (
                     <div>
                         <h3 className="text-lg font-semibold mb-2">Preview</h3>
-                        <img src={URL.createObjectURL(selectedFile)} alt="Payment Proof" className="max-w-full h-auto mb-4" />
+                        <Image
+                            src={URL.createObjectURL(selectedFile)}
+                            alt="Payment Proof"
+                            width={500} // specify the width
+                            height={500} // specify the height
+                            className="max-w-full h-auto mb-4"
+                        />
                     </div>
                 )}
             </div>

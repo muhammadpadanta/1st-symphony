@@ -54,7 +54,7 @@ export default function TicketAlbums() {
 
     return (
         <div>
-            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center text-white 2xl:pt-20 2xl:mt-20 xl:pt-5 xl:mt-5 animate-bounce ">
+            <p className=" font-semibold 2xl:text-8xl xl:text-6xl flex justify-center text-[#FFC107] 2xl:pt-20 2xl:mt-20 xl:pt-5 xl:mt-5 animate-bounce ">
                 Checkout the Album!
             </p>
 
@@ -62,11 +62,11 @@ export default function TicketAlbums() {
 
                 <div
                     className="albumsContainer"
-                    style={{filter: "drop-shadow(1px 1px 10px rgba(180, 180, 180, 0.7))"}}
+                    style={{filter: "drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.8))"}}
                 >
 
                     <div
-                        className="ticketAlbumsGridContainer pattern1">
+                        className="ticketAlbumsGridContainer ">
                         <p
                             style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                             className="ticketAlbumsTitle">Popular
@@ -78,11 +78,11 @@ export default function TicketAlbums() {
 
                         <div className="">
 
-                            <div className="ticketAlbumsSongList"
+                            <div className="ticketAlbumsSongList rounded-xl "
                                  style={{maxHeight: '25rem'}}>
-                                <dl className="ticketAlbumsSongWrapper">
+                                <dl className="ticketAlbumsSongWrapper ">
                                     {songs.map((songs, index) => (
-                                        <div key={songs.name} className="relative pl-9 ">
+                                        <div key={songs.name} className="relative pl-9 bg-gray-800 hover:bg-green-900 border border-1 border-white hover:bg-opacity-100 bg-opacity-70 p-5 rounded-full transition-all">
                                             <dt className="inline ">
 
                                                 <div
@@ -91,10 +91,10 @@ export default function TicketAlbums() {
                                                         <button onClick={() => toggleAudio(index)}
                                                                 className="ticketAlbumsSongIcon">
                                                             {play && currentSongIndex === index ? (
-                                                                <PauseCircleIcon className="h-6 w-6"
+                                                                <PauseCircleIcon className="h-8 w-8"
                                                                                  aria-hidden="true"/>
                                                             ) : (
-                                                                <PlayCircleIcon className="h-6 w-6" aria-hidden="true"/>
+                                                                <PlayCircleIcon className="h-8 w-8" aria-hidden="true"/>
                                                             )}
                                                         </button>
                                                         {songs.name}
@@ -132,7 +132,7 @@ export default function TicketAlbums() {
                                                                    min={0}
                                                                    max={MAX}
                                                                    onChange={(e) => handleVolume(e, index)}
-                                                                   className="range range-error range-xs transition-all"/>
+                                                                   className="range range-warning range-xs transition-all"/>
                                                         </div>
                                                     </div>
                                                     <audio ref={musicRefs[index]} loop src={songs.music}/>
@@ -142,7 +142,7 @@ export default function TicketAlbums() {
                                             </dt>
                                             {' '}
 
-                                            <hr className="w-full border-t border-red-400 "/>
+
                                         </div>
                                     ))}
                                 </dl>

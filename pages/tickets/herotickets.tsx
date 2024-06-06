@@ -22,7 +22,7 @@ export default function Herotickets() {
                                 ))}
                             </div>
 
-                            <dl className="featureWrapper">
+                            <dl className="featureWrapper ">
 
                                 {ticketFeatures.map((ticketFeatures) => (
                                     <div key={ticketFeatures.name} className="ticketFeaturesContainer">
@@ -31,14 +31,14 @@ export default function Herotickets() {
                                         <Link to={ticketFeatures.link} smooth={true} duration={500}>
                                             <div
                                                 style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
-                                                className="ticketFeaturesLink">
+                                                className="ticketFeaturesLink text-prime hover:text-[#8BC34A] ">
                                                 {ticketFeatures.name}
                                             </div>
 
                                         </Link>
 
                                         {' '}
-                                        <dd className="block text-white">{ticketFeatures.description}</dd>
+                                        <dd className="block text-second ">{ticketFeatures.description}</dd>
                                     </div>
                                 ))}
                             </dl>
