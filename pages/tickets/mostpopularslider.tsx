@@ -11,6 +11,7 @@ import { OrangesImages, PurplesImages } from "@/constants";
 import '../../styles/twclass.css'
 import React, {useState} from "react";
 import Button from "@/components/btn";
+import Link from "next/link";
 
 const MostPopularSlider = () => {
 
@@ -112,11 +113,18 @@ const MostPopularSlider = () => {
                     <p
 
                         className="text-[22px] max-w-[400px] text-gray-200 md:text-gray-100 text-right">
-                        Prepare for the event of the year – our Most Popular Event is back and bigger than ever! Dont miss your chance to be part of history – grab
+                        Prepare for the event of the year – our Most Popular Event is back and bigger than ever! Dont
+                        miss your chance to be part of history – grab
                         your tickets now before they gone! 🎤🎸🎉
                     </p>
 
-                    <button className="btn bg-gray-800 text-white hover:bg-green-800 "> Check All Ticket</button>
+                    <Link href={"/tickets/ticketlisting"}>
+                        <button
+                            style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
+                            All Tickets
+                        </button>
+                    </Link>
 
 
                 </h1>

@@ -10,7 +10,7 @@ import Button from "@/components/btn";
 import PasswordField from "@/components/inputfieldpw";
 import Modal from "react-modal";
 import ReactLoading from 'react-loading';
-
+import { toast, Toaster } from "react-hot-toast";
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -26,7 +26,7 @@ const Login = () => {
 
     const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsLoading(true); // Start loading
+        setIsLoading(true);
 
         const response = await fetch('http://localhost:8000/api/password/email', {
             method: 'POST',
@@ -39,12 +39,12 @@ const Login = () => {
         const data = await response.json();
 
         if (response.ok) {
-            setMessage(data.message);
+            toast.success(data.message);
         } else {
-            setMessage(data.message);
+            toast.error(data.message);
         }
 
-        setIsLoading(false); // End loading
+        setIsLoading(false);
     };
 
 
@@ -71,7 +71,7 @@ const Login = () => {
 
     const login = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        setIsLoading(true);
         const item = { username, password };
 
         if (!username || !password) {
@@ -93,10 +93,10 @@ const Login = () => {
             const result = await response.json();
 
             if (result.message === "Email is not verified") {
-                openLoginModal();
+                toast.error(result.message);
             } else if (result.error) {
                 // Handle wrong credentials
-                setInvalidCredentialMessage(result.message);
+                toast.error(result.message);
             } else if (result.token) {
                 // Handle correct credentials
                 localStorage.setItem("token", result.token);
@@ -104,19 +104,21 @@ const Login = () => {
                 window.location.replace("/");
             } else if (!response.ok) {
                 // Handle HTTP error status
-                setInvalidCredentialMessage(result.message);
+                toast.error(result.message);
             } else {
                 // Handle unexpected response format
-                alert("Unexpected response format");
+                toast.error(result.message);
             }
         } catch (error) {
             console.error("An unexpected error occurred:", error);
             alert("An unexpected error occurred. Please try again.");
         }
+        setIsLoading(false);
     };
 
     return (
         <>
+            <Toaster/>
         <motion.div
             initial={{
                 y: 600,
@@ -247,7 +249,8 @@ const Login = () => {
                                 >
 
                                     <Button type="submit" className="btnPrimary">
-                                        Login
+                                        {isLoading ? <ReactLoading type={"spin"} color={"#ffffff"} height={20} className="mx-auto"
+                                                                   width={20}/> : 'Login'}
                                     </Button>
 
                                 </motion.div>
@@ -375,7 +378,7 @@ const Login = () => {
                 className={{
                     base: 'animate-modal',
                     afterOpen: 'animate-modal-after-open',
-                    beforeClose: 'animate-modal'
+                    beforeClose: 'animate-modal-before-close'
                 }}
                 style={{
                     overlay: {
@@ -426,7 +429,6 @@ const Login = () => {
                         {isLoading ? <ReactLoading type={"spin"} color={"#ffffff"} height={20} className="mx-auto"
                                                    width={20}/> : 'Send Reset Password Link'}
                     </button>
-                    <p className="text-center mx-auto text-gray-100  w-1/2">{message}</p>
                 </form>
             </Modal>
 

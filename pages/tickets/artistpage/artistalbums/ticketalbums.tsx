@@ -1,10 +1,10 @@
 import {songs} from "@/constants";
-import '../../styles/twclass.css'
+import '../../../../styles/twclass.css';
 import React, {useEffect, useState} from "react";
 import {PauseCircleIcon, PlayCircleIcon} from "@heroicons/react/20/solid";
 
 
-export default function TicketAlbums() {
+export default function ArtistAlbums() {
 
     const [currentSongIndex, setCurrentSongIndex] = useState(-1); // Add this line
     const [play, setPlay] = useState(false);

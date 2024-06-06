@@ -10,6 +10,7 @@ import { OrangeImages, PurpleImages } from "@/constants";
 import Modal from "react-modal";
 import Button from "@/components/btn";
 import React, {useState} from "react";
+import Link from "next/link";
 
 const UpcomingSlider = () => {
 
@@ -34,10 +35,17 @@ const UpcomingSlider = () => {
                     <p
 
                         className="text-[22px] max-w-[400px] text-gray-200 md:text-gray-100">
-                        Get ready for an unforgettable night of music with our upcoming concert series! Dont miss out – grab your tickets now and secure your spot for a night to remember! 🎶🎟️
+                        Get ready for an unforgettable night of music with our upcoming concert series! Dont miss out –
+                        grab your tickets now and secure your spot for a night to remember! 🎶🎟️
                     </p>
 
-                    <button className="btn bg-gray-800 text-white hover:bg-green-800 "> Check All Ticket</button>
+                    <Link href={"/tickets/ticketlisting"}>
+                        <button
+                            style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
+                            All Tickets
+                        </button>
+                    </Link>
                 </h1>
             </div>
             <div className="w-[70%] md:w-[40%]">

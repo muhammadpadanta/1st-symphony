@@ -1,11 +1,13 @@
+
 import React from 'react';
-import TicketAlbums from "./ticketalbums";
-import TicketArtist from "./ticketartists";
+import TicketListing from './ticketlisting'
+import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-import Layout from "@/components/layout";
 
-const TicketListPage = () => {
+
+
+const TicketListingPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -21,12 +23,20 @@ const TicketListPage = () => {
         return <Loading />;
     }
 
-    return (
-        <Layout>
-            <TicketAlbums/>
-            <TicketArtist />
-        </Layout>
-    );
+
+
+  return (
+
+    <Layout>
+
+        <TicketListing/>
+
+
+    </Layout>
+
+
+
+  );
 };
 
-export default TicketListPage;
+export default TicketListingPage;

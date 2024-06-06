@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 import Layout from "@/components/layout";
 import ShoppingCart from './cart';
+import {Toaster} from "react-hot-toast";
 
 const CartPage = () => {
     const [items, setItems] = useState([
@@ -44,6 +45,7 @@ const CartPage = () => {
     return (
 
         <>
+
             <Layout>
                 <div className="min-h-screen bg-[0a0a0a] flex items-center justify-center">
                     <ShoppingCart

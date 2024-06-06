@@ -62,7 +62,7 @@ const ActiveSlider = () => {
             >
                 {artistData.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <Link href="/ticketlists">
+                        <Link href="/tickets/artistpage/artistalbums">
                             <div className="group artistcardlistCardShaper">
                                 <div className="artistcardlistCardBg"
                                      style={{backgroundImage: `url(${item.backgroundImage})`}}/>
@@ -86,10 +86,15 @@ const ActiveSlider = () => {
                 ))}
 
             </Swiper>
-            <button
-                style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
-                className="btn bg-gray-800 text-white hover:bg-green-800 "> Check All Artist
-            </button>
+
+            <Link href={"/tickets/artistpage"}>
+                <button
+                    style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                    className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
+                    All Artist
+                </button>
+            </Link>
+
 
             {/*modal*/}
             <Modal
@@ -147,7 +152,7 @@ const ActiveSlider = () => {
                                 </p>
 
 
-                                <Button type="submit" className="btnBack " href="/auth/login">
+                                <Button type="submit" className="btnBack" href="/auth/login">
                                     Login
                                 </Button>
                                 <Button type="submit" className="btnPrimary" href="/auth/register">

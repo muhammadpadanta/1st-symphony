@@ -180,7 +180,7 @@
 }
 
 .btnPrimary {
-    @apply w-1/2 bg-green-800  backdrop-blur-sm text-white p-2 rounded hover:bg-green-900 mt-10 transition-all w-full;
+    @apply w-1/2 bg-green-800 h-[40px] backdrop-blur-sm text-white p-2 rounded hover:bg-green-900 mt-10 transition-all w-full;
 }
 .btnBack{
     @apply w-1/2 bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:opacity-80 mt-10 transition-all;
@@ -231,7 +231,7 @@
 }
 
 .artistListTitle {
-    @apply text-4xl font-bold mb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent px-5;
+    @apply text-6xl font-bold mb-5 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent px-5;
 }
 
 .artistCardContainer {
@@ -457,12 +457,21 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .animate-modal {
-    transition: transform 0.3s ease-out;
-    transform: scale(0);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .animate-modal-after-open {
+    opacity: 1;
     transform: scale(1);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.animate-modal-before-close {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .transparent-navbar {

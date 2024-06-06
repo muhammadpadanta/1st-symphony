@@ -20,6 +20,7 @@ const nextConfig = {
       { hostname: 'daisyui.com' },
       { hostname: 'avatars.githubusercontent.com' },
       { hostname: 'localhost' },
+      { hostname: 'via.placeholder.com'},
     ],
   },
   // Merge withVideos and withFonts configuration

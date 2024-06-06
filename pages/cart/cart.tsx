@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import { toast, Toaster } from "react-hot-toast";
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css'; // Import Rodal styles
 interface Item {
     id: string;
     name: string;
@@ -18,7 +20,24 @@ interface ShoppingCartProps {
 function ShoppingCart({ items, onRemove, onQuantityChange }: ShoppingCartProps) {
     const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+    // State variable for controlling the visibility of the Rodal modal
+    const [visible, setVisible] = useState(false);
+
+    // Function to show the modal
+    const showModal = () => {
+        setVisible(true);
+    };
+
+    // Function to hide the modal
+    const hideModal = () => {
+        setVisible(false);
+    };
+
+
     return (
+
+        <>
+        <Toaster/>
         <div className="rounded-lg p-6 w-3/4 w-full text-white ">
             <div className="flex flex-col md:flex-row justify-between space-x-5">
                 {/* Items Container */}
@@ -70,16 +89,29 @@ function ShoppingCart({ items, onRemove, onQuantityChange }: ShoppingCartProps) 
                             <span className="font-bold">${subtotal.toFixed(2)}</span>
                         </div>
 
-                        <Link href="/payment" legacyBehavior>
-                            <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700">
-                                Proceed to Checkout
-                            </button>
-                        </Link>
+                        <button onClick={showModal}
+                                className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700">
+                            Proceed to Checkout
+                        </button>
+
+
+
 
                     </div>
                 </div>
             </div>
+
         </div>
+            <Rodal visible={visible} onClose={hideModal}>
+                <div>
+                    {/* Content of the modal goes here */}
+                    <h2>Checkout</h2>
+                    <p>Proceed to checkout?</p>
+                    <button onClick={hideModal}>Yes</button>
+                    <button onClick={hideModal}>No</button>
+                </div>
+            </Rodal>
+        </>
     );
 }
 

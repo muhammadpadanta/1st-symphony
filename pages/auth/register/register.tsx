@@ -8,6 +8,9 @@ import PasswordField from "@/components/inputfieldpw";
 import InputField from "@/components/inputfield";
 import Checkbox from "@/components/checkbox";
 import Modal from "react-modal";
+import ReactLoading from 'react-loading';
+import { toast, Toaster } from "react-hot-toast";
+
 
 function Register() {
     const [gender, setGender] = useState("");
@@ -23,6 +26,9 @@ function Register() {
         setShowModal(true);
     };
 
+
+    const [isLoading, setIsLoading] = useState(false);
+
     // Function to close the modal
     const closeModal = () => {
         setShowModal(false);
@@ -36,8 +42,10 @@ function Register() {
     async function signUp(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
+        setIsLoading(true);
+
         let item = { name, username, email, password, gender };
-        let result = await fetch("http://localhost:8000/api/register", {
+        let response = await fetch("http://localhost:8000/api/register", {
             method: "POST",
             body: JSON.stringify(item),
             headers: {
@@ -46,22 +54,22 @@ function Register() {
             },
         });
 
-        // Convert the response to JSON
-        let response = await result.json();
+        const data = await response.json();
 
-        // Check if the registration was successful
-        if (response.message === "User registered successfully") {
-            // Open the modal
+
+        if (data.message === "User registered successfully") {
             openModal();
         } else {
-            // Handle registration failure
-            // ...
+            toast.error(data.message);
         }
+
+        setIsLoading(false);
     }
 
 
     return (
         <>
+            <Toaster/>
         <div >
             <div className="mainContainer wp2">
 
@@ -167,10 +175,10 @@ function Register() {
                                 required={true}
                             />
 
-                                <Button type="submit" className="btnPrimary"
-                                        disabled={!!usernameError || !!passwordError}>
-                                    Register
-                                </Button>
+                            <Button type="submit" className="btnPrimary"
+                                    disabled={!!usernameError || !!passwordError || isLoading}>
+                                {isLoading ? <ReactLoading type={"spin"} color={"#ffffff"} height={20} width={20} className="mx-auto"/> : "Register"}
+                            </Button>
 
 
                             <div>
@@ -235,14 +243,14 @@ function Register() {
                     },
                 }}
             >
-                <button onClick={closeModal} className="absolute right-5 top-5 font-bold text-xl">X</button>
+                <button onClick={closeModal} className="absolute right-5 top-5 font-bold text-xl text-prime">X</button>
                 <div className="space-y-5">
                     <div>
-                        <p className="font-bold text-2xl text-center text-red-400">Email Verification Link has been
+                        <p className="font-bold text-2xl text-center text-[#FFC107]">Email Verification Link has been
                             sent!</p>
                     </div>
                     <div>
-                        <p className="font-bold text-lg text-center">You can check your email address that contains
+                        <p className="font-bold text-lg text-center text-prime">You can check your email address that contains
                             Link
                             to verify your email.</p>
                     </div>
