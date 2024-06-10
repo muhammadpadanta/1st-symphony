@@ -483,20 +483,20 @@ export const faqs = [
     {
         question: "What does your website offer and how does it works?",
         answer:
-            'we make getting tickets to your favorite concerts easy. Browse our curated selection of live music events, choose your seats, and book with confidence.',
+            'we make getting concerts to your favorite concerts easy. Browse our curated selection of live music events, choose your seats, and book with confidence.',
     },
 
-    { question: "How To receive my tickets after purchasing them?",
-        answer: "After you complete your ticket purchase on our website, you will receive a confirmation email with details about your order. Your concert tickets will be delivered to you electronically via email." },
+    { question: "How To receive my concerts after purchasing them?",
+        answer: "After you complete your ticket purchase on our website, you will receive a confirmation email with details about your order. Your concert concerts will be delivered to you electronically via email." },
 
-    { question: "Can I cancel my concert tickets after purchasing them?",
-        answer: "Unfortunately, we are unable to offer cancellations or exchanges for concert tickets once they have been purchased." },
+    { question: "Can I cancel my concert concerts after purchasing them?",
+        answer: "Unfortunately, we are unable to offer cancellations or exchanges for concert concerts once they have been purchased." },
 
     { question: "age restrictions for concerts listed on your website?",
         answer: "Age restrictions for concerts vary depending on the event and venue. Some concerts may be open to all ages, while others may have age restrictions imposed by the artist or venue." },
 
-    { question: "How do I know if my concert tickets are authentic?",
-        answer: "When you purchase tickets through our website, you can rest assured that you are buying genuine tickets directly from authorized sellers." },
+    { question: "How do I know if my concert concerts are authentic?",
+        answer: "When you purchase concerts through our website, you can rest assured that you are buying genuine concerts directly from authorized sellers." },
 
     {
         question: "What payment methods do you accept?",

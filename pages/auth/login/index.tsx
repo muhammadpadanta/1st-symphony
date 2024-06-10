@@ -2,6 +2,7 @@ import React from 'react';
 import Login from "./login";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
+
 const LoginPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);

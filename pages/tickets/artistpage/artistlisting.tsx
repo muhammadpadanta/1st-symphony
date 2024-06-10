@@ -43,7 +43,7 @@ const ArtistListing = () => {
                             <h2 className="text-2xl font-semibold">{artist.name}</h2>
                             <p className="text-gray-400">{artist.genre}</p>
 
-                            <Link href={"/tickets/artistpage/artistalbums"}>
+                            <Link href={"/concerts/artistpage/artistalbums"}>
                                 <button
                                     className="mt-4 p-3 bg-yellow-600 hover:opacity-80 shadow-xl transition-all  rounded">
                                     Check Popular Albums
@@ -51,7 +51,7 @@ const ArtistListing = () => {
                             </Link>
 
 
-                            <Link href={"/tickets/artistpage/artisttickets"}>
+                            <Link href={"/concerts/artistpage/artisttickets"}>
                                 <button
                                     className="mt-4 p-3 bg-green-500 hover:opacity-80 shadow-xl transition-all  rounded">
                                     Check Available Tickets

@@ -39,7 +39,7 @@ const UpcomingSlider = () => {
                         grab your tickets now and secure your spot for a night to remember! 🎶🎟️
                     </p>
 
-                    <Link href={"/tickets/ticketlisting"}>
+                    <Link href={"/concerts/ticketlisting"}>
                         <button
                             style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
                             className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check

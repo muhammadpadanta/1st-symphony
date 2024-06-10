@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-
+import "../../styles/twclass.css"
 interface InputFieldProps {
     id: string;
     name: string;

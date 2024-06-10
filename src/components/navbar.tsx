@@ -18,7 +18,7 @@
     export function Navbar({ className}: { className?: string }) {
         interface UserData {
             pfp_path: string;
-
+            role: string;
         }
 
         const [userData, setUserData] = useState<UserData | null>(null);
@@ -37,12 +37,32 @@
             }
         }, []);
 
-        const handleLogout = () => {
-            localStorage.removeItem('token');
-            setUserData(null);
-        };
+        async function handleLogout() {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await logout(token);
+                console.log(response.message);
+                localStorage.removeItem('token');
+            } catch (error) {
+                console.error('Logout failed', error);
+            }
+        }
 
+        async function logout(token) {
+            const response = await fetch('http://localhost:8000/api/logout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+            });
 
+            if (!response.ok) {
+                throw new Error('Logout failed');
+            }
+
+            return response.json();
+        }
 
 
 
@@ -89,21 +109,26 @@
                                 </MenuItem>
 
                                 <div>
-                                    <div
-                                        className="flex justify-between items-center text-white text-xl mr-10 space-x-8 ">
+                                    <div className="flex justify-between items-center text-white text-xl mr-10 space-x-8 ">
                                         {checkUserLoggedIn() ? (
                                             <>
-                                                <Link href="/inventory" legacyBehavior
-                                                      className="text-xl hover:scale-110 hover:opacity-50 transition-all">
-                                                    <BsClipboard2Check
-                                                        className="cursor-pointer hover:scale-110 hover:opacity-50 transition-all"/>
-                                                </Link>
+                                                {userData && userData.role === 'user' && (
+                                                    <>
+                                                        <Link href="/inventory" legacyBehavior className="text-xl hover:scale-110 hover:opacity-50 transition-all">
+                                                            <BsClipboard2Check className="cursor-pointer hover:scale-110 hover:opacity-50 transition-all"/>
+                                                        </Link>
 
-                                                <Link href="/cart" legacyBehavior
-                                                      className="text-xl hover:scale-110 hover:text-[#8BC34A] transition-all">
-                                                    <BsCart
-                                                        className="cursor-pointer hover:scale-110 hover:opacity-50 transition-all"/>
-                                                </Link>
+                                                        <Link href="/cart" legacyBehavior className="text-xl hover:scale-110 hover:text-[#8BC34A] transition-all">
+                                                            <BsCart className="cursor-pointer hover:scale-110 hover:opacity-50 transition-all"/>
+                                                        </Link>
+                                                    </>
+                                                )}
+
+                                                {userData && userData.role === 'admin' && (
+                                                    <Link href="/admin/dashboard" legacyBehavior >
+                                                        <p className="text-xl hover:scale-110 hover:text-[#8BC34A] transition-all cursor-pointer">Dashboard</p>
+                                                    </Link>
+                                                )}
 
                                                 <MenuItem
                                                     setActive={setActive}

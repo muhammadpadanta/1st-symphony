@@ -79,7 +79,6 @@ const Login = () => {
             return;
         }
 
-
         try {
             const response = await fetch("http://localhost:8000/api/login", {
                 method: "POST",
@@ -101,7 +100,12 @@ const Login = () => {
                 // Handle correct credentials
                 localStorage.setItem("token", result.token);
                 setIsLoggedIn(true);
-                window.location.replace("/");
+                // Check user role and redirect accordingly
+                if (result.user.role === 'admin') {
+                    window.location.replace("/admin/dashboard");
+                } else {
+                    window.location.replace("/");
+                }
             } else if (!response.ok) {
                 // Handle HTTP error status
                 toast.error(result.message);

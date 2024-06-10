@@ -78,6 +78,8 @@ body {
 
 }
 
+
+
 .wp4 {
     background-image: url("/images/wp4.png");
     background-position: center;
@@ -129,5 +131,7 @@ body {
 .heroTicketImage {
     animation: scale 1s infinite;
                     }
-
+.inputBox {
+    @apply w-full text-white p-2 px-3 rounded-xl shadow-md bg-gray-800 placeholder-gray-300 outline-none;
+}
 
