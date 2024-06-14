@@ -62,7 +62,7 @@ const ActiveSlider = () => {
             >
                 {artistData.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <Link href="/tickets/artistpage/artistalbums">
+                        <Link href="/pages/concerts/artistpage/artistalbums">
                             <div className="group artistcardlistCardShaper">
                                 <div className="artistcardlistCardBg"
                                      style={{backgroundImage: `url(${item.backgroundImage})`}}/>

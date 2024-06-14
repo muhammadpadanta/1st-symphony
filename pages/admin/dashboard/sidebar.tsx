@@ -44,18 +44,18 @@ const Sidebar = () => {
             </Link>
 
             <Link href="/admin/concerts">
-              <li className={`mb-4 flex items-center space-x-2 group hover:bg-gray-800 ${router.pathname === '/admin/concerts' ? 'bg-gray-800' : ''} rounded-full p-1 transition-all`}>
+              <li className={`mb-4 flex items-center space-x-2 group hover:bg-gray-800 ${router.pathname.startsWith ('/admin/concerts') ? 'bg-gray-800' : ''} rounded-full p-1 transition-all`}>
                 <div className="flex items-center justify-center space-x-2">
-                  <Image src="/images/png/concerts.png" width={40} height={40} alt="concert" className={`bg-white ${router.pathname === '/admin/concerts' ? 'bg-yellow-300' : ''} group-hover:bg-yellow-300 rounded-full group-hover:scale-110 transition-all`}/>
+                  <Image src="/images/png/concerts.png" width={40} height={40} alt="concert" className={`bg-white ${router.pathname.startsWith ('/admin/concerts') ? 'bg-yellow-300' : ''} group-hover:bg-yellow-300 rounded-full group-hover:scale-110 transition-all`}/>
                   <label className={`text-prime ${router.pathname.startsWith ('/admin/concerts') ? 'text-yellow-300' : ''} group-hover:text-yellow-300 transition-all transform cursor-pointer font-bold`}>CONCERT</label>
                 </div>
               </li>
             </Link>
 
             <Link href="/admin/tickets">
-              <li className={`mb-4 flex items-center space-x-2 group hover:bg-gray-800 ${router.pathname === '/admin/tickets' ? 'bg-gray-800' : ''} rounded-full p-1 transition-all`}>
+              <li className={`mb-4 flex items-center space-x-2 group hover:bg-gray-800 ${router.pathname.startsWith ('/admin/tickets') ? 'bg-gray-800' : ''} rounded-full p-1 transition-all`}>
                 <div className="flex items-center justify-center space-x-2">
-                  <Image src="/images/png/ticket.png" width={40} height={40} alt="concert" className={`bg-white ${router.pathname === '/admin/tickets' ? 'bg-yellow-300' : ''} group-hover:bg-yellow-300 rounded-full group-hover:scale-110 transition-all`}/>
+                  <Image src="/images/png/ticket.png" width={40} height={40} alt="concert" className={`bg-white ${router.pathname.startsWith ('/admin/tickets') ? 'bg-yellow-300' : ''} group-hover:bg-yellow-300 rounded-full group-hover:scale-110 transition-all`}/>
                   <label className={`text-prime ${router.pathname.startsWith ('/admin/tickets') ? 'text-yellow-300' : ''} group-hover:text-yellow-300 transition-all transform cursor-pointer font-bold`}>TICKET</label>
                 </div>
               </li>

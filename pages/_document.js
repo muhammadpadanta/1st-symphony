@@ -11,11 +11,13 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
+                    <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+                            data-client-key="SB-Mid-client-LeAx25F5wlkzinnO"></script>
 
                 </Head>
 
-                <Main />
-                <NextScript />
+                <Main/>
+                <NextScript/>
 
             </Html>
         )

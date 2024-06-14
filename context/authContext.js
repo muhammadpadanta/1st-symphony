@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     const router = useRouter();
 
     const [loading, setLoading] = useState(true);
-// context/AuthContext.js
+
     const loadUserFromLocalStorage = async () => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -19,11 +19,13 @@ export const AuthProvider = ({ children }) => {
                 console.log('User data:', data);
                 setUser(data);
 
-                // Redirect user based on role
-                if (data.role === 'admin') {
-                    router.push('/admin/dashboard');
-                } else if (data.role === 'user') {
-                    router.push('/');
+                // Redirect user based on role only if current route is login
+                if (router.pathname === '/login') {
+                    if (data.role === 'admin') {
+                        router.push('/admin/dashboard');
+                    } else if (data.role === 'user') {
+                        router.push('/');
+                    }
                 }
 
                 setLoading(false);
@@ -36,9 +38,8 @@ export const AuthProvider = ({ children }) => {
         } else {
             setLoading(false);
         }
-    };;
+    };
 
-    // Add this useEffect hook
     useEffect(() => {
         loadUserFromLocalStorage();
     }, []);

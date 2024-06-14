@@ -75,7 +75,7 @@ export default function HeroHome() {
                             className="btnborder">
                             <Link
 
-                                href="/tickets">
+                                href="/concerts">
                                 <ButtonBorder
                                     borderRadius="1.75rem"
                                     className="btnContainer"

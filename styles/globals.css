@@ -135,3 +135,13 @@ body {
     @apply w-full text-white p-2 px-3 rounded-xl shadow-md bg-gray-800 placeholder-gray-300 outline-none;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+

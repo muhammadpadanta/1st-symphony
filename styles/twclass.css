@@ -116,28 +116,18 @@
 }
 
 .inventoryContent {
-    @apply max-w-7xl p-6 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl overflow-auto h-[70vh] 2xl:h-[60vh];
+    @apply w-2/3 p-6 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl overflow-auto h-[70vh] 2xl:h-[60vh];
 }
 
 .gridContainerInventory {
-    @apply grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-20 lg:mx-0 lg:grid-cols-2 ;
+    @apply grid grid-cols-2 gap-x-8 gap-y-8 lg:mx-0 lg:grid-cols-2 ;
 }
 
-.ticketItem {
-    @apply w-full rounded-xl p-5;
-}
 
-.ticketImageInventory {
-    @apply w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-center h-full;
-}
 
-.infoContainer {
-    @apply flex flex-col text-left text-red-400;
-}
 
-.infoItem {
-    @apply text-xl items-center mt-4;
-}
+
+
 
 /*~~~~~~~~~~~~~~~~~inventory~~~~~~~~~~~~~~~~~~~~*/
 
@@ -183,7 +173,7 @@
     @apply w-1/2 bg-green-800 h-[40px] backdrop-blur-sm text-white p-2 rounded hover:bg-green-900 mt-10 transition-all w-full;
 }
 .btnBack{
-    @apply w-1/2 bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:opacity-80 mt-10 transition-all;
+    @apply w-full bg-gray-500 backdrop-blur-sm bg-opacity-30 text-white p-2 rounded hover:opacity-80 mt-10 transition-all;
 }
 
 .bottomText1 {

@@ -120,7 +120,7 @@ export default function UserList() {
             // handle the case when userId is null
             return;
         }
-        setIsLoading(true); // Start loading
+        setIsLoading(true);
 
         const token = localStorage.getItem('token');
 
@@ -193,7 +193,7 @@ export default function UserList() {
                 });
             }
 
-            setIsLoading(false); // End loading
+            setIsLoading(false);
         }
     };
 

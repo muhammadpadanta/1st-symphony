@@ -91,8 +91,8 @@
                                 <Link href="/" legacyBehavior>
                                     <p className="text-white hover:scale-110 hover:text-[#8BC34A] transition-all cursor-pointer xs:hidden lg:flex">Home</p>
                                 </Link>
-                                <Link href="/tickets" legacyBehavior>
-                                    <p className="text-white hover:scale-110 hover:text-[#8BC34A] transition-all cursor-pointer xs:hidden lg:flex">Ticket</p>
+                                <Link href="/concerts" legacyBehavior>
+                                    <p className="text-white hover:scale-110 hover:text-[#8BC34A] transition-all cursor-pointer xs:hidden lg:flex">Concert</p>
                                 </Link>
 
                                 <MenuItem

@@ -3,17 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import Modal from 'react-modal'
 import {Autoplay, FreeMode, Pagination} from "swiper/modules";
 import Image from "next/image";
 import { RxArrowRight } from "react-icons/rx";
-import { OrangesImages, PurplesImages } from "@/constants";
-import '../../styles/twclass.css'
-import React, {useState} from "react";
+import { OrangeImages, PurpleImages } from "@/constants";
+import Modal from "react-modal";
 import Button from "@/components/btn";
+import React, {useState} from "react";
 import Link from "next/link";
 
-const MostPopularSlider = () => {
+const UpcomingSlider = () => {
 
     const [showModal, setShowModal] = useState(false);
     const handleButtonClick = () => {
@@ -25,12 +24,33 @@ const MostPopularSlider = () => {
     };
 
 
+
     return (
         <div className="h-[1000px] flex flex-col md:flex-row gap-5 items-center justify-center bg-transparent">
+            <div
+                style={{filter: "drop-shadow(3px 3px 2px rgba(0, 0, 0, 1))"}}
+                className="flex flex-col gap-3">
+                <h1 className="accent-primary text-[50px] font-semibold">
+                    Upcoming Event<span className="text-prime">.</span>
+                    <p
 
-            <div className="w-[70%] md:w-[40%]  ">
+                        className="text-[22px] max-w-[400px] text-gray-200 md:text-gray-100">
+                        Get ready for an unforgettable night of music with our upcoming concert series! Dont miss out –
+                        grab your tickets now and secure your spot for a night to remember! 🎶🎟️
+                    </p>
+
+                    <Link href={"/concerts/concertlisting"}>
+                        <button
+                            style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
+                            All Concerts
+                        </button>
+                    </Link>
+                </h1>
+            </div>
+            <div className="w-[70%] md:w-[40%]">
                 <Swiper
-                    className = "swipercon mostPopularConcerts  "
+                    className="upcomingConcerts "
                     style={{filter: "drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.8))"}}
                     breakpoints={{
                         340: {
@@ -58,45 +78,42 @@ const MostPopularSlider = () => {
                     }}
                     modules={[FreeMode, Pagination, Autoplay]}
                 >
-                    <SwiperSlide className="mb-14 swiperslid ">
-                        <div className="grid grid-cols-3 gap-4 px-10 ">
-                            {PurplesImages.reverse().map((image) => (
-                                <div className="relative group mostPopularSlider border border-2 border-[#8BC34A]" key={image.src} onClick={handleButtonClick}>
+                    <SwiperSlide
+                        className="mb-14">
+                        <div className="grid grid-cols-3 gap-4 px-10">
+                            {PurpleImages.map((image) => (
+                                <div className="relative group border border-2 border-[#8BC34A]" key={image.src} onClick={handleButtonClick}>
                                     <Image
                                         width={600}
                                         height={600}
                                         src={image.src}
                                         alt="purple image"
-                                        className="rounded-md xl:h-[150px] 2xl:h-[240px] w-[240px] object-cover"
+                                        className=" xl:h-[150px] 2xl:h-[240px] w-[240px] object-cover"
                                     />
-                                    <div
-                                        className="cursor-pointer absolute inset-0 max-w-[240px] rounded-md bg-green-800 opacity-0 transition-all group-hover:opacity-60"/>
-                                    <div
-                                        className="absolute text-[#FFC107] inset-0 flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
+                                    <div  className="cursor-pointer absolute inset-0 max-w-[240px] rounded-md bg-green-800 opacity-0 transition-all group-hover:opacity-60"/>
+                                    <div className="absolute text-[#FFC107] inset-0 flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
                                         See Ticket
-                                        <RxArrowRight className="ml-2 w-[24px] h-[24px]"/>
+                                        <RxArrowRight className="ml-2 w-[24px] h-[24px]" />
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="mb-14 swiperslid ">
+                    <SwiperSlide className="mb-14">
                         <div className="grid grid-cols-3 gap-4 px-10">
-                            {OrangesImages.reverse().map((image) => (
-                                <div className="relative group mostPopularSlider border border-2 border-[#8BC34A]" key={image.src} onClick={handleButtonClick}>
+                            {OrangeImages.map((image) => (
+                                <div className="relative group border border-2 border-[#8BC34A]" key={image.src} onClick={handleButtonClick}>
                                     <Image
                                         width={600}
                                         height={600}
                                         src={image.src}
                                         alt="purple image"
-                                        className="rounded-md xl:h-[150px] 2xl:h-[240px] w-[240px] object-cover"
+                                        className=" xl:h-[150px] 2xl:h-[240px] w-[240px] object-cover"
                                     />
-                                    <div
-                                        className="cursor-pointer absolute inset-0 max-w-[240px] rounded-md bg-green-800 opacity-0 transition-all group-hover:opacity-60"/>
-                                    <div
-                                        className="absolute text-[#FFC107] inset-0 flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
+                                    <div  className="cursor-pointer absolute inset-0 max-w-[240px] rounded-md bg-green-800 opacity-0 transition-all group-hover:opacity-60"/>
+                                    <div className="absolute text-[#FFC107] inset-0 flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
                                         See Ticket
-                                        <RxArrowRight className="ml-2 w-[24px] h-[24px]"/>
+                                        <RxArrowRight className="ml-2 w-[24px] h-[24px]" />
                                     </div>
                                 </div>
                             ))}
@@ -105,30 +122,6 @@ const MostPopularSlider = () => {
                 </Swiper>
             </div>
 
-            <div
-                style={{filter: "drop-shadow(3px 3px 2px rgba(0, 0, 0, 1))"}}
-                className="flex flex-col gap-3">
-                <h1 className="accent-primary text-[50px] font-semibold text-right">
-                    Most Popular<span className="text-red-500">.</span>
-                    <p
-
-                        className="text-[22px] max-w-[400px] text-gray-200 md:text-gray-100 text-right">
-                        Prepare for the event of the year – our Most Popular Event is back and bigger than ever! Dont
-                        miss your chance to be part of history – grab
-                        your tickets now before they gone! 🎤🎸🎉
-                    </p>
-
-                    <Link href={"/concerts/ticketlisting"}>
-                        <button
-                            style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
-                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
-                            All Tickets
-                        </button>
-                    </Link>
-
-
-                </h1>
-            </div>
 
             {/*modal*/}
             <Modal
@@ -211,4 +204,4 @@ const MostPopularSlider = () => {
     );
 };
 
-export default MostPopularSlider;
+export default UpcomingSlider;

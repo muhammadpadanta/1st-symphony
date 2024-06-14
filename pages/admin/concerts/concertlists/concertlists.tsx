@@ -7,6 +7,8 @@ import ReactLoading from "react-loading";
 
 export default function ConcertList() {
     const [artists, setArtists] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentConcert, setCurrentConcert] = useState(null);
     const [concerts, setConcerts] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +21,11 @@ export default function ConcertList() {
         description: '',
         concert_photo: '',
     });
+
+    const handleShowTickets = (concert) => {
+        setCurrentConcert(concert);
+        setIsModalOpen(true);
+    };
 
     const handleInputChange = (event) => {
         let value = event.target.value;
@@ -190,7 +197,7 @@ export default function ConcertList() {
                                     alt={concert.concert_name}
                                     width={100}
                                     height={100}
-                                    className="object-cover"
+                                    className="object-cover w-full h-full"
                                 />
                             </div>
 
@@ -203,21 +210,80 @@ export default function ConcertList() {
                                 <p>Description: {concert.description}</p>
                             </div>
 
+
                             <div className="space-x-3 text-white p-3 w-full">
                                 <button onClick={() => editConcert(concert)}
-                                        className="p-2 bg-gray-600 rounded hover:bg-green-800 transition-all w-1/3">
+                                        className="p-2 bg-gray-600 rounded hover:bg-green-800 transition-all ">
                                     Edit Concert
                                 </button>
                                 <button
+                                    onClick={() => handleShowTickets(concert)}
+                                    className="p-2 bg-blue-400 rounded hover:bg-green-800 transition-all "
+                                >
+                                    Show Tickets
+                                </button>
+                                <button
                                     onClick={() => handleDelete(concert.concert_id)}
-                                    className="p-2 bg-red-400 rounded hover:bg-green-800 transition-all w-1/2"
+                                    className="p-2 bg-red-400 rounded hover:bg-green-800 transition-all "
                                 >
                                     Delete
                                 </button>
+
                             </div>
                         </div>
                     </div>
                 ))}
+
+                <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}
+                       className={{
+                           base: 'animate-modal',
+                           afterOpen: 'animate-modal-after-open',
+                           beforeClose: 'animate-modal-before-close'
+                       }}
+                       style={{
+                           overlay: {
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               zIndex: 1000,
+                               backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                               backdropFilter: 'blur(3px)',
+                           },
+                           content: {
+                               display: 'flex',
+                               flexDirection: 'column',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               border: '1px solid #FFFFFF',
+                               borderRadius: '10px',
+                               width: '50%',
+                               height: '50%',
+                               top: '0',
+                               left: '0',
+                               right: '0',
+                               bottom: '0',
+                               margin: 'auto',
+                               backgroundColor: '#0a0a0a',
+                               padding: '20px',
+                               color: 'white',
+                           },
+                       }}>
+                    {currentConcert && (
+                        <div>
+                            {currentConcert.ticket_types.map(ticketType => (
+                                <div key={ticketType.ticket_type_id} className={"text-2xl "}>
+                                    <h3 className={"text-yellow-400 space-y-5"}>Ticket Type: {ticketType.type_name}</h3>
+                                    {ticketType.concert_tickets.map(concertTicket => (
+                                        <p key={concertTicket.concert_ticket_id} className={"text-second "}>
+                                            Stock: {concertTicket.total_stock}, Sold: {concertTicket.sold_tickets}
+                                        </p>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </Modal>
+
 
                 <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}
                        className={{

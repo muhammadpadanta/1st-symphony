@@ -93,7 +93,7 @@ const TicketDetailsItem = ({ details }: { details: Details }) => {
 
     return (
         <div
-            className="bg-gray-800 p-5 rounded-lg shadow-lg flex flex-row items-start mb-4 border border-2 border-gray-500 hover:bg-green-900 transition-all">
+            className="bg-gray-800 p-5 rounded-lg shadow-lg flex flex-row items-start mb-4 border border-2 border-gray-500 hover:bg-gray-700 transition-all">
             <div className="flex-1 flex flex-col justify-between ">
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">{name}</h2>
@@ -112,7 +112,7 @@ const TicketDetailsItem = ({ details }: { details: Details }) => {
                     </div>
                 </div>
                 <button
-                    className="bg-green-800 hover:bg-green-900 transition-all text-white font-bold py-2 px-4 rounded mt-auto">
+                    className="bg-green-800 hover:bg-green-900 transition-all text-white font-bold py-2 px-4 rounded mt-auto w-full">
                     Check Tickets
                 </button>
             </div>
@@ -129,7 +129,7 @@ const TicketDetailsItem = ({ details }: { details: Details }) => {
     );
 };
 
-const TicketListing = () => {
+const Cop = () => {
     const [currentCategory, setCurrentCategory] = useState('upcomingEvent');
     const ticketDetails = currentCategory === 'upcomingEvent'
         ? upcomingEvent
@@ -139,7 +139,7 @@ const TicketListing = () => {
 
     return (
         <div className="min-h-screen text-white p-5 w-2/3 mx-auto">
-            <h1 className="text-5xl text-[#FFC107] font-bold mb-5 text-center">Available Tickets</h1>
+            <h1 className="text-5xl text-[#FFC107] font-bold mb-5 text-center">Available Concerts</h1>
             <div className="flex justify-center mb-5">
                 <button
                     className={`mx-2 text-xl font-semibold ${currentCategory === 'allEvents' ? 'underline' : ''}`}
@@ -170,4 +170,4 @@ const TicketListing = () => {
     );
 };
 
-export default TicketListing;
+export default Cop;
