@@ -111,17 +111,7 @@
     @apply text-4xl pt-3 flex justify-center items-center text-white;
 }
 
-.inventoryBox {
-    @apply flex justify-center py-6 pb-24;
-}
 
-.inventoryContent {
-    @apply w-2/3 p-6 bg-[#2e3239] bg-opacity-20 backdrop-blur-lg rounded-xl overflow-auto h-[70vh] 2xl:h-[60vh];
-}
-
-.gridContainerInventory {
-    @apply grid grid-cols-2 gap-x-8 gap-y-8 lg:mx-0 lg:grid-cols-2 ;
-}
 
 
 
@@ -446,23 +436,7 @@
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.animate-modal {
-    opacity: 0;
-    transform: scale(0.6);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
 
-.animate-modal-after-open {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.animate-modal-before-close {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
 
 .transparent-navbar {
     background-color: transparent;

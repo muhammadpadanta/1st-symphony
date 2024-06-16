@@ -15,8 +15,8 @@ const TicketListing = () => {
     const [concerts, setConcerts] = useState([]);
     const [selectedConcert, setSelectedConcert] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [quantity, setQuantity] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
+    const [quantity, setQuantity] = useState({});
+    const [isLoading, setIsLoading] = useState({});
 
     useEffect(() => {
         fetch(API_URL)
@@ -31,12 +31,12 @@ const TicketListing = () => {
     };
 
     const handleBuyTicket = async (concert_ticket_id, quantity) => {
-        const token = localStorage.getItem('token'); // Assuming the token is stored in local storage
+        const token = localStorage.getItem('token');
 
-        setIsLoading(true);
+        setIsLoading(prevLoading => ({...prevLoading, [concert_ticket_id]: true}));
         const formData = new FormData();
 
-        // Append the concert_ticket_id and quantity to the formData
+
         formData.append('concert_ticket_id', concert_ticket_id.toString());
         formData.append('quantity', quantity.toString());
 
@@ -81,7 +81,7 @@ const TicketListing = () => {
                 });
             }
         } finally {
-            setIsLoading(false);
+            setIsLoading(prevLoading => ({...prevLoading, [concert_ticket_id]: false}));
         }
     };
 
@@ -160,39 +160,53 @@ const TicketListing = () => {
                        }}
                 >
                     {selectedConcert && (
-                        <div className={" h-full w-full"}>
+                        <div className={" h-full w-full "}>
                             <h1 className={"text-2xl text-yellow-400 text-center mb-5"}>AVAILABLE TICKETS</h1>
-                            {selectedConcert.ticket_types.map(ticketType => (
-                                ticketType.concert_tickets.map(concertTicket => (
-                                    <div key={concertTicket.concert_ticket_id} className={"bg-gray-800 p-3 rounded-xl"}>
-                                        <p className={"text-prime"}>
-                                            Stock: {concertTicket.total_stock}, Sold: {concertTicket.sold_tickets},
-                                            Price: {ticketType.price}
-                                        </p>
-                                        <div>
-                                            <button className={"w-5 h-7 rounded-full bg-gray-600"}
-                                                onClick={() => setQuantity(prevQuantity => prevQuantity - 1)}
-                                                    disabled={quantity === 1}>
-                                                -
-                                            </button>
-                                            <input type="number" value={quantity} readOnly
-                                                   className={"bg-transparent w-24 text-center"}/>
-                                            <button className={"w-5 h-7 h-12 rounded-full bg-gray-600"}
-                                                    onClick={() => setQuantity(prevQuantity => prevQuantity + 1)}>
-                                                +
+                            <div className={"space-y-2 xl:h-[30vh] 2xl:h=[60vh] overflow-y-auto"}>
+                                {selectedConcert.ticket_types.map(ticketType => (
+                                    ticketType.concert_tickets.map(concertTicket => (
+                                        <div key={concertTicket.concert_ticket_id}
+                                             className={"bg-gray-800 p-3 rounded-xl space-y-2"}>
+                                            <p className={"text-yellow-300 p-3 bg-gray-900 rounded-xl"}>
+                                                Ticket Type: {ticketType.type_name}
+                                            </p>
+                                            <div className={"p-3  "}>
+                                                <p className={"text-second"}>Price: Rp{ticketType.price}</p>
+                                                <p className={"text-second"}>Sold: {concertTicket.sold_tickets}</p>
+                                                <p className={"text-second"}>STOCK: {concertTicket.total_stock}</p>
+                                                <button className={"w-7 h-7 rounded-full bg-gray-600 "}
+                                                        onClick={() => setQuantity(prevQuantity => ({
+                                                            ...prevQuantity,
+                                                            [concertTicket.concert_ticket_id]: (prevQuantity[concertTicket.concert_ticket_id] || 1) - 1
+                                                        }))}
+                                                        disabled={quantity[concertTicket.concert_ticket_id] === 1}>
+                                                    -
+                                                </button>
+                                                <input type="number"
+                                                       value={quantity[concertTicket.concert_ticket_id] || 1}
+                                                       readOnly
+                                                       className={"bg-transparent w-12 text-center"}/>
+                                                <button className={"w-7 h-7 rounded-full bg-gray-600"}
+                                                        onClick={() => setQuantity(prevQuantity => ({
+                                                            ...prevQuantity,
+                                                            [concertTicket.concert_ticket_id]: (prevQuantity[concertTicket.concert_ticket_id] || 1) + 1
+                                                        }))}>
+                                                    +
+                                                </button>
+                                            </div>
+                                            <button
+                                                onClick={() => handleBuyTicket(concertTicket.concert_ticket_id, parseInt(quantity[concertTicket.concert_ticket_id] || 1))}
+                                                className={"p-2 rounded-xl bg-green-800 w-full mt-5 hover:opacity-80 transition-all"}>
+                                                {isLoading[concertTicket.concert_ticket_id] ?
+                                                    <ReactLoading type={"spin"} className="mx-auto" color={"#ffffff"}
+                                                                  height={20}
+                                                                  width={20}/> : 'Add to cart'}
                                             </button>
                                         </div>
-                                        <button
-                                            onClick={() => handleBuyTicket(concertTicket.concert_ticket_id, quantity)} // Replace 'quantity' with the actual quantity from the input
-                                            className={"p-2 rounded-xl bg-green-800 w-full mt-5 hover:opacity-80 transition-all"}>
-                                            {isLoading ?
-                                                <ReactLoading type={"spin"} className="mx-auto" color={"#ffffff"}
-                                                              height={20}
-                                                              width={20}/> : 'Add to cart'}
-                                        </button>
-                                    </div>
-                                ))
-                            ))}
+                                    ))
+                                ))}
+                            </div>
+
                         </div>
                     )}
                 </Modal>

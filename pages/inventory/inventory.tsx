@@ -26,19 +26,19 @@ export default function Inventory() {
     }, []);
 
     return (
-        <div className="h-screen">
+        <>
             <div>
                 <p className="inventoryContainer">Purchased Tickets</p>
             </div>
-            <div className="inventoryBox">
+            <div className="w-2/3 mx-auto h-[70vh] overflow-y-auto">
                 <div
-                    className="inventoryContent"
+                    className=""
                     style={{filter: "drop-shadow(8px 8px 2px rgba(0, 0, 0, 1))"}}
                 >
-                    <div className="gridContainerInventory">
-                        {userData && userData.orders.map((order, index) => (
-                            <div key={index} className=" bg-gray-800">
-                                <div className="text-prime p-3 rounded-xl">
+                    <div className="grid grid-cols-3 gap-4"> {/* Apply grid layout here */}
+                        {userData && userData.orders.filter(order => order.purchase_status === 'Success').map((order, index) => (
+                            <div key={index} className="bg-gray-800 rounded-xl  p-3 ">
+                                <div className="text-prime">
                                     <p className="">Order ID: {order.order_id}</p>
                                     <p className="">Order Date: {order.order_date}</p>
                                     <p className="">Total Amount: Rp{order.total_amount}</p>
@@ -58,6 +58,6 @@ export default function Inventory() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

@@ -130,6 +130,7 @@ const ShoppingCart = () => {
                                             <h3 className={"text-xl"}>Item
                                                 Name: {ticket.concert_ticket.ticket_type.type_name}</h3>
                                             <p className="text-gray-400">Order Date: {order.order_date}</p>
+                                            <p className="text-gray-400">Ticket Quantity: {order.order_tickets.reduce((total, ticket) => total + ticket.quantity, 0)}</p>
                                             <p className="text-gray-400">Total Amount: Rp{order.total_amount}</p>
                                             <p className={`${
                                                 order.purchase_status === 'Success' ? 'text-green-500' : 'text-yellow-500'

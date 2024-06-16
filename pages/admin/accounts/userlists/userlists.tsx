@@ -269,7 +269,7 @@ export default function UserList() {
                                     alt={user.name}
                                     width={100}
                                     height={100}
-                                    className="object-cover"
+                                    className="object-cover w-full h-full"
                                 />
                             </div>
                             <div className={"text-second text-xl mb-3 p-3"}>
