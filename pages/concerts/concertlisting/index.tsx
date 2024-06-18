@@ -4,7 +4,7 @@ import TicketListing from './ticketlisting'
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-
+import { AuthCheckProvider } from '../../../context/authCheck';
 
 
 const TicketListingPage = () => {
@@ -28,10 +28,9 @@ const TicketListingPage = () => {
   return (
 
     <Layout>
-
+        <AuthCheckProvider>
         <TicketListing/>
-
-
+        </AuthCheckProvider>
     </Layout>
 
 

@@ -16,9 +16,16 @@ import Link from "next/link";
 const MostPopularSlider = () => {
 
     const [showModal, setShowModal] = useState(false);
+
     const handleButtonClick = () => {
-        setShowModal(true);
+        const token = localStorage.getItem('token');
+        if (!token) {
+            setShowModal(true);
+        } else {
+            window.location.href = "/concerts/concertlisting";
+        }
     };
+
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -118,13 +125,15 @@ const MostPopularSlider = () => {
                         your tickets now before they gone! 🎤🎸🎉
                     </p>
 
-                    <Link href={"/concerts/concertlisting"}>
+
                         <button
                             style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
-                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
-                            All Concerts
+                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "
+                            onClick={handleButtonClick}
+                        >
+                            Check All Concerts
                         </button>
-                    </Link>
+
 
 
                 </h1>

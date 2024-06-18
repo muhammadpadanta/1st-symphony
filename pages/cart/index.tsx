@@ -5,6 +5,7 @@ import Loading  from '@/components/loading';
 import Layout from "@/components/layout";
 import ShoppingCart from './cart';
 import {Toaster} from "react-hot-toast";
+import { AuthCheckProvider } from '../../context/authCheck';
 
 const CartPage = () => {
     const [items, setItems] = useState([
@@ -47,6 +48,7 @@ const CartPage = () => {
         <>
 
             <Layout>
+                <AuthCheckProvider>
                 <div className="min-h-screen bg-[0a0a0a] flex items-center justify-center">
                     <ShoppingCart
                         items={items}
@@ -54,6 +56,7 @@ const CartPage = () => {
                         onQuantityChange={handleQuantityChange}
                     />
                 </div>
+            </AuthCheckProvider>
             </Layout>
         </>
 

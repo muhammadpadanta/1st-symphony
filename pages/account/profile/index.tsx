@@ -3,6 +3,7 @@ import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 import Profile from "./accountinfo";
+import { AuthCheckProvider } from '../../../context/authCheck';
 
 const ProfilePage = () => {
 
@@ -25,7 +26,9 @@ const ProfilePage = () => {
     return (
         <div className="svgwave">
             <Layout>
+                <AuthCheckProvider>
                 <Profile/>
+                </AuthCheckProvider>
             </Layout>
         </div>
 

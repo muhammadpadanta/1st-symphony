@@ -3,6 +3,8 @@ import Inventory from "./inventory";
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
+import { AuthCheckProvider } from '../../context/authCheck';
+
 const InventoryPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +23,9 @@ const InventoryPage = () => {
 
     return (
         <Layout >
+            <AuthCheckProvider>
             <Inventory/>
+            </AuthCheckProvider>
         </Layout>
     );
 };

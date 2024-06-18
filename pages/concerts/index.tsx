@@ -7,6 +7,10 @@ import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
 import UpcomingSlider from "./upcomingslider";
 import MostPopularSlider from "./mostpopularslider";
+
+
+
+
 const TicketsPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +38,6 @@ const TicketsPage = () => {
         <div className="mt-20">
             <MostPopularSlider/>
         </div>
-
     </Layout>
 
 

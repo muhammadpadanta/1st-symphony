@@ -13,10 +13,16 @@ import React, {useState} from "react";
 import Link from "next/link";
 
 const UpcomingSlider = () => {
-
     const [showModal, setShowModal] = useState(false);
+
+
     const handleButtonClick = () => {
-        setShowModal(true);
+        const token = localStorage.getItem('token');
+        if (!token) {
+            setShowModal(true);
+        } else {
+            window.location.href = "/concerts/concertlisting";
+        }
     };
 
     const handleCloseModal = () => {
@@ -39,13 +45,13 @@ const UpcomingSlider = () => {
                         grab your tickets now and secure your spot for a night to remember! 🎶🎟️
                     </p>
 
-                    <Link href={"/concerts/concertlisting"}>
-                        <button
-                            style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
-                            className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "> Check
-                            All Concerts
-                        </button>
-                    </Link>
+                    <button
+                        style={{filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))"}}
+                        className=" p-5 bg-gray-800 text-white hover:bg-green-800 text-2xl rounded-full transition-all "
+                        onClick={handleButtonClick}
+                    >
+                        Check All Concerts
+                    </button>
                 </h1>
             </div>
             <div className="w-[70%] md:w-[40%]">
