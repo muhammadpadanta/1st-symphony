@@ -69,11 +69,11 @@ const ShoppingCart = () => {
             payButtons.forEach(payButton => {
                 // Add the onclick event handler to each pay button
                 payButton.onclick = function() {
-                    const orderId = this.getAttribute('data-order-id'); // Get the order_id from the button's data attribute
-                    const snapToken = this.getAttribute('data-snap-token'); // Get the order_id from the button's data attribute
+                    const orderId = this.getAttribute('data-order-id');
+                    const snapToken = this.getAttribute('data-snap-token');
                     window.snap.pay(snapToken, {
                         onSuccess: function(result) {
-                            console.log('Payment successful:', result); // Log the result of the payment
+                            console.log('Payment successful:', result);
                             setResultJson(JSON.stringify(result, null, 2));
 
 
@@ -130,21 +130,82 @@ const ShoppingCart = () => {
                                             <h3 className={"text-xl"}>Item
                                                 Name: {ticket.concert_ticket.ticket_type.type_name}</h3>
                                             <p className="text-gray-400">Order Date: {order.order_date}</p>
-                                            <p className="text-gray-400">Ticket Quantity: {order.order_tickets.reduce((total, ticket) => total + ticket.quantity, 0)}</p>
+                                            <p className="text-gray-400">Ticket
+                                                Quantity: {order.order_tickets.reduce((total, ticket) => total + ticket.quantity, 0)}</p>
                                             <p className="text-gray-400">Total Amount: Rp{order.total_amount}</p>
                                             <p className={`${
                                                 order.purchase_status === 'Success' ? 'text-green-500' : 'text-yellow-500'
                                             }`}>Purchase Status: {order.purchase_status}</p>
                                         </div>
-                                        <button
-                                            id={`pay-button-${order.order_id}`}
-                                            data-order-id={order.order_id}
-                                            data-snap-token={order.snap_token}
-                                            data-payment-status={order.purchase_status}
-                                            disabled={order.purchase_status === 'Success'}
-                                            className={order.purchase_status === 'Success' ? "bg-gray-800 text-prime p-3 hover:opacity-80 rounded-xl w-1/3 transition-all" : "bg-green-800 text-prime p-3 hover:opacity-80 rounded-xl w-1/3 transition-all"}>
-                                            {order.purchase_status === 'Success' ? 'SUCCESS' : 'PAY'}
-                                        </button>
+                                        <div className={"space-x-3 flex-row flex w-1/3 "}>
+                                            <button
+                                                id={`pay-button-${order.order_id}`}
+                                                data-order-id={order.order_id}
+                                                data-snap-token={order.snap_token}
+                                                data-payment-status={order.purchase_status}
+                                                disabled={order.purchase_status === 'Success'}
+                                                className={order.purchase_status === 'Success' ? "bg-gray-800 text-prime p-3 hover:opacity-80 rounded-xl w-full transition-all" : "bg-green-800 text-prime p-3 hover:opacity-80 rounded-xl w-1/3 transition-all"}>
+                                                {order.purchase_status === 'Success' ? 'SUCCESS' : 'PAY'}
+                                            </button>
+                                            {order.purchase_status !== 'Success' && (
+                                                <button
+                                                    className="p-3 bg-red-600 rounded-xl hover:opacity-80 transition-all text-white w-1/3"
+                                                    onClick={async () => {
+                                                        const response = await fetch('http://localhost:8000/api/orders/cancel', {
+                                                            method: 'POST',
+                                                            headers: {
+                                                                'Content-Type': 'application/json',
+                                                                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                                                            },
+                                                            body: JSON.stringify({order_id: order.order_id})
+                                                        });
+
+                                                        if (response.ok) {
+                                                            toast.success("Order Cancelled.", {
+                                                                style: {
+                                                                    border: '1px solid #31ff00',
+                                                                    padding: '16px',
+                                                                    background: '#333',
+                                                                    color: '#fff',
+                                                                },
+                                                                iconTheme: {
+                                                                    primary: '#31ff00',
+                                                                    secondary: '#FFFFFF',
+                                                                },
+                                                            });
+
+                                                            // Fetch the updated data
+                                                            const updatedDataResponse = await fetch('http://localhost:8000/api/me', {
+                                                                method: 'GET',
+                                                                headers: {
+                                                                    "Accept": "application/json",
+                                                                    "Authorization": `Bearer ${localStorage.getItem('token')}`
+                                                                }
+                                                            });
+
+                                                            const updatedData = await updatedDataResponse.json();
+                                                            setItems(updatedData); // Assuming setItems is the state setter function for your data
+                                                        } else {
+                                                            toast.error("Failed to cancel order", {
+                                                                style: {
+                                                                    border: '1px solid #f44336',
+                                                                    padding: '16px',
+                                                                    background: '#333',
+                                                                    color: '#fff',
+                                                                },
+                                                                iconTheme: {
+                                                                    primary: '#f44336',
+                                                                    secondary: '#FFFAEE',
+                                                                },
+                                                            });
+                                                        }
+                                                    }}
+                                                >
+                                                    Cancel
+                                                </button>
+                                            )}
+                                        </div>
+
                                     </div>
                                 ))
                             ))}
@@ -158,10 +219,14 @@ const ShoppingCart = () => {
                             <hr className={"border-t-2 border-prime"}/>
                             <div className={""}>
                                 <p className={"text-prime text-lg "}>Are you sure you want to proceed to checkout?</p>
-                                <div className={"text-prime w-full space-x-3 flex justify-end absolute bottom-6 right-6"}>
-                                    <button id  className={"p-2 bg-green-600 rounded-xl w-1/3 hover:opacity-70 transition-all"} >Yes
+                                <div
+                                    className={"text-prime w-full space-x-3 flex justify-end absolute bottom-6 right-6"}>
+                                    <button id
+                                            className={"p-2 bg-green-600 rounded-xl w-1/3 hover:opacity-70 transition-all"}>Yes
                                     </button>
-                                    <button className={"p-2 bg-red-600 rounded-xl w-1/3 hover:opacity-70 transition-all"} onClick={hideModal}>No
+                                    <button
+                                        className={"p-2 bg-red-600 rounded-xl w-1/3 hover:opacity-70 transition-all"}
+                                        onClick={hideModal}>No
                                     </button>
                                 </div>
                             </div>
