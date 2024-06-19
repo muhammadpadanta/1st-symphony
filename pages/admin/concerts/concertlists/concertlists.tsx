@@ -332,6 +332,7 @@ export default function ConcertList() {
                             <span className="">Artist:</span>
                             <select name="artist_id" value={formData.artist_id} onChange={handleInputChange} required
                                     className="inputBox">
+                                <option value="">- Select an artist -</option>
                                 {artists.map(artist => (
                                     <option key={artist.artist_id} value={artist.artist_id}>
                                         {artist.name}

@@ -27,8 +27,6 @@ export default function TypeLists() {
     });
 
 
-
-
     const handleTicketFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -124,6 +122,9 @@ export default function TypeLists() {
                     type_name: '',
                     price: '',
                 });
+
+                // Reload the page
+                location.reload();
             } else {
                 toast.error(responseData.message);
             }
@@ -260,6 +261,7 @@ export default function TypeLists() {
                             <span className="">Select Concert:</span>
                             <select name="concert_id" value={formData.concert_id} onChange={handleInputChange} required
                                     className="inputBox">
+                                <option value="">- Select a Concert -</option>
                                 {concerts.map(concert => (
                                     <option key={concert.concert_id} value={concert.concert_id}>
                                         {concert.concert_name}
@@ -331,6 +333,7 @@ export default function TypeLists() {
                             <select name="ticket_type_id" value={ticketFormData.ticket_type_id}
                                     onChange={handleTicketInputChange} required
                                     className="inputBox">
+                                <option value="">- Select Ticket Type -</option>
                                 {ticketTypes.map(ticketType => (
                                     <option key={ticketType.ticket_type_id} value={ticketType.ticket_type_id}>
                                         {ticketType.type_name}
