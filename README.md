@@ -6,15 +6,20 @@ Welcome to my 1st Symphony Music Concert Ticket Shop! This web application is yo
 <br><br><br>
 ## Features
 
-- **Browse Events**: Explore a wide range of upcoming musical events, including concerts, festivals, and live performances.
-  
-- **Search Functionality**: Easily search for specific artists, genres, or event names to find exactly what you're looking for.
+- **Browse Concerts and Artists**: Explore a wide range of upcoming musical events, including concerts, festivals, and live performances.
 
 - **User Authentication**: Create an account or sign in to access additional features such as saving favorite events and managing your bookings.
 
-- **Ticket Purchasing**: Securely purchase tickets for your chosen events directly through the app.
+- **Email Verification**: Verify user email before logging in.
 
-- **Responsive Design**: Enjoy a consistent and intuitive experience across devices, whether you're using a desktop, tablet, or smartphone.
+- **Password Reset**: Reset the password if User forgot their password.
+
+- **Ticket Purchasing**: Securely purchase tickets for your chosen events Via Midtrans.
+
+- **Inventory**: Check Completed Orders and see the Purchased E-ticket.
+
+- **Admin CRUD**: Admin able to manage Users, Artists, Concerts, Tickets, and Orders from user.
+
 
 ## Technologies Used
 
