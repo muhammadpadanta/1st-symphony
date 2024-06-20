@@ -117,7 +117,6 @@ export default function UserList() {
 
     const handleFormSubmit = async (userId: number | null) => {
         if (userId === null) {
-            // handle the case when userId is null
             return;
         }
         setIsLoading(true);
@@ -128,12 +127,13 @@ export default function UserList() {
             const data = new FormData();
             Object.keys(formData).forEach(key => {
                 if (key === 'password' && formData[key] === '') {
-                    // Skip the password if it's not provided
                     return;
                 }
 
-                if (key === 'pfp_path' && ((formData[key] as unknown) as File) instanceof File) {
-                    data.append(key, (formData[key] as unknown) as File, ((formData[key] as unknown) as File).name);
+                if (key === 'pfp_path') {
+                    if ((formData[key] as unknown) instanceof File) {
+                        data.append(key, (formData[key] as unknown) as File, ((formData[key] as unknown) as File).name);
+                    }
                 } else {
                     data.append(key, formData[key]);
                 }
