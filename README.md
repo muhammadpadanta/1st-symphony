@@ -1,7 +1,11 @@
-# 1st Symphony Music Concert Ticket Shop
 
+   
+# 1st Symphony Music Concert Ticket Shop
 Welcome to my 1st Symphony Music Concert Ticket Shop! This web application is your one-stop destination for purchasing tickets to your favorite musical events. Built with Next.js, Tailwind CSS, and Aceternity UI, 1st Symphony offers a seamless and delightful experience for music enthusiasts.
-<br><br><br><br>
+- Laravel Backend for the App
+   ```bash
+   https://github.com/muhammadpadanta/1st_symphony_laravel
+<br><br><br>
 <img align="center" alt="Coding" width="400" src="https://s12.gifyu.com/images/SrHiQ.png">
 <br><br><br>
 ## Features
