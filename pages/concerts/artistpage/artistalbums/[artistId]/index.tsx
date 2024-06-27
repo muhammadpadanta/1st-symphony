@@ -1,10 +1,10 @@
 
 import React from 'react';
-import ArtistAlbums from "./ticketalbums";
 import Layout from "@/components/layout";
 import { useState, useEffect } from 'react';
 import Loading  from '@/components/loading';
-
+import YouTubePlayer from "./artistalbums";
+import ArtistBanner from "./artistbanner";
 
 const ArtistPage = () => {
 
@@ -27,7 +27,8 @@ const ArtistPage = () => {
   return (
 
     <Layout>
-        <ArtistAlbums />
+        <ArtistBanner/>
+        <YouTubePlayer />
     </Layout>
 
 

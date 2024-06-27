@@ -1,38 +1,16 @@
 /*~~~~~~~~~~~~~~~~hero~~~~~~~~~~~~~~~~~~~~~*/
-.heroContainer {
-    @apply h-screen w-full flex flex-col items-center justify-center ;
-
-}
 
 
 
-.heroHomeTitleSpan1 {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 xs:text-[1rem] xl:text-[3rem] 2xl:text-[4rem] drop-shadow-xl ;
-}
 
-.heroHomeTitleSpan2 {
-    @apply bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent xs:text-[1rem] xl:text-[3rem]  2xl:text-[4rem] drop-shadow-xl ;
-}
 
-.itemContainer {
-    @apply w-full p-4 absolute 2xl:top-48 xs:top-20 xl:top-32 ;
-}
 
-.videoContainer {
-    @apply absolute w-full h-full object-cover brightness-50 opacity-50;
-}
 
-.imageSliderContainer {
-    @apply flex xs:flex-col lg:flex-row justify-center items-center space-y-5 px-16 xl:ml-20 xl:pl-20 2xl:pl-24 2xl:ml-24 ;
-}
 
-.typewriterContainer {
-    @apply w-full flex flex-col justify-center items-center ;
-}
 
-.heroText1 {
-    @apply text-neutral-500 dark:text-neutral-200 text-lg text-center
-}
+
+
+
 .btnContainer {
     @apply bg-[#0a0a0a] text-white border-slate-800 z-20 hover:text-[#8BC34A] transition-all text-xl shadow-xl
 }
@@ -235,9 +213,7 @@
     @apply max-w-7xl p-10 rounded-xl   ;
 }
 
-.heroTicketImage {
-    @apply w-full object-center xl:h-[80vh] 2xl:h-full transition-all ease-in-out overflow-hidden;
-}
+
 
 .heroTicketImageContainer {
     @apply flex w-1/2 ;
@@ -412,7 +388,7 @@
 }
 
 .artistcardlistArtistName {
-    @apply text-xl lg:text-2xl group-hover:text-[#FFC107] transition-all;
+    @apply text-xl lg:text-4xl group-hover:text-[#FFC107] transition-all;
 }
 
 .artistcardlistIcon {
@@ -427,9 +403,7 @@
     @apply absolute inset-0 bg-black opacity-10 group-hover:opacity-50 transition-all ;
 }
 
-.artistcardlistCardShaper {
-    @apply flex hover:scale-105 mt-10 transition-all border-2 border-[#8BC34A] flex-col gap-6 mb-20 relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ;
-}
+
 /*~~~~~~~~~~~~~~~~~artistcardlist~~~~~~~~~~~~~~~~~~~~*/
 
 

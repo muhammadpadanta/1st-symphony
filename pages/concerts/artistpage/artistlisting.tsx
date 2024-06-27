@@ -45,11 +45,21 @@ const ArtistListing = () => {
                             <p className="text-gray-400">{artist.bio}</p>
                             <p className="text-gray-400 mt-5">Genre: {artist.genre}</p>
 
-                            <button
-                                onClick={() => openModal(artist)}
-                                className="mt-4 p-3 bg-green-500 hover:opacity-80 shadow-xl transition-all  rounded">
-                                Check Available Concerts
-                            </button>
+                            <div className={"flex-row flex space-x-2"}>
+                                <Link href={`/concerts/artistpage/artistalbums/${artist.artist_id}`}>
+                                    <button
+                                        className="mt-4 p-2 bg-yellow-700 hover:opacity-80 shadow-xl transition-all  rounded">
+                                        Check Popular Songs
+                                    </button>
+                                </Link>
+
+                                <button
+                                    onClick={() => openModal(artist)}
+                                    className="mt-4 p-2 bg-green-500 hover:opacity-80 shadow-xl transition-all  rounded">
+                                    Check Available Concerts
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 ))}

@@ -48,7 +48,6 @@ export default function Herotickets() {
 
                     </div>
                     <motion.div
-                        whileHover={{ rotate: 30 }}
                         whileTap={{
                             scale: 0.8,
                             rotate: -30,
@@ -59,7 +58,7 @@ export default function Herotickets() {
                             priority={true}
                             src="/images/heroTicketBanner.png"
                             alt="hero tickets image"
-                            className="heroTicketImage"
+                            className="w-full object-center xl:h-[80vh] 2xl:h-full transition-all ease-in-out overflow-hidden heroTicketImage"
                             width={1920}
                             height={1080}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
