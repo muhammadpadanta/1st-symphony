@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "bun next dev",
+    "build": "bun next build",
+    "start": "bun next start",
+    "lint": "bun next lint"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",
@@ -51,6 +51,9 @@
     "eslint-config-next": "14.1.2",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
-  }
+    "typescript": "^5",
+    "@types/bun": "latest"
+  },
+  "module": "index.ts",
+  "type": "module"
 }

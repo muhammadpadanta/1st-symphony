@@ -1,15 +1,15 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from "react";
 import { Navbar } from "@/components/navbar";
-import  Footer  from "@/components/footer";
-import "../../styles/globals.css"
+import Footer from "@/components/footer";
+import "../../styles/globals.css";
 const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
-    return (
-        <div className="flex flex-col min-h-screen ">
-            <Navbar className="pacifico-regular sticky top-0 z-50 w-full "/>
-                {children}
-            <Footer className="pacifico-regular"/>
-        </div>
-);
+  return (
+    <div className="flex flex-col min-h-screen ">
+      <Navbar className="pacifico-regular sticky top-0 z-50 w-full " />
+      {children}
+      <Footer className="pacifico-regular" />
+    </div>
+  );
 };
 
 export default Layout;
