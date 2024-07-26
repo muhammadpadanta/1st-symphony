@@ -35,7 +35,7 @@ Welcome to my 1st Symphony Music Concert Ticket Shop! This web application is yo
 
 ## Getting Started
 
-To get started with 1st Symphony Web app on your local machine, follow these steps:
+To get started with 1st Symphony Web app on your local machine you need to have bun installed, then follow these steps:
 
 1. Clone the repository:
    ```bash
@@ -45,13 +45,17 @@ To get started with 1st Symphony Web app on your local machine, follow these ste
    ```bash
    cd 1st-symphony
 
-3. Install dependencies:
+3. Install Bun:
    ```bash
-   npm i
+   npm install -g bun
 
-4. Start the development server:
+4. Install dependencies:
    ```bash
-   npm run dev
+   bun install
+
+5. Start the development server:
+   ```bash
+   bun run dev
 
 ## Contributing
 
